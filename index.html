@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NESTA Competencies Framework</title>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <style type="text/css">
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <ul id="competencies"></ul>
+    <ul id="attitudes" class="hidden"></ul>
+    
+    <ul id="roles"><ul>
+    
+  </body>
+  <script>
+  
+    var buildBlocks = function(key, type) {
+      $.ajax({
+        url: 'https://api.airtable.com/v0/app1HYN2V4VL6fbhu/'+ type +'?view=Grid%20view',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data) {
+          $.each(data.records, function( i, value ) {
+            $('#' + type).append('<li><label><input type="checkbox" value="' + value.fields.Name + '" data-id="'+ value.id +'" data-type="'+ value.fields.type +'" />' + value.fields.Name +'</label></li>');
+          });
+        },
+        error: function() { alert('boo!'); },
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Authorization', 'Bearer ' + key);
+        }
+      });
+    }
+
+    $(function() {
+      var key = 'key1kzTjJXNBMNAmG';
+      
+      buildBlocks(key, 'competencies');
+      buildBlocks(key, 'attitudes');
+      
+      $(document).on('click', '#competencies input, #attitudes input', function() {
+        if ($('#competencies input:checked').length >= 4) {
+          $('#attitudes').removeClass('hidden');
+          $('#competencies').addClass('hidden');
+        }
+        if ($('#competencies input:checked').length >= 4 && $('#attitudes input:checked').length >= 4) {
+          $('#attitudes').addClass('hidden');
+          $('#competencies').addClass('hidden');
+          $('#roles').empty();
+
+          query = [];
+          competencies = [];
+          attitudes = [];
+          
+          $.each($('#competencies input:checked'), function(i, el) {
+            query.push('SEARCH("'+ encodeURIComponent(el.value) +'",Competencies) > 0');
+            competencies.push($(el).data('id'));
+          })
+          $.each($('#attitudes input:checked'), function(i, el) {
+            query.push('SEARCH("'+ encodeURIComponent(el.value) +'",Attitudes) > 0');
+            attitudes.push($(el).data('id'));
+          })
+          
+          query = 'OR('+ query.join(',') +')';
+          console.log(query);
+          
+          $.ajax({
+            url: 'https://api.airtable.com/v0/app1HYN2V4VL6fbhu/Roles?view=Grid%20view&filterByFormula=' + query,
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+              $.each(data.records, function( i, record ) {
+                attitude_match = jQuery.grep(attitudes, function( attitude ) {
+                  return (jQuery.inArray(attitude, record.fields.Attitudes) >= 0);
+                });
+                competency_match = jQuery.grep(competencies, function( competency ) {
+                  return (jQuery.inArray(competency, record.fields.Competencies) >= 0);
+                });
+                
+                if (attitude_match.length > 3 && competency_match.length > 3) {
+                  $li = $('<li>');
+                  $li.append('<h2>' + record.fields.Name + '</h2>');
+                  $li.append('<h3>Competencies</h3>');
+                  $.each(record.fields.Competencies, function( i, record ) {
+                    competency = $('input[data-id="'+ record +'"]')[0].value
+                    type = $($('input[data-id="'+ record +'"]')[0]).data('type')
+                    $li.append('<span class="'+ type +'">' + competency + '</span>');
+                  });
+                  $li.append('<h3>Attitudes</h3>');
+                  $.each(record.fields.Attitudes, function( i, record ) {
+                    attitude = $('input[data-id="'+ record +'"]')[0].value
+                    $li.append('<span>' + attitude + '</span>');
+                  });
+                  $('#roles').append($li);
+                }
+              });
+              
+            },
+            error: function() { alert('boo!'); },
+            beforeSend: function(xhr) {
+              xhr.setRequestHeader('Authorization', 'Bearer ' + key);
+            }
+          });
+        }
+      });
+       
+      console.log( "ready!" );
+    });
+  </script>
+</html>
