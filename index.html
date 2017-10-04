@@ -85,7 +85,7 @@
                   return (jQuery.inArray(competency, record.fields.Competencies) >= 0);
                 });
                 
-                if (attitude_match.length > 3 && competency_match.length > 3) {
+                if (attitude_match.length >= 3 && competency_match.length >= 3) {
                   $li = $('<li>');
                   $li.append('<h2>' + record.fields.Name + '</h2>');
                   $li.append('<h3>Competencies</h3>');
