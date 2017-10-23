@@ -1,16 +1,52 @@
 %p Each of the three areas relates to a specific set of skills, activities and behaviours. You as an individual might have a range of these skills (At varying degrees of strength and weakness) across all 3 areas or you may naturally gravitate to only 1 or 2 of them.
 
-.card
-  .card-title Working Together
-  .card-description list skills
+.accord-cont
+  .card.accordion
+    .accord-btn.card-title
+      Working Together
+      %span.accord-arrow=fa_icon "chevron-down"
+    .accord-content.card-description
+      .skill
+        Citizen &amp; Stakeholder Engagement
+      .skill
+        Creative Facilitation
+      .skill
+        Building Bridges
+      .skill
+        Brokering
 
-.card
-  .card-title Leading Change
-  .card-description list skills
+  .card.accordion
+    .accord-btn.card-title
+      Leading Change
+      %span.accord-arrow=fa_icon "chevron-down"
+    .accord-content.card-description
+      .skill
+        Political &amp; Bureaucratic Awareness
+      .skill
+        Financing Change
+      .skill
+        Intrapreneurship
+      .skill
+        Demonstrating Value
+      .skill
+        Storytelling &amp; Advocacy
 
-.card
-  .card-title Accelerating Learning
-  .card-description list skills
+  .card.accordion
+    .accord-btn.card-title
+      Accelerating Learning
+      %span.accord-arrow=fa_icon "chevron-down"
+    .accord-content.card-description
+      .skill
+        Future Acumen
+      .skill
+        Prototyping &amp; Iterating
+      .skill
+        Data Literacy &amp; Evidence
+      .skill
+        Systems Thinking
+      .skill
+        Tech Literacy
 
-= link_to "back", :assess_step1, :class => "button"
-= link_to "next", :assess_step3, :class => "button"
+.actions
+  = link_to "back", :assess_step1, :class => "button full-button"
+  = link_to "next", :assess_step3, :class => "button full-button"
