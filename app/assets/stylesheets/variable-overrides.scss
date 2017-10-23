@@ -1,0 +1,14 @@
+// paste in any varibles to override from GEFF variables.scss file
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+
+$heading-font-family: 'Roboto Slab', serif;
+$font-stack-system: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+
+$blue: #05CADA;
+$purple: #D201FF;
+$black: #4D4A50;
+
+$primary-color: $blue;
+
+$base-border-radius: 0;
