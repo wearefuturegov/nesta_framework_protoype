@@ -1,0 +1,54 @@
+.card {
+  margin-top: 25px;
+  background-color: $black;
+  color: $white;
+
+  .card_title {
+    font-family: $heading-font-family;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  .card_description {
+    margin-top: 10px;
+
+    .skill {
+      margin-top: 10px;
+    }
+  }
+}
+
+.card_sort_single {
+  background-color: $white;
+  color: $black;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 2px 0 rgba($black,.14), 0 3px 1px -2px rgba($black,.2), 0 1px 5px 0 rgba($black,.12);
+  margin: 30px 0;
+
+  .card_title {
+    color: $white;
+    font-size: 18px;
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    padding: $container-padding/2 $container-padding/1.5;
+  }
+  .card_description {
+    padding: $container-padding/2 $container-padding/1.5;
+  }
+
+  &.selected {
+    background-color: gray;
+  }
+}
+
+
+.card_sort_footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 7px;
+  background-color: $white;
+  border-top: rgba($black, 0.4) solid 1px;
+}

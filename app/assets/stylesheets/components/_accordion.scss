@@ -1,26 +1,26 @@
 .accordion {
-  .accord-btn {
+  .accord_btn {
     &:hover {
       cursor: pointer;
     }
   }
-  .accord-arrow {
+  .accord_arrow {
     float: right;
     @include transition(all 0.5s);
   }
-  .accord-content {
+  .accord_content {
     display: none;
   }
 }
 
 .accordion.open {
-  .accord-btn {
+  .accord_btn {
 
   }
-  .accord-arrow {
+  .accord_arrow {
     @include transform(rotate(180deg));
   }
-  .accord-content {
+  .accord_content {
 
   }
 }

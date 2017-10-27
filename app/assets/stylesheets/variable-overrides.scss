@@ -3,12 +3,38 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
 
 $heading-font-family: 'Roboto Slab', serif;
-$font-stack-system: -apple-system, BlinkMacSystemFont, "Avenir Next", "Avenir", "Segoe UI", "Lucida Grande", "Helvetica Neue", "Helvetica", "Fira Sans", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
+$font-stack: "Lucida Sans Unicode", "Lucida Grande", "Helvetica Neue", "Helvetica", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
 
-$blue: #05CADA;
-$purple: #D201FF;
-$black: #4D4A50;
+// ORIGINAL COLOURS
+// $green: #8DD0C6;
+// $yellow: #F6DA9A;
+// $pink: #F7A0B2;
+// $purple: #C29FDA;
 
-$primary-color: $blue;
+//NEW COLOURS
+$green: #FDC66E;
+$yellow: #FDC66E;
+$pink: #68A2F7;
+$purple: #C58BE2;
 
-$base-border-radius: 0;
+$blue-gradient: linear-gradient(94deg, #4388E6 3%, #68A2F7 100%);
+$yell-gradient: linear-gradient(94deg, #FFBC52 3%, #FDC66E 100%);
+$purp-gradient: linear-gradient(94deg, #BB68D8 3%, #C58BE2 100%);
+
+$pink-gradient: linear-gradient(98deg, $pink 0%, $purple 140%);
+$green-gradient: linear-gradient(98deg, $green -10%, $yellow 120%);
+
+$pink-gradient-subtle: linear-gradient(98deg, $pink -30%, $purple 170%);
+$green-gradient-subtle: linear-gradient(98deg, $green -50%, $yellow 150%);
+
+
+$pink-gradient-original: linear-gradient(98deg, $pink 0%, $purple 100%);
+$green-gradient-original: linear-gradient(98deg, $green 0%, $yellow 105%);
+
+$black: #434149;
+$black-original: #434149;
+
+
+$primary-color: $black;
+
+$base-border-radius: 3px;
