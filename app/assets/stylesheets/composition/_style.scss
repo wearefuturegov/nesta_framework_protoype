@@ -2,8 +2,8 @@ body {
   font-family: $font-stack;
   background-color: rgb(245,245,245);
   &.home {
-    background-color: $green;
-    background-image: $green-yellow-gradient;
+    background-color: $pink;
+    background-image: $pink-purple-gradient;
 
     header, footer {
       background: transparent;
@@ -51,5 +51,10 @@ p {
 .lead_change {
   background-color: $lead_change;
   background-image: $lead_change-gradient;
+}
+
+.attitude {
+  background-color: $primary-color;
+  background-color: $primary-color-gradient;
 }
 

@@ -7,7 +7,7 @@ $(document).ready(function() {
     noOfCards: 14,
     noToChoose: 5,
     type: 'cards_sort_1',
-    type_text_text: "strongest skills"});
+    type_text: "strongest skills"});
 
   $('#cards_sort_2').cardSort({
     noOfCards: 9,

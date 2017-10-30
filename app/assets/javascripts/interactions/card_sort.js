@@ -11,7 +11,7 @@ $.fn.cardSort = function(options) {
   var cardsLeft = settings.noToChoose;
 
   $('.card_sort_footer .num_left').html(cardsLeft);
-  $('.card_sort_footer .card_type').html(settings.type);
+  $('.card_sort_footer .card_type').html(settings.type_text);
 
   $('.card_sort_single').click(function() {
     if ($(this).hasClass('selected')) {

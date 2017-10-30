@@ -22,9 +22,13 @@ $yellow: #FFC107;
 $pink: #E91E63;
 $purple: #9C27B0;
 
+$blue: #2F1E52;
+
 $green-gradient: linear-gradient(-94deg, lighten($green, 3%) 3%, $green 100%);
 $yell-gradient: linear-gradient(-94deg, lighten($yellow, 3%) 3%, $yellow 100%);
 $purp-gradient: linear-gradient(-94deg, lighten($purple, 3%) 3%, $purple 100%);
+
+$primary-color-gradient: linear-gradient(-94deg, lighten($primary-color, 3%) 3%, $primary-color 100%);
 
 $pink-purple-gradient: linear-gradient(98deg, $old-pink 0%, $old-purple 140%);
 $green-yellow-gradient: linear-gradient(98deg, $old-green -10%, $old-yellow 120%);
@@ -40,7 +44,7 @@ $black: #434149;
 $black-original: #434149;
 
 
-$primary-color: $black;
+$primary-color: $blue;
 
 $base-border-radius: 3px;
 
