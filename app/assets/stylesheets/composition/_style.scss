@@ -2,7 +2,7 @@ body {
   font-family: $font-stack;
   &.home {
     background-color: $green;
-    background-image: $green-gradient;
+    background-image: $green-yellow-gradient;
 
     header, footer {
       background: transparent;
@@ -35,7 +35,7 @@ body {
 
 .work_together {
   background-color: $pink;
-  background-image: $blue-gradient;
+  background-image: $green-gradient;
 }
 
 .accel_learning {

@@ -64,8 +64,4 @@
     .card_title.accel_learning Brokering
     .card_description Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests.
 
-=render partial: 'shared/card_sort_footer';
-
-.actions
-  = link_to "back", :assess_step2, :class => "button full-button"
-  = link_to "next", :assess_step4, :class => "button full-button"
+=render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step4, back_link: :assess_step2};

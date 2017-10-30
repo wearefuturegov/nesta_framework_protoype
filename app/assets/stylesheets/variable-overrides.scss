@@ -6,10 +6,10 @@ $heading-font-family: 'Roboto Slab', serif;
 $font-stack: "Lucida Sans Unicode", "Lucida Grande", "Helvetica Neue", "Helvetica", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
 
 // ORIGINAL COLOURS
-// $green: #8DD0C6;
-// $yellow: #F6DA9A;
-// $pink: #F7A0B2;
-// $purple: #C29FDA;
+$old-green: #8DD0C6;
+$old-yellow: #F6DA9A;
+$old-pink: #F7A0B2;
+$old-purple: #C29FDA;
 
 //NEW COLOURS
 $green: #FDC66E;
@@ -17,19 +17,24 @@ $yellow: #FDC66E;
 $pink: #68A2F7;
 $purple: #C58BE2;
 
-$blue-gradient: linear-gradient(94deg, #4388E6 3%, #68A2F7 100%);
-$yell-gradient: linear-gradient(94deg, #FFBC52 3%, #FDC66E 100%);
-$purp-gradient: linear-gradient(94deg, #BB68D8 3%, #C58BE2 100%);
+$green: #009688;
+$yellow: #FFC107;
+$pink: #E91E63;
+$purple: #9C27B0;
 
-$pink-gradient: linear-gradient(98deg, $pink 0%, $purple 140%);
-$green-gradient: linear-gradient(98deg, $green -10%, $yellow 120%);
+$green-gradient: linear-gradient(-94deg, lighten($green, 3%) 3%, $green 100%);
+$yell-gradient: linear-gradient(-94deg, lighten($yellow, 3%) 3%, $yellow 100%);
+$purp-gradient: linear-gradient(-94deg, lighten($purple, 3%) 3%, $purple 100%);
 
-$pink-gradient-subtle: linear-gradient(98deg, $pink -30%, $purple 170%);
-$green-gradient-subtle: linear-gradient(98deg, $green -50%, $yellow 150%);
+$pink-purple-gradient: linear-gradient(98deg, $old-pink 0%, $old-purple 140%);
+$green-yellow-gradient: linear-gradient(98deg, $old-green -10%, $old-yellow 120%);
+
+$pink-gradient-subtle: linear-gradient(98deg, $old-pink -30%, $old-purple 170%);
+$green-gradient-subtle: linear-gradient(98deg, $old-green -50%, $old-yellow 150%);
 
 
-$pink-gradient-original: linear-gradient(98deg, $pink 0%, $purple 100%);
-$green-gradient-original: linear-gradient(98deg, $green 0%, $yellow 105%);
+$pink-gradient-original: linear-gradient(98deg, $old-pink 0%, $old-purple 100%);
+$green-gradient-original: linear-gradient(98deg, $old-green 0%, $old-yellow 105%);
 
 $black: #434149;
 $black-original: #434149;

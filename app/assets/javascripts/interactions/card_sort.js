@@ -23,5 +23,13 @@ $.fn.cardSort = function(options) {
       }
     }
     $('.card_sort_footer .num_left').html(cardsLeft);
+
+    if (cardsLeft == 0) {
+      $('.card_sort_footer .actions').slideDown(300);
+      $('.next_button').removeClass('disabled');
+    } else {
+      $('.card_sort_footer .actions').slideUp(300);
+      $('.next_button').addClass('disabled');
+    }
   });
 };
