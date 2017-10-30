@@ -123,3 +123,20 @@
     }
   }
 }
+
+.step_counter {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  .step {
+    display: inline-block;
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    background-color: rgba($black, 0.2);
+
+    &.active {
+      background-color: $primary-color;
+    }
+  }
+}
