@@ -1,5 +1,6 @@
 body {
   font-family: $font-stack;
+  background-color: rgb(245,245,245);
   &.home {
     background-color: $green;
     background-image: $green-yellow-gradient;
@@ -9,6 +10,10 @@ body {
       color: $black;
     }
   }
+}
+
+p {
+  max-width: 925px;
 }
 
 .actions {
@@ -34,16 +39,17 @@ body {
 }
 
 .work_together {
-  background-color: $pink;
-  background-image: $green-gradient;
+  background-color: $work_together;
+  background-image: $work_together-gradient;
 }
 
 .accel_learning {
-  background-color: $purple;
-  background-image: $purp-gradient;
+  background-color: $acel_learning;
+  background-image: $acel_learning-gradient;
 }
 
 .lead_change {
-  background-color: $green;
-  background-image: $yell-gradient;
+  background-color: $lead_change;
+  background-image: $lead_change-gradient;
 }
+

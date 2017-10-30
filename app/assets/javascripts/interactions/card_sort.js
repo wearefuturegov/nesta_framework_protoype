@@ -4,7 +4,8 @@ $.fn.cardSort = function(options) {
   var settings = $.extend({
     noOfCards: 14,
     noToChoose: 5,
-    type: "skills"
+    type: 'cards_sort_1',
+    type_text: "skills"
   }, options );
 
   var cardsLeft = settings.noToChoose;
