@@ -2,13 +2,13 @@ body {
   font-family: $font-stack;
   background-color: rgb(245,245,245);
   &.home {
-    // background-color: $pink;
-    // background-image: $pink-purple-gradient;
+    background-color: $pink;
+    background-image: $green-yellow-gradient;
 
-    // header, footer {
-    //   background: transparent;
-    //   color: $black;
-    // }
+    header, footer {
+      background: transparent;
+      color: $black;
+    }
   }
 }
 
