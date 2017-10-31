@@ -1,0 +1,142 @@
+.card {
+  margin-top: 25px;
+  background-color: $primary-color;
+  color: $white;
+
+  .card_title {
+    font-family: $heading-font-family;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+  }
+  .card_description {
+    margin-top: 10px;
+
+    .skill {
+      margin-top: 10px;
+    }
+  }
+}
+
+.card_sorting {
+  @include grid-container;
+
+  @include tablet {
+    @include grid-collapse;
+  }
+  @include desktop {
+    @include grid-column(6);
+    @include grid-collapse;
+  }
+}
+
+.card_sort_single {
+  background-color: $white;
+  color: $black;
+  border-radius: $base-border-radius;
+  box-shadow: 0 2px 2px 0 rgba($black,.14), 0 3px 1px -2px rgba($black,.2), 0 1px 5px 0 rgba($black,.12);
+  margin: 30px 0;
+  opacity: 0.9;
+  @include transition(all 0.2s);
+
+  .card_title {
+    font-family: $heading-font-family;
+    color: $white;
+    font-size: 18px;
+    border-top-left-radius: $base-border-radius;
+    border-top-right-radius: $base-border-radius;
+    padding: $container-padding/2 $container-padding/1.5;
+  }
+  .card_description {
+    padding: $container-padding/2 $container-padding/1.5;
+  }
+
+  &.selected {
+    background-color: $primary-color;
+    color: $white;
+    box-shadow: 0 8px 10px 1px rgba($black, .14), 0 3px 14px 2px rgba($black, .12), 0 5px 5px -3px rgba($black, .2);
+    opacity: 1;
+
+    .card_title {
+      border-bottom: 1px solid rgba($white, 0.5);
+    }
+
+    &.lc {
+      background-image: $lead_change-gradient;
+    }
+    &.al {
+      background-image: $acel_learning-gradient;
+    }
+    &.wt {
+      background-image: $work_together-gradient;
+    }
+    &:hover {
+      box-shadow: 0 5px 8px 0 rgba($black,.14), 0 3px 9px -2px rgba($black,.2), 0 3px 5px -1px rgba($black,.12);
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+    box-shadow: 0 8px 10px 1px rgba($black, .14), 0 3px 14px 2px rgba($black, .12), 0 5px 5px -3px rgba($black, .2);
+  }
+
+  &:active {
+    box-shadow: 0 0px 0px 0 rgba(67, 65, 73, 0.14), 0 0px 0px -2px rgba(67, 65, 73, 0.2), 0 1px 5px 0 rgba(67, 65, 73, 0.12)
+  }
+
+  @include tablet {
+    @include grid-column(6);
+
+    &:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+  @include desktop {
+    @include grid-column(6);
+
+    &:nth-child(2n+1) {
+      clear: left;
+    }
+  }
+}
+
+
+.card_sort_footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background-color: $white;
+  box-shadow: 0 0 10px 0 rgba(47, 47, 47, 0.1);
+  z-index: 999;
+  // @include transition(height, 0.4s);
+
+  .actions {
+    margin-top: 10px;
+    display: none;
+
+    .full-button {
+      width: 100%;
+    }
+  }
+}
+
+.step_counter {
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
+  .step {
+    display: inline-block;
+    border-radius: 100%;
+    width: 5px;
+    height: 5px;
+    background-color: rgba($black, 0.2);
+
+    &.active {
+      background-color: $primary-color;
+    }
+  }
+}

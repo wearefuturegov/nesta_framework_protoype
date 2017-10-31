@@ -1,0 +1,60 @@
+body {
+  font-family: $font-stack;
+  background-color: rgb(245,245,245);
+  &.home {
+    background-color: $pink;
+    background-image: $green-yellow-gradient;
+
+    header, footer {
+      background: transparent;
+      color: $black;
+    }
+  }
+}
+
+p {
+  max-width: 925px;
+}
+
+.actions {
+  margin-top: 50px;
+  text-transform: uppercase;
+  .full-button {
+    width: 49.5%;
+
+    &:last-child {
+      float: right;
+    }
+  }
+}
+
+.button {
+  font-family: $heading-font-family;
+  background-color: rgba($primary-color, 0.8);
+  @include transition(background-color, 0.1s);
+
+  &:hover, &:active {
+    background-color: rgba($primary-color, 1);
+  }
+}
+
+.work_together {
+  background-color: $work_together;
+  background-image: $work_together-gradient;
+}
+
+.accel_learning {
+  background-color: $acel_learning;
+  background-image: $acel_learning-gradient;
+}
+
+.lead_change {
+  background-color: $lead_change;
+  background-image: $lead_change-gradient;
+}
+
+.attitude {
+  background-color: $primary-color;
+  background-color: $primary-color-gradient;
+}
+

@@ -1,0 +1,31 @@
+footer {
+  background-color: $primary-color;
+  color: $white;
+  margin-top: 50px;
+
+  .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  h1,h2,h3,h4,p {
+    margin: 0;
+    line-height: 31px;
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    padding: 0 5px;
+
+    &:hover {
+      color: $white;
+    }
+    &:active, &:focus {
+      outline: none;
+    }
+    @include desktop {
+      color: rgba($white, 0.9);
+    }
+  }
+}

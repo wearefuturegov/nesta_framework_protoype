@@ -1,0 +1,74 @@
+header {
+  background-color: $primary-color;
+  // background-image: $green-gradient;
+  color: $white;
+  margin-bottom: 5px;
+
+  .container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  h1,h2,h3,h4,p {
+    margin: 0;
+    line-height: 31px;
+  }
+
+  .site-header__logo {
+    @include grid-column(6, $mobile_grid);
+
+    @include desktop {
+      @include grid-column(4);
+    }
+  }
+
+  nav {
+    @include grid-column(6, $mobile_grid);
+    text-align: right;
+
+    @include desktop {
+      @include grid-column(8);
+    }
+  }
+
+  a {
+    color: $white;
+    text-decoration: none;
+    padding: 0 5px;
+
+    &:hover {
+      color: $white;
+    }
+    &:active, &:focus {
+      outline: none;
+    }
+    @include desktop {
+      color: rgba($white, 0.9);
+    }
+  }
+
+  form {
+    display: inline-block;
+  }
+
+  .button_unstyle {
+    padding: 0 5px;
+    line-height: 31px;
+    background-color: transparent;
+    vertical-align: inherit;
+    font-weight: bold;
+    font-size: $base-font-size;
+
+    @include desktop {
+      font-size: $base-font-size-desktop;
+    }
+
+    &:hover {
+      color: $white;
+      background-color: transparent;
+    }
+    @include desktop {
+      color: rgba($white, 0.9);
+    }
+  }
+}

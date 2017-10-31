@@ -1,0 +1,13 @@
+%h1 Nesta Skills & Innovation Tool
+
+%p Hello! Welcome to our new skills and innovation tool
+
+%p= "We’ve #{link_to 'worked with leading innovators', 'https://www.nesta.org.uk/blog/what-are-skills-and-attitudes-successful-public-problem-solving', target: '_blank'} from around the world to define the key skills and attitudes that help support innovation in the public sector. Focusing in on problem-solving and experimentation, this tool has been designed so that you can...".html_safe
+
+%ul.default
+  %li Make sense of our findings.
+  %li Reflect on & test your own skills and attitudes.
+  %li Compare your results with colleagues and build a picture for your team.
+
+.center.actions
+  = link_to "Get Started", :assess_step1, :class => "button"

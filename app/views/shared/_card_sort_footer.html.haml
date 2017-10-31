@@ -1,0 +1,12 @@
+.card_sort_footer
+  .status
+    Choose
+    %span.num_left.bold 0
+    more
+    %span.card_type
+  .actions
+    = link_to "next", next_link, :class => "button full-button fin_card_sort"
+
+.actions
+  = link_to "back", back_link, :class => "button full-button"
+  = link_to "next", next_link, :class => "button full-button disabled next_button fin_card_sort"
