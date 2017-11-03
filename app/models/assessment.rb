@@ -1,6 +1,16 @@
 class Assessment < ApplicationRecord
   has_many :assessment_answers
-    
+  
+  STRONG_SKILLS_COUNT = 5
+  WEAK_SKILLS_COUNT = 2
+  STRONG_ATTITUDES_COUNT = 3
+  WEAK_ATTITUDES_COUNT = 1
+  
+  validate :correct_number_of_strong_skills
+  validate :correct_number_of_weak_skills
+  validate :correct_number_of_strong_attitudes
+  validate :correct_number_of_weak_attitudes
+  
   # This defines getters and setters for strong and weak skills and attitudes,
   # the setter sets assesssment_answers with the correct skill or attitude
   # and type (strong or weak), and the getter searches for the assessment answers
@@ -29,13 +39,33 @@ class Assessment < ApplicationRecord
   end
   
   def get_answers(answer_type, answer_class)
-    column_name = get_column_name(answer_class)
-    assessment_answers.where("#{column_name} IS NOT NULL AND answer_type = ?", answer_type)
+    assessment_answers.select { |a| !a.send("#{answer_class.singularize}").nil? && a.answer_type == answer_type }
   end
   
-  def get_column_name(answer_class)
-    raise Exception unless ['skills', 'attitudes'].include? answer_class
-    Assessment.connection.quote_column_name("#{answer_class.singularize}_id")
-  end
+  private
+  
+    def correct_number_of_strong_skills
+      if strong_skills.count != STRONG_SKILLS_COUNT
+        errors.add(:strong_skills, "must be #{STRONG_SKILLS_COUNT}")
+      end
+    end
+    
+    def correct_number_of_weak_skills
+      if weak_skills.count != WEAK_SKILLS_COUNT
+        errors.add(:weak_skills, "must be #{WEAK_SKILLS_COUNT}")
+      end
+    end
+    
+    def correct_number_of_strong_attitudes
+      if strong_attitudes.count != STRONG_ATTITUDES_COUNT
+        errors.add(:strong_attitudes, "must be #{STRONG_ATTITUDES_COUNT}")
+      end
+    end
+    
+    def correct_number_of_weak_attitudes
+      if weak_attitudes.count != WEAK_ATTITUDES_COUNT
+        errors.add(:weak_attitudes, "must be #{WEAK_ATTITUDES_COUNT}")
+      end
+    end
 
 end
