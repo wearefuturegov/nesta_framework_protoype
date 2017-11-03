@@ -1,18 +1,19 @@
 GIT
-  remote: https://github.com/wearefuturegov/web_address_validator.git
-  revision: cb1d99b192b96f0c037b90fdb2af9faf7e63558a
-  specs:
-    web_address_validator (0.0.2)
-      activemodel
-
-PATH
-  remote: ../geff
+  remote: https://github.com/wearefuturegov/geff.git
+  revision: d4eccf1460dd9e2dd60324982357144a2f34b535
   specs:
     geff (0.1.0)
       bourbon
       font-awesome-rails
       mountain_view (~> 0.12)
       neat
+
+GIT
+  remote: https://github.com/wearefuturegov/web_address_validator.git
+  revision: cb1d99b192b96f0c037b90fdb2af9faf7e63558a
+  specs:
+    web_address_validator (0.0.2)
+      activemodel
 
 GEM
   remote: https://rubygems.org/

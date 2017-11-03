@@ -14,7 +14,11 @@ gem 'jquery-rails'
 gem 'sass-rails'
 
 # gem 'geff', git: 'https://github.com/wearefuturegov/geff.git'
-gem 'geff', path: '../geff'
+if ENV['GEFF_DEV']
+  gem 'geff', path: '../geff'
+else
+  gem 'geff', github: 'wearefuturegov/geff'
+end
 
 gem 'web_address_validator', git: 'https://github.com/wearefuturegov/web_address_validator.git'
 
