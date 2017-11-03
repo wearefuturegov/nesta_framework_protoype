@@ -41,4 +41,34 @@ RSpec.describe AssessmentsController, type: :controller do
     end
   end
   
+  describe 'GET edit' do
+    
+    let(:assessment) { FactoryBot.create(:assessment) }
+    let(:subject) { get :edit, params: { id: assessment } }
+    
+    {
+      start: :strong_skills,
+      strong_skills_added: :weak_skills,
+      weak_skills_added: :strong_attitudes,
+      strong_attitudes_added: :weak_attitudes
+    }.each do |state, template|
+      
+      context "with #{state} state" do
+        
+        before do
+          assessment.aasm_state = state
+          assessment.save
+        end
+        
+        it 'renders the correct template' do
+          expect(subject).to render_template(template)
+        end
+        
+      end
+      
+    end
+    
+  end
+  
+  
 end
