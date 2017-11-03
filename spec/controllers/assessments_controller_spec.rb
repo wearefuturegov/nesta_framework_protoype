@@ -26,5 +26,19 @@ RSpec.describe AssessmentsController, type: :controller do
     end
   end
   
+  describe 'PUT create' do
+    it 'creates an assessment' do
+      expect { put :create }.to change { Assessment.count }.by(1)
+    end
+    
+    it 'redirects to edit' do
+      expect(put :create).to redirect_to(edit_assessment_url(Assessment.last))
+    end
+    
+    it 'sets the right state' do
+      put :create
+      expect(Assessment.last.aasm_state).to eq('start')
+    end
+  end
   
 end

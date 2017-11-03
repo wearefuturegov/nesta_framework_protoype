@@ -8,6 +8,8 @@ class AssessmentsController < ApplicationController
   end
   
   def create
+    @assessment = Assessment.create
+    redirect_to edit_assessment_url(@assessment)
   end
   
   def update

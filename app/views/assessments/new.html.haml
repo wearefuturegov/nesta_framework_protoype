@@ -20,4 +20,4 @@
 
 .actions
   = link_to "back", :assessments, :class => "button full-button"
-  = link_to "next", :assess_step3, :class => "button full-button"
+  = button_to 'next', assessments_path, method: :post, class: "button full-button"
