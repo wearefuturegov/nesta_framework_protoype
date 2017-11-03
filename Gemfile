@@ -14,7 +14,11 @@ gem 'jquery-rails'
 gem 'sass-rails'
 
 # gem 'geff', git: 'https://github.com/wearefuturegov/geff.git'
-gem 'geff', path: '../geff'
+if ENV['GEFF_DEV']
+  gem 'geff', path: '../geff'
+else
+  gem 'geff', github: 'wearefuturegov/geff'
+end
 
 gem 'web_address_validator', git: 'https://github.com/wearefuturegov/web_address_validator.git'
 
@@ -31,6 +35,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'coveralls', require: false
+  gem 'pry'
 end
 
 group :development do
