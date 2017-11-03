@@ -1,0 +1,58 @@
+areas:
+  - name: Working Together
+    description: Engaging with citizens and stakeholders to create shared ownership of new solutions.
+    skills:
+      - name: Citizen & Stakeholder Engagement
+        description: Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation.
+      - name: Creative Facilitation
+        description: Creatively supporting the externalisation and processing of different perspectives and facilitating the deliberation of multiple options and ideas.
+      - name: Building Bridges
+        description: Orchestrating interaction to develop a common ground across teams or stakeholders, in order to create the shared ownership of and effort towards a goal.
+      - name: Brokering
+        description: Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests.
+  - name: Leading Change
+    description: Mobilising resources and legitimacy to make change happen.
+    skills:
+      - name: Political & Bureaucratic Awareness
+        description: Operating political dynamics and bureaucratic procedures to ensure strategic support.
+      - name: Financing Change
+        description: Understanding the many ways to liberate and use financial resources as motivation.
+      - name: Intrapreneurship
+        description: Being insurgent, challenging and questioning the status quo and using business acumen to create space and opportunities for change.
+      - name: Demonstrating Value
+        description: Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes.
+      - name: Storytelling & Advocacy
+        description: Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with.
+  - name: Accelerating Learning
+    description: Exploring and iterating new ideas to inform and validate solutions.
+    skills:
+      - name: Future Acumen
+        description: Creating and shaping a long-term vision and connecting it with short-term achievable tasks.
+      - name: Prototyping & Iterating
+        description: Testing ideas, using lessons of what works (and what doesn’t) to iterate them, in order to systematically improve your idea to create a more informed, robust solution to a problem.
+      - name: Data Literacy & Evidence
+        description: Discovering, generating and interpreting different kinds of data to accelerate sense-making.
+      - name: Systems Thinking
+        description: Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way.
+      - name: Tech Literacy
+        description: Recognizing and understanding the potential of technological developments which can improve your practice.
+
+attitudes:
+  - name: Agile
+    description: Responding to changing environments with flexibility.
+  - name: Action-oriented
+    description: Biased towards action and learning by doing.
+  - name: Curious
+    description: The desire to explore multiple possibilities.
+  - name: Reflective
+    description: Habit of critically reflecting on process and results.
+  - name: Courageous
+    description: Willingness to take risks.
+  - name: Outcomes-focused
+    description: Strong commitment to real world effects.
+  - name: Imaginative
+    description: Exploring and envisioning new possible futures.
+  - name: Resilient
+    description: The perseverance to deal with resistance.
+  - name: Empathetic
+    description: Understanding others’ experiences and frames of reference.
