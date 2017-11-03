@@ -1,4 +1,14 @@
 class Assessment < ApplicationRecord
+  include AASM
+
+  aasm do
+    state :start, initial: true
+    state :strong_skills_added
+    state :weak_skills_added
+    state :strong_attitudes_added
+    state :weak_attitudes_added
+  end
+  
   has_many :assessment_answers
   
   STRONG_SKILLS_COUNT = 5
@@ -45,25 +55,25 @@ class Assessment < ApplicationRecord
   private
   
     def correct_number_of_strong_skills
-      if strong_skills.count != STRONG_SKILLS_COUNT
+      if strong_skills.count > 0 && strong_skills.count != STRONG_SKILLS_COUNT
         errors.add(:strong_skills, "must be #{STRONG_SKILLS_COUNT}")
       end
     end
     
     def correct_number_of_weak_skills
-      if weak_skills.count != WEAK_SKILLS_COUNT
+      if weak_skills.count > 0 && weak_skills.count != WEAK_SKILLS_COUNT
         errors.add(:weak_skills, "must be #{WEAK_SKILLS_COUNT}")
       end
     end
     
     def correct_number_of_strong_attitudes
-      if strong_attitudes.count != STRONG_ATTITUDES_COUNT
+      if strong_attitudes.count > 0 && strong_attitudes.count != STRONG_ATTITUDES_COUNT
         errors.add(:strong_attitudes, "must be #{STRONG_ATTITUDES_COUNT}")
       end
     end
     
     def correct_number_of_weak_attitudes
-      if weak_attitudes.count != WEAK_ATTITUDES_COUNT
+      if weak_attitudes.count > 0 && weak_attitudes.count != WEAK_ATTITUDES_COUNT
         errors.add(:weak_attitudes, "must be #{WEAK_ATTITUDES_COUNT}")
       end
     end
