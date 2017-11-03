@@ -38,6 +38,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'coveralls', require: false
+  gem 'pry'
 end
 
 group :development do
