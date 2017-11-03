@@ -37,6 +37,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'coveralls', require: false
 end
 
 group :development do
