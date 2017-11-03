@@ -1,0 +1,14 @@
+=render partial: "shared/step_counter", locals: {number: 1};
+
+%p Our research has shown that successful experimentation and problem solving results in greater, sustainable impact when teams can demonstrate skills and behaviours in the following 3 areas…
+
+- @areas.each do |a|
+  .card{ class: a.name.parameterize.underscore }
+    .card_title
+      = a.name
+    .card_description
+      = a.description
+
+.actions
+  = link_to "back", :home_index, :class => "button full-button"
+  = link_to "next", :new_assessment, :class => "button full-button"

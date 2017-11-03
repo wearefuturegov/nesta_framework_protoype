@@ -1,0 +1,23 @@
+=render partial: "shared/step_counter", locals: {number: 2};
+
+%p Each of the 3 areas relates to a specific set of skills, activities and behaviours.
+
+%p These are rarely all found in one individual, and instead need to be present within a wider team. The challenge (and opportunity) is to combine them in ways that make the team greater than its individual members.
+
+%p You as an individual might still have a range of these skills (at varying degrees of strength and weakness) across all 3 areas or you may naturally gravitate to only 1 or 2 of them.
+
+.accord_cont
+  - @areas.each do |a|
+    .card.accordion{ class: a.name.parameterize.underscore }
+      .accord_btn.card_title
+        = a.name
+        %span.accord_arrow=fa_icon "chevron-down"
+      .accord_content.card_description
+        - a.skills.each do |s|
+          .skill
+            &ndash;
+            = s.name
+
+.actions
+  = link_to "back", :assessments, :class => "button full-button"
+  = link_to "next", :assess_step3, :class => "button full-button"
