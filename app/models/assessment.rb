@@ -1,5 +1,7 @@
 class Assessment < ApplicationRecord
   include AASM
+  
+  after_update :transition_state
 
   aasm do
     state :start, initial: true
@@ -7,6 +9,27 @@ class Assessment < ApplicationRecord
     state :weak_skills_added
     state :strong_attitudes_added
     state :weak_attitudes_added
+    state :complete
+    
+    event :add_strong_skills do
+      transitions from: :start, to: :strong_skills_added
+    end
+
+    event :add_weak_skills do
+      transitions from: :strong_skills_added, to: :weak_skills_added
+    end
+    
+    event :add_strong_attitudes do
+      transitions from: :weak_skills_added, to: :strong_attitudes_added
+    end
+    
+    event :add_weak_attitudes do
+      transitions from: :strong_attitudes_added, to: :weak_attitudes_added
+    end
+    
+    event :complete do
+      transitions from: :weak_attitudes_added, to: :complete
+    end
   end
   
   has_many :assessment_answers
@@ -76,6 +99,11 @@ class Assessment < ApplicationRecord
       if weak_attitudes.count > 0 && weak_attitudes.count != WEAK_ATTITUDES_COUNT
         errors.add(:weak_attitudes, "must be #{WEAK_ATTITUDES_COUNT}")
       end
+    end
+    
+    def transition_state
+      job = self.aasm.events.map(&:name).first
+      self.send(job) unless job.nil?
     end
 
 end
