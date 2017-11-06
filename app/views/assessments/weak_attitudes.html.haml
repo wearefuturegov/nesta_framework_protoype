@@ -3,43 +3,9 @@
 
 %p Now select the 1 attribute that you think your colleagues would be least likely use to describe you.
 
+= form_for @assessment do |f|
 
-#cards_sort_4.card_sorting
-  #at_1.card_sort_single
-    .card_title.attitude Agile
-    .card_description Responding to changing environments with flexibility.
+  #cards_sort_4.card_sorting
+    = render partial: 'attitudes', locals: { areas: @areas, f: f, type: :weak_attitudes }
 
-  #at_2.card_sort_single
-    .card_title.attitude Action-oriented
-    .card_description Biased towards action and learning by doing.
-
-  #at_3.card_sort_single
-    .card_title.attitude Curious
-    .card_description The desire to explore multiple possibilities.
-
-  #at_4.card_sort_single
-    .card_title.attitude Reflective
-    .card_description Habit of critically reflecting on process and results.
-
-  #at_5.card_sort_single
-    .card_title.attitude Courageous
-    .card_description Willingness to take risks.
-
-  #at_6.card_sort_single
-    .card_title.attitude Outcomes-focused
-    .card_description Strong commitment to real  world effects.
-
-  #at_7.card_sort_single
-    .card_title.attitude Imaginative
-    .card_description Exploring and envisioning new possible futures.
-
-  #at_8.card_sort_single
-    .card_title.attitude Resilient
-    .card_description The perseverance to deal with resistance.
-
-  #at_9.card_sort_single
-    .card_title.attitude Empathetic
-    .card_description Understanding others’ experiences and frames of reference.
-
-
-=render partial: 'shared/card_sort_footer', locals: {next_link: :home_index, back_link: :assess_step5};
+    = render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step6, back_link: :assess_step4, f: f};

@@ -32,3 +32,7 @@ step 'I should be shown the ":type" form' do |type|
     expect(page.body).to match /your colleagues would be least likely use/
   end
 end
+
+step 'I should be shown my results' do
+  expect(page.body).to match /COMING SOON/
+end

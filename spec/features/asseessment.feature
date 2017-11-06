@@ -31,3 +31,11 @@ Feature: Assessment
     And I choose 3 attitudes
     Then my assessment should have 3 strong attitudes
     And I should be shown the "weak attitudes" form
+    
+  Scenario: Adding Weak Attitudes
+    Given I have started an assessment
+    And I have added my strong attitudes
+    When I access the edit assessment page
+    And I choose 1 attitude
+    Then my assessment should have 1 weak attitude
+    And I should be shown my results

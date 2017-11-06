@@ -32,7 +32,6 @@ class Assessment < ApplicationRecord
     state :strong_skills_added
     state :weak_skills_added
     state :strong_attitudes_added
-    state :weak_attitudes_added
     state :complete
     
     event :add_strong_skills do
@@ -48,11 +47,7 @@ class Assessment < ApplicationRecord
     end
     
     event :add_weak_attitudes do
-      transitions from: :strong_attitudes_added, to: :weak_attitudes_added
-    end
-    
-    event :complete do
-      transitions from: :weak_attitudes_added, to: :complete
+      transitions from: :strong_attitudes_added, to: :complete
     end
   end
   
