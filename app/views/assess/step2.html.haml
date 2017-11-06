@@ -1,57 +1,71 @@
 =render partial: "shared/step_counter", locals: {number: 2};
 
-%p Each of the 3 areas relates to a specific set of skills, activities and behaviours.
+%p=t('asses.step_2.about_1')
 
-%p These are rarely all found in one individual, and instead need to be present within a wider team. The challenge (and opportunity) is to combine them in ways that make the team greater than its individual members.
+%p=t('asses.step_2.about_2')
 
-%p You as an individual might still have a range of these skills (at varying degrees of strength and weakness) across all 3 areas or you may naturally gravitate to only 1 or 2 of them.
+%p=t('asses.step_2.about_3')
 
 .accord_cont
   .card.accordion.work_together
     .accord_btn.card_title
-      Working Together
+      =t('main_areas.wt.title')
       %span.accord_arrow=fa_icon "chevron-down"
     .accord_content.card_description
       .skill
-        &ndash; Citizen &amp; Stakeholder Engagement
+        &ndash;
+        =t('main_areas.wt.skill_1.title')
       .skill
-        &ndash; Creative Facilitation
+        &ndash;
+        =t('main_areas.wt.skill_2.title')
       .skill
-        &ndash; Building Bridges
+        &ndash;
+        =t('main_areas.wt.skill_3.title')
       .skill
-        &ndash; Brokering
+        &ndash;
+        =t('main_areas.wt.skill_4.title')
 
   .card.accordion.lead_change
     .accord_btn.card_title
-      Leading Change
+      =t('main_areas.lc.title')
       %span.accord_arrow=fa_icon "chevron-down"
     .accord_content.card_description
       .skill
-        &ndash; Political &amp; Bureaucratic Awareness
+        &ndash;
+        =t('main_areas.lc.skill_1.title')
       .skill
-        &ndash; Financing Change
+        &ndash;
+        =t('main_areas.lc.skill_2.title')
       .skill
-        &ndash; Intrapreneurship
+        &ndash;
+        =t('main_areas.lc.skill_3.title')
       .skill
-        &ndash; Demonstrating Value
+        &ndash;
+        =t('main_areas.lc.skill_4.title')
       .skill
-        &ndash; Storytelling &amp; Advocacy
+        &ndash;
+        =t('main_areas.lc.skill_5.title')
 
   .card.accordion.accel_learning
     .accord_btn.card_title
-      Accelerating Learning
+      =t('main_areas.al.title')
       %span.accord_arrow=fa_icon "chevron-down"
     .accord_content.card_description
       .skill
-        &ndash; Future Acumen
+        &ndash;
+        =t('main_areas.al.skill_1.title')
       .skill
-        &ndash; Prototyping &amp; Iterating
+        &ndash;
+        =t('main_areas.al.skill_2.title')
       .skill
-        &ndash; Data Literacy &amp; Evidence
+        &ndash;
+        =t('main_areas.al.skill_3.title')
       .skill
-        &ndash; Systems Thinking
+        &ndash;
+        =t('main_areas.al.skill_4.title')
       .skill
-        &ndash; Tech Literacy
+        &ndash;
+        =t('main_areas.al.skill_5.title')
 
 .actions
   = link_to "back", :assess_step1, :class => "button full-button"

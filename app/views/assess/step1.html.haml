@@ -1,19 +1,19 @@
 =render partial: "shared/step_counter", locals: {number: 1};
 
-%p Our research has shown that successful experimentation and problem solving results in greater, sustainable impact when teams can demonstrate skills and behaviours in the following 3 areas…
+%p=t('asses.step_1.about')
 
 .card.work_together
-  .card_title Working Together
-  .card_description Engaging with citizens and stakeholders to create shared ownership of new solutions.
+  .card_title=t('main_areas.wt.title')
+  .card_description=t('main_areas.wt.about')
 
 .card.lead_change
-  .card_title Leading Change
-  .card_description Mobilising resources and legitimacy to make change happen.
+  .card_title=t('main_areas.lc.title')
+  .card_description=t('main_areas.lc.about')
 
 .card.accel_learning
-  .card_title Accelerating Learning
-  .card_description Exploring and iterating new ideas to inform and validate solutions.
+  .card_title=t('main_areas.al.title')
+  .card_description=t('main_areas.al.about')
 
 .actions
-  = link_to "back", :home_index, :class => "button full-button"
-  = link_to "next", :assess_step2, :class => "button full-button"
+  = link_to t('buttons.back'), :home_index, :class => "button full-button"
+  = link_to t('buttons.next'), :assess_step2, :class => "button full-button"
