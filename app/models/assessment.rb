@@ -26,6 +26,14 @@ class Assessment < ApplicationRecord
   def weak_attitudes=(attitudes)
     set_answers('weak', 'attitude', attitudes)
   end
+  
+  def available_skills
+    Skill.where.not(id: skill_answers.map { |s| s.skill_id } )
+  end
+  
+  def available_attitudes
+    Attitude.where.not(id: attitude_answers.map { |s| s.attitude_id } )
+  end
 
   aasm do
     state :start, initial: true
@@ -74,7 +82,16 @@ class Assessment < ApplicationRecord
   end
   
   def get_answers(answer_type, answer_class)
-    assessment_answers.select { |a| !a.send("#{answer_class.singularize}").nil? && a.answer_type == answer_type }
+    answers = answer_class == 'skills' ? skill_answers : attitude_answers
+    answers.select { |a| a.answer_type == answer_type }
+  end
+  
+  def skill_answers
+    assessment_answers.select { |a| !a.skill.nil? }
+  end
+  
+  def attitude_answers
+    assessment_answers.select { |a| !a.attitude.nil? }
   end
   
   private
