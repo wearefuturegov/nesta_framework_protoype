@@ -38,19 +38,19 @@ p {
   }
 }
 
-.work_together {
-  background-color: $work_together;
-  background-image: $work_together-gradient;
+.working_together {
+  background-color: $working_together;
+  background-image: $working_together-gradient;
 }
 
-.accel_learning {
-  background-color: $acel_learning;
-  background-image: $acel_learning-gradient;
+.accelerating_learning {
+  background-color: $accelerating_learning;
+  background-image: $accelerating_learning-gradient;
 }
 
-.lead_change {
-  background-color: $lead_change;
-  background-image: $lead_change-gradient;
+.leading_change {
+  background-color: $leading_change;
+  background-image: $leading_change-gradient;
 }
 
 .attitude {
@@ -58,3 +58,6 @@ p {
   background-color: $primary-color-gradient;
 }
 
+.button_to {
+  display: inline;
+}

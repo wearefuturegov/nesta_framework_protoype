@@ -1,0 +1,11 @@
+=render partial: "shared/step_counter", locals: {number: 5};
+
+%p=t('assess.step_5.about_1')
+%p=t('assess.step_5.about_2').html_safe
+
+= form_for @assessment do |f|
+
+  #cards_sort_3.card_sorting
+    = render partial: 'attitudes', locals: { areas: @areas, f: f, type: :strong_attitudes }
+
+    = render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step6, back_link: :assess_step4, f: f};

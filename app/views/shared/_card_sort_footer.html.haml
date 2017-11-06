@@ -5,8 +5,8 @@
     more
     %span.card_type
   .actions
-    = link_to t('buttons.next'), next_link, :class => "button full-button fin_card_sort"
+    = f.submit t('buttons.next'), :class => "button full-button fin_card_sort"
 
 .actions
   = link_to t('buttons.back'), back_link, :class => "button full-button"
-  = link_to t('buttons.next'), next_link, :class => "button full-button disabled next_button fin_card_sort"
+  = f.submit t('buttons.next'), :class => "button full-button disabled next_button fin_card_sort"

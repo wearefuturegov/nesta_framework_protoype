@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   get 'assess/step4'
   get 'assess/step5'
   get 'assess/step6'
+  
+  resources :assessments do
+    collection do
+      get :areas, action: :areas
+    end
+  end
 
   root 'home#index'
 end

@@ -1,0 +1,7 @@
+.card_sort_single{ id: "lc_#{i + 1}"}
+  %label
+    .card_title{ class: class_name }
+      = obj.name
+    .card_description
+      = obj.description
+    = f.check_box type, { multiple: true }, obj.id, nil

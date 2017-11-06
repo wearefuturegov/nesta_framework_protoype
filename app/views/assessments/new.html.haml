@@ -1,0 +1,23 @@
+=render partial: "shared/step_counter", locals: {number: 2};
+
+%p=t('assess.step_2.about_1')
+
+%p=t('assess.step_2.about_2')
+
+%p=t('assess.step_2.about_3')
+
+.accord_cont
+  - @areas.each do |a|
+    .card.accordion{ class: a.name.parameterize.underscore }
+      .accord_btn.card_title
+        = a.name
+        %span.accord_arrow=fa_icon "chevron-down"
+      .accord_content.card_description
+        - a.skills.each do |s|
+          .skill
+            &ndash;
+            = s.name
+
+.actions
+  = link_to "back", :assessments, :class => "button full-button"
+  = button_to 'next', assessments_path, method: :post, class: "button full-button"

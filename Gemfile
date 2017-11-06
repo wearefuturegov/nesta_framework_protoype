@@ -28,6 +28,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'pg'
 
 gem 'puma'
+gem 'aasm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,6 +40,10 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'coveralls', require: false
   gem 'pry'
+  gem 'rails-controller-testing'
+  gem 'turnip'
+  gem 'capybara-selenium'
+  gem 'chromedriver-helper'
 end
 
 group :development do

@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   $('#cards_sort_2').cardSort({
     noOfCards: 9,
-    noToChoose: 3,
+    noToChoose: 2,
     type: 'cards_sort_2',
     type_text: "weakest skills"});
 

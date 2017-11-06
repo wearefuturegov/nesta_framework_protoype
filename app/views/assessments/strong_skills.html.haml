@@ -1,0 +1,18 @@
+=render partial: "shared/step_counter", locals: {number: 3};
+
+%p=t('assess.step_3.about_1')
+%p=t('assess.step_3.about_2').html_safe
+
+%p
+  Look through each of the cards below and
+  %span.bold
+    select the
+    = Assessment::STRONG_SKILLS_COUNT
+    which you think your colleagues would use to describe your strongest skills.
+
+= form_for @assessment do |f|
+  #cards_sort_1.card_sorting
+
+    = render partial: 'skills', locals: { areas: @areas, f: f, type: :strong_skills }
+
+  =render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step4, back_link: :assess_step2, f: f};

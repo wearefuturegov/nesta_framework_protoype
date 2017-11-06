@@ -3,18 +3,7 @@ include ActionView::Helpers::TextHelper
 namespace :assessment do
   task :build => :environment do
     t1 = Time.now
-    yaml = YAML.load File.read(File.join Rails.root, 'config', 'assessment.yml')
-    yaml['areas'].each do |a|
-      area = Area.create(name: a['name'], description: a['description'])
-      a['skills'].each do |s|
-        Skill.create(name: s['name'], description: s['description'], area: area)
-      end
-    end
-    
-    yaml['attitudes'].each do |a|
-      Attitude.create(name: a['name'], description: a['description'])
-    end
-    
+    BuildAssessment.perform
     t2 = Time.now
     
     message = """
