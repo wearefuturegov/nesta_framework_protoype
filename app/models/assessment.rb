@@ -2,6 +2,30 @@ class Assessment < ApplicationRecord
   include AASM
   
   after_update :transition_state
+  has_many :assessment_answers
+  
+  STRONG_SKILLS_COUNT = 5
+  WEAK_SKILLS_COUNT = 2
+  STRONG_ATTITUDES_COUNT = 3
+  WEAK_ATTITUDES_COUNT = 1
+  
+  validate :check_answers, on: :update
+  
+  def strong_skills=(skills)
+    set_answers('strong', 'skill', skills)
+  end
+  
+  def weak_skills=(skills)
+    set_answers('weak', 'skill', skills)
+  end
+  
+  def strong_attitudes=(attitudes)
+    set_answers('strong', 'attitude', attitudes)
+  end
+  
+  def weak_attitudes=(attitudes)
+    set_answers('weak', 'attitude', attitudes)
+  end
 
   aasm do
     state :start, initial: true
@@ -32,37 +56,23 @@ class Assessment < ApplicationRecord
     end
   end
   
-  has_many :assessment_answers
-  
-  STRONG_SKILLS_COUNT = 5
-  WEAK_SKILLS_COUNT = 2
-  STRONG_ATTITUDES_COUNT = 3
-  WEAK_ATTITUDES_COUNT = 1
-  
-  validate :check_answers, on: :update
-  
   # This defines getters and setters for strong and weak skills and attitudes,
   # the setter sets assesssment_answers with the correct skill or attitude
   # and type (strong or weak), and the getter searches for the assessment answers
   # with the a skill or attitude and the given type.
   def method_missing(m, *args, &block)
-    match_data = m.match /(strong|weak)_(skills|attitudes)(=?)/
+    match_data = m.match /(strong|weak)_(skills|attitudes)/
     if match_data && match_data.length >= 3
-      if match_data[3] == '='
-        set_answers(match_data[1], args[0])
-      else
-        get_answers(match_data[1], match_data[2])
-      end
+      get_answers(match_data[1], match_data[2])
     else
       super
     end
   end
   
-  def set_answers(type, answers)
+  def set_answers(type, answer_type, answers)
     answers.each do |a|
-      answer_type = a.class.to_s.downcase
       assessment_answers << AssessmentAnswer.new(
-        "#{answer_type}" => a,
+        "#{answer_type}_id" => (a.try(:id) || a),
         answer_type: type
       )
     end

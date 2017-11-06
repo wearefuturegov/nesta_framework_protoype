@@ -15,6 +15,14 @@ class AssessmentsController < ApplicationController
   end
   
   def update
+    # Update the assessment
+    @assessment.update_attributes(assessment_params)
+    # Redirect to edit or show
+    if @assessment.complete?
+      redirect_to assessment_url(@assessment)
+    else
+      redirect_to edit_assessment_url(@assessment)
+    end
   end
   
   def edit
@@ -45,6 +53,15 @@ class AssessmentsController < ApplicationController
       when 'strong_attitudes_added'
         @template = 'weak_attitudes'
       end
+    end
+    
+    def assessment_params
+      params.require(:assessment).permit(
+        strong_skills: [],
+        weak_skills: [],
+        strong_attitudes: [],
+        weak_attitudes: []
+      )
     end
   
 end
