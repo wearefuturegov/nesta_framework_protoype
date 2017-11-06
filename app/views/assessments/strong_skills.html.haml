@@ -12,14 +12,6 @@
 = form_for @assessment do |f|
   #cards_sort_1.card_sorting
 
-    - @areas.each do |area|
-      - area.skills.each_with_index do |skill, i|
-        .card_sort_single{ id: "lc_#{i + 1}"}
-          %label
-            .card_title{ class: area.name.parameterize.underscore }
-              = skill.name
-            .card_description
-              = skill.description
-            = f.check_box :strong_skills, { multiple: true }, skill.id, nil
+    = render partial: 'skills', locals: { areas: @areas, f: f, type: :strong_skills }
 
   =render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step4, back_link: :assess_step2, f: f};

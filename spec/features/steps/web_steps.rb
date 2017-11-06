@@ -21,3 +21,12 @@ end
 step 'I should be shown the weak skills form' do
   expect(page.body).to match /least strong/
 end
+
+step 'I should be shown the ":type" form' do |type|
+  case type
+  when 'weak skills'
+    expect(page.body).to match /least strong/
+  when 'strong attitudes'
+    expect(page.body).to match /attributes that you think your colleagues/
+  end
+end

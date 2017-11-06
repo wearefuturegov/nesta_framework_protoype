@@ -14,5 +14,12 @@ Feature: Assessment
     When I access the edit assessment page
     And I choose 5 skills
     Then my assessment should have 5 strong skills
-    And I should be shown the weak skills form
+    And I should be shown the "weak skills" form
   
+  Scenario: Adding Weak Skills
+    Given I have started an assessment
+    And I have added my strong skills
+    When I access the edit assessment page
+    And I choose 2 skills
+    Then my assessment should have 2 weak skills
+    And I should be shown the "strong attitudes" form
