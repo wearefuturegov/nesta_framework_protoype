@@ -23,6 +23,16 @@ step 'my assessment should have :num :type skills' do |num, type|
   expect(skills.count).to eq(num.to_i)
 end
 
+step 'my assessment should have :num :type attitudes' do |num, type|
+  @assessment.reload
+  attitudes = type == 'strong' ? @assessment.strong_attitudes : @assessment.weak_attitudes
+  expect(attitudes.count).to eq(num.to_i)
+end
+
 step 'I have added my strong skills' do
   @assessment.update_column(:aasm_state, 'strong_skills_added')
+end
+
+step 'I have added my weak skills' do
+  @assessment.update_column(:aasm_state, 'weak_skills_added')
 end

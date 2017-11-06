@@ -23,3 +23,11 @@ Feature: Assessment
     And I choose 2 skills
     Then my assessment should have 2 weak skills
     And I should be shown the "strong attitudes" form
+    
+  Scenario: Adding Strong Attitudes
+    Given I have started an assessment
+    And I have added my weak skills
+    When I access the edit assessment page
+    And I choose 3 attitudes
+    Then my assessment should have 3 strong attitudes
+    And I should be shown the "weak attitudes" form
