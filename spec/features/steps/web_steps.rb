@@ -15,22 +15,19 @@ step 'I choose :num :things' do |i, things|
     card = all('.card_sort_single')[i]
     scroll_to(card).click
   end
-  first(:button, 'next').click
-end
-
-step 'I should be shown the weak skills form' do
-  expect(page.body).to match /least strong/
+  first(:button, I18n.t('buttons.next')).click
 end
 
 step 'I should be shown the ":type" form' do |type|
-  case type
+  text = case type
   when 'weak skills'
-    expect(page.body).to match /least strong/
+    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_4.about')
   when 'strong attitudes'
-    expect(page.body).to match /attributes that you think your colleagues/
+    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_5.about_1')
   when 'weak attitudes'
-    expect(page.body).to match /your colleagues would be least likely use/
+    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_6.about')
   end
+  expect(page.find('body').text).to match /#{text}/
 end
 
 step 'I should be shown my results' do
