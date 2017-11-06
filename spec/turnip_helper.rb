@@ -24,3 +24,11 @@ Capybara.javascript_driver = :headless_chrome
 Capybara.raise_server_errors = false
 
 Dir.glob("spec/features/steps/**/*steps.rb") { |f| load f, true }
+
+def scroll_to(element)
+  script = <<-JS
+  arguments[0].scrollIntoView(true);
+  JS
+  Capybara.current_session.driver.browser.execute_script(script, element.native)
+  return element
+end

@@ -4,67 +4,22 @@
 
 %p
   Look through each of the cards below and
-  %span.bold select the 5
-  which you think your colleagues would use to describe your strongest skills.
+  %span.bold
+    select the
+    = Assessment::STRONG_SKILLS_COUNT
+    which you think your colleagues would use to describe your strongest skills.
 
+= form_for @assessment do |f|
+  #cards_sort_1.card_sorting
 
+    - @areas.each do |area|
+      - area.skills.each_with_index do |skill, i|
+        .card_sort_single{ id: "lc_#{i + 1}"}
+          %label
+            .card_title{ class: area.name.parameterize.underscore }
+              = skill.name
+            .card_description
+              = skill.description
+            = f.check_box :strong_skills, { multiple: true }, skill.id, nil
 
-#cards_sort_1.card_sorting
-
-  #lc_1.card_sort_single.lc
-    .card_title.leading_change Political & Bureaucratic Awareness
-    .card_description Operating political dynamics and bureaucratic procedures to ensure strategic support.
-
-  #lc_2.card_sort_single.lc
-    .card_title.leading_change Demonstrating Value
-    .card_description Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes.
-
-  #lc_3.card_sort_single.lc
-    .card_title.leading_change Storytelling & Advocacy
-    .card_description Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with.
-
-  #lc_4.card_sort_single.lc
-    .card_title.leading_change Financial Change
-    .card_description Understanding the many ways to liberate and use financial resources as motivation.
-
-  #lc_5.card_sort_single.lc
-    .card_title.leading_change Intrapreneurship
-    .card_description Being insurgent, challenging and questioning the status quo and using business acumen to create space and opportunities for change.
-
-  #al_1.card_sort_single.al
-    .card_title.accelerating_learning Tech Literacy
-    .card_description Recognizing and understanding the potential of technological developments which can improve your practice.
-
-  #al_2.card_sort_single.al
-    .card_title.accelerating_learning Systems Thinking
-    .card_description Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way.
-
-  #al_3.card_sort_single.al
-    .card_title.accelerating_learning Future Acumen
-    .card_description Creating and shaping a long-term vision and connecting it with short-term achievable tasks.
-
-  #al_4.card_sort_single.al
-    .card_title.accelerating_learning Data Literacy & Evidence
-    .card_description Discovering, generating and interpreting different kinds of data to accelerate sense-making.
-
-  #al_5.card_sort_single.al
-    .card_title.accelerating_learning Prototyping & Iterating
-    .card_description Testing ideas, using lessons of what works (and what doesn’t) to iterate them, in order to systematically improve your idea to create a more informed, robust solution to a problem.
-
-  #wt_1.card_sort_single.wt
-    .card_title.working_together Brokering
-    .card_description Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests.
-
-  #wt_2.card_sort_single.wt
-    .card_title.working_together Citizen & Stakeholder Engagement
-    .card_description Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation.
-
-  #wt_3.card_sort_single.wt
-    .card_title.working_together Building Bridges
-    .card_description Orchestrating interaction to develop a common ground across teams or stakeholders, in order to create the shared ownership of and effort towards a goal.
-
-  #wt_4.card_sort_single.wt
-    .card_title.working_together Creative Facilitation
-    .card_description Creatively supporting the externalisation and processing of different perspectives and facilitating the deliberation of multiple options and ideas.
-
-=render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step4, back_link: :assess_step2};
+  =render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step4, back_link: :assess_step2, f: f};

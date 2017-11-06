@@ -13,15 +13,16 @@ $.fn.cardSort = function(options) {
   $('.card_sort_footer .num_left').html(cardsLeft);
   $('.card_sort_footer .card_type').html(settings.type_text);
 
-  $('.card_sort_single').click(function() {
+  $('.card_sort_single label').click(function() {
     console.log($('.card_sort_footer').height());
-    if ($(this).hasClass('selected')) {
-      $(this).removeClass('selected');
+    var $parent = $(this).parent('div');
+    if ($parent.hasClass('selected')) {
+      $parent.removeClass('selected');
       cardsLeft++;
     } else {
       if(cardsLeft != 0) {
         cardsLeft--;
-        $(this).addClass('selected');
+        $parent.addClass('selected');
       }
     }
     $('.card_sort_footer .num_left').html(cardsLeft);
@@ -37,6 +38,8 @@ $.fn.cardSort = function(options) {
       });
       $('.next_button').addClass('disabled');
     }
+    $(this).children('input').attr('checked', true);
+    return false;
   });
 
 
