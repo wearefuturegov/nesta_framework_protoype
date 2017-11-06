@@ -33,57 +33,105 @@ en:
       about: "Now <span class='bold'>select the 1 attribute</span> that you think your colleagues would be least likely use to describe you."
 
   main_areas:
+    titles:
+      behaviours:
+        title_0: "Effective Behaviours"
+        title_1: "Approach"
+        title_2: "Descision basis"
+        title_3: "Interactions"
     wt:
       title: "Working Together"
       about: "Engaging with citizens and stakeholders to create shared ownership of new solutions."
       skill_1:
-        title: "Citizen & Stakeholder Engagement"
+        title: "Brokering"
         about: "Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests."
+        behaviour_1: "Practical"
+        behaviour_2: "Impartial"
+        behaviour_3: "Genuine"
       skill_2:
-        title: "Creative Facilitation"
+        title: "Citizen & Stakeholder Engagement"
         about: "Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation."
+        behaviour_1: "Consider others as the experts"
+        behaviour_2: "Understand and generate"
+        behaviour_3: "Tailored to participants"
       skill_3:
         title: "Building Bridges"
         about: "Orchestrating interaction to develop a common ground across teams or stakeholders, in order to create the shared ownership of and effort towards a goal."
+        behaviour_1: "Open to diversity"
+        behaviour_2: "Inclusive"
+        behaviour_3: "Enables collaborative meaning making"
       skill_4:
-        title: "Brokering"
+        title: "Creative Facilitation"
         about: "Creatively supporting the externalisation and processing of different perspectives and facilitating the deliberation of multiple options and ideas."
+        behaviour_1: "Responsive and adaptable"
+        behaviour_2: "Built on diversity"
+        behaviour_3: "Co-created"
     lc:
       title: "Leading Change"
       about: "Mobilising resources and legitimacy to make change happen."
       skill_1:
         title: "Political & Bureaucratic Awareness"
         about: "Operating political dynamics and bureaucratic procedures to ensure strategic support."
+        behaviour_1: "Utilises leverage for change"
+        behaviour_2: "Pragmatic"
+        behaviour_3: "Opportunistic"
       skill_2:
-        title: "Financing Change"
-        about: "Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes."
-      skill_3:
-        title: "Intrapreneurship"
-        about: "Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with."
-      skill_4:
         title: "Demonstrating Value"
-        about: "Understanding the many ways to liberate and use financial resources as motivation."
-      skill_5:
+        about: "Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes."
+        behaviour_1: "Through other's eyes"
+        behaviour_2: "Shaped by 'what if?..'"
+        behaviour_3: "Tailored to audience"
+      skill_3:
         title: "Storytelling & Advocacy"
+        about: "Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with."
+        behaviour_1: "To intrigued and stimulate"
+        behaviour_2: "Through re-framing"
+        behaviour_3: "Compelling"
+      skill_4:
+        title: "Financing Change"
+        about: "Understanding the many ways to liberate and use financial resources as motivation."
+        behaviour_1: "-"
+        behaviour_2: "-"
+        behaviour_3: "-"
+      skill_5:
+        title: "Intrapreneurship"
         about: "Being insurgent, challenging and questioning the status quo and using business acumen to create space and opportunities for change."
+        behaviour_1: "Risk taker"
+        behaviour_2: "Possibilities"
+        behaviour_3: "Provoking/probing"
     al:
       title: "Accelerating Learning"
       about: "Exploring and iterating new ideas to inform and validate solutions."
       skill_1:
-        title: "Future Acumen"
-        about: "Recognizing and understanding the potential of technological developments which can improve your practice."
-      skill_2:
-        title: "Prototyping & Iterating"
-        about: "Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way."
-      skill_3:
-        title: "Data Literacy & Evidence"
-        about: "Creating and shaping a long-term vision and connecting it with short-term achievable tasks."
-      skill_4:
-        title: "Systems Thinking"
-        about: "Discovering, generating and interpreting different kinds of data to accelerate sense-making."
-      skill_5:
         title: "Tech Literacy"
+        about: "Recognizing and understanding the potential of technological developments which can improve your practice."
+        behaviour_1: "Exploring new means"
+        behaviour_2: "Tech as a means to an end"
+        behaviour_3: "Un-obvious, fit for purpose"
+      skill_2:
+        title: "Systems Thinking"
+        about: "Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way."
+        behaviour_1: "Zooming in and out"
+        behaviour_2: "Aggregated"
+        behaviour_3: "Multi-level"
+      skill_3:
+        title: "Future Acumen"
+        about: "Creating and shaping a long-term vision and connecting it with short-term achievable tasks."
+        behaviour_1: "Long term planning with short term goals"
+        behaviour_2: "Multiple futures"
+        behaviour_3: "Embracing risk"
+      skill_4:
+        title: "Data Literacy & Evidence"
+        about: "Discovering, generating and interpreting different kinds of data to accelerate sense-making."
+        behaviour_1: "Broad"
+        behaviour_2: "Data informed frames"
+        behaviour_3: "Novel"
+      skill_5:
+        title: "Prototyping & Iterating"
         about: "Testing ideas, using lessons of what works (and what doesn’t) to iterate them, in order to systematically improve your idea to create a more informed, robust solution to a problem."
+        behaviour_1: "Many incremental steps"
+        behaviour_2: "Explorative"
+        behaviour_3: "Experimental"
     attitudes:
       at_1:
         title: "Agile"
