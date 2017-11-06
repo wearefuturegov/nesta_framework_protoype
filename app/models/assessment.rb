@@ -1,7 +1,7 @@
 class Assessment < ApplicationRecord
   include AASM
   
-  after_update :transition_state
+  before_update :transition_state
   has_many :assessment_answers
   
   STRONG_SKILLS_COUNT = 5

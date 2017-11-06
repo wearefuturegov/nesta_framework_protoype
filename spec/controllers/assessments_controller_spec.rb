@@ -56,7 +56,7 @@ RSpec.describe AssessmentsController, type: :controller do
       context "with #{state} state" do
         
         before do
-          assessment.update_attribute(:aasm_state, state)
+          assessment.update_column(:aasm_state, state)
         end
         
         it 'renders the correct template' do
@@ -87,7 +87,7 @@ RSpec.describe AssessmentsController, type: :controller do
     end
     
     it 'updates strong skills' do
-      assessment.update_attribute(:aasm_state, 'strong_skills_added')
+      assessment.update_column(:aasm_state, 'strong_skills_added')
       params[:assessment][:weak_skills] = FactoryBot.create_list(:skill, 2)
       put :update, params: params
       assessment.reload
@@ -95,7 +95,7 @@ RSpec.describe AssessmentsController, type: :controller do
     end
     
     it 'updates strong attitudes' do
-      assessment.update_attribute(:aasm_state, 'weak_skills_added')
+      assessment.update_column(:aasm_state, 'weak_skills_added')
       params[:assessment][:strong_attitudes] = FactoryBot.create_list(:attitude, 3)
       put :update, params: params
       assessment.reload
@@ -103,7 +103,7 @@ RSpec.describe AssessmentsController, type: :controller do
     end
     
     it 'updates weak attitudes' do
-      assessment.update_attribute(:aasm_state, 'strong_attitudes_added')
+      assessment.update_column(:aasm_state, 'strong_attitudes_added')
       params[:assessment][:weak_attitudes] = FactoryBot.create_list(:attitude, 1)
       put :update, params: params
       assessment.reload
