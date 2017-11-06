@@ -1,2 +1,2 @@
-- Attitude.all.each_with_index do |attitude, i|
+- @assessment.available_attitudes.each_with_index do |attitude, i|
   = render partial: 'card', locals: { obj: attitude, i: i, class_name: 'attitude', type: type, f: f }

@@ -33,3 +33,19 @@ end
 step 'I should be shown my results' do
   expect(page.body).to match /COMING SOON/
 end
+
+step 'I select the following cards:' do |table|
+  @cards = []
+  table.hashes.map { |a| a.values.first }.each do |label|
+    card = first(:label, label)
+    scroll_to(card).click
+    @cards << label
+  end
+  first(:button, I18n.t('buttons.next')).click
+end
+
+step 'I should not see those cards on the next screen' do
+  @cards.each do |s|
+    expect(page.body).to_not match /#{s}/
+  end
+end
