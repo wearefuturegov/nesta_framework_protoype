@@ -56,8 +56,7 @@ RSpec.describe AssessmentsController, type: :controller do
       context "with #{state} state" do
         
         before do
-          assessment.aasm_state = state
-          assessment.save
+          assessment.update_attribute(:aasm_state, state)
         end
         
         it 'renders the correct template' do
