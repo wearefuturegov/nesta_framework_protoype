@@ -94,14 +94,8 @@ RSpec.describe Assessment, type: :model do
       expect(assessment.aasm_state).to eq('strong_attitudes_added')
     end
     
-    it 'moves from strong_attitudes_added to weak_attitudes_added' do
-      assessment.aasm_state = 'weak_skills_added'
-      assessment.save
-      expect(assessment.aasm_state).to eq('strong_attitudes_added')
-    end
-    
-    it 'moves from weak_attitudes_added to complete' do
-      assessment.aasm_state = 'weak_attitudes_added'
+    it 'moves from strong_attitudes_added to complete' do
+      assessment.aasm_state = 'strong_attitudes_added'
       assessment.save
       expect(assessment.aasm_state).to eq('complete')
     end
