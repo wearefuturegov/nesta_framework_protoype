@@ -1,9 +1,3 @@
 - @areas.each do |area|
   - area.skills.each_with_index do |skill, i|
-    .card_sort_single{ id: "lc_#{i + 1}"}
-      %label
-        .card_title{ class: area.name.parameterize.underscore }
-          = skill.name
-        .card_description
-          = skill.description
-        = f.check_box type, { multiple: true }, skill.id, nil
+    = render partial: 'card', locals: { obj: skill, i: i, class_name: area.name.parameterize.underscore, type: type, f: f }
