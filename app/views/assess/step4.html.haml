@@ -1,64 +1,63 @@
 =render partial: "shared/step_counter", locals: {number: 4};
 
-%p Now select the 2 cards which you think your colleagues would use to describe your least strong or least well-practiced skills.
-
+%p=t('asses.step_4.about').html_safe
 
 #cards_sort_2.card_sorting
   #lc_1.card_sort_single.lc
-    .card_title.lead_change Political & Bureaucratic Awareness
-    .card_description Operating political dynamics and bureaucratic procedures to ensure strategic support.
+    .card_title.lead_change=t('main_areas.al.skill_1.title')
+    .card_description=t('main_areas.lc.skill_1.about')
 
   #lc_2.card_sort_single.lc
-    .card_title.lead_change Demonstrating Value
-    .card_description Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes.
+    .card_title.lead_change=t('main_areas.al.skill_2.title')
+    .card_description=t('main_areas.lc.skill_2.about')
 
   #lc_3.card_sort_single.lc
-    .card_title.lead_change Storytelling & Advocacy
-    .card_description Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with.
+    .card_title.lead_change=t('main_areas.al.skill_3.title')
+    .card_description=t('main_areas.lc.skill_3.about')
 
   #lc_4.card_sort_single.lc
-    .card_title.lead_change Financial Change
-    .card_description Understanding the many ways to liberate and use financial resources as motivation.
+    .card_title.lead_change=t('main_areas.al.skill_4.title')
+    .card_description=t('main_areas.lc.skill_4.about')
 
   #lc_5.card_sort_single.lc
-    .card_title.lead_change Intrapreneurship
-    .card_description Being insurgent, challenging and questioning the status quo and using business acumen to create space and opportunities for change.
+    .card_title.lead_change=t('main_areas.al.skill_5.title')
+    .card_description=t('main_areas.lc.skill_5.about')
 
   #al_1.card_sort_single.al
-    .card_title.accel_learning Tech Literacy
-    .card_description Recognizing and understanding the potential of technological developments which can improve your practice.
+    .card_title.accel_learning=t('main_areas.al.skill_1.title')
+    .card_description=t('main_areas.al.skill_1.about')
 
   #al_2.card_sort_single.al
-    .card_title.accel_learning Systems Thinking
-    .card_description Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way.
+    .card_title.accel_learning=t('main_areas.al.skill_2.title')
+    .card_description=t('main_areas.al.skill_2.about')
 
   #al_3.card_sort_single.al
-    .card_title.accel_learning Future Acumen
-    .card_description Creating and shaping a long-term vision and connecting it with short-term achievable tasks.
+    .card_title.accel_learning=t('main_areas.al.skill_3.title')
+    .card_description=t('main_areas.al.skill_3.about')
 
   #al_4.card_sort_single.al
-    .card_title.accel_learning Data Literacy & Evidence
-    .card_description Discovering, generating and interpreting different kinds of data to accelerate sense-making.
+    .card_title.accel_learning=t('main_areas.al.skill_4.title')
+    .card_description=t('main_areas.al.skill_4.about')
 
   #al_5.card_sort_single.al
-    .card_title.accel_learning Prototyping & Iterating
-    .card_description Testing ideas, using lessons of what works (and what doesn’t) to iterate them, in order to systematically improve your idea to create a more informed, robust solution to a problem.
+    .card_title.accel_learning=t('main_areas.al.skill_5.title')
+    .card_description=t('main_areas.al.skill_5.about')
 
   #wt_1.card_sort_single.wt
-    .card_title.work_together Brokering
-    .card_description Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests.
+    .card_title.work_together=t('main_areas.wt.skill_1.title')
+    .card_description=t('main_areas.wt.skill_1.about')
 
   #wt_2.card_sort_single.wt
-    .card_title.work_together Citizen & Stakeholder Engagement
-    .card_description Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation.
+    .card_title.work_together=t('main_areas.wt.skill_2.title')
+    .card_description=t('main_areas.wt.skill_2.about')
 
   #wt_3.card_sort_single.wt
-    .card_title.work_together Building Bridges
-    .card_description Orchestrating interaction to develop a common ground across teams or stakeholders, in order to create the shared ownership of and effort towards a goal.
+    .card_title.work_together=t('main_areas.wt.skill_3.title')
+    .card_description=t('main_areas.wt.skill_3.about')
 
   #wt_4.card_sort_single.wt
-    .card_title.work_together Creative Facilitation
-    .card_description Creatively supporting the externalisation and processing of different perspectives and facilitating the deliberation of multiple options and ideas.
+    .card_title.work_together=t('main_areas.wt.skill_4.title')
+    .card_description=t('main_areas.wt.skill_4.about')
 
 =render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step5, back_link: :assess_step3};
 
