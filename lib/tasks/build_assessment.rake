@@ -1,3 +1,5 @@
+require 'build_assessment'
+
 include ActionView::Helpers::TextHelper
 
 namespace :assessment do
