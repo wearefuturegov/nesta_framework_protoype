@@ -1,10 +1,10 @@
 =render partial: "shared/step_counter", locals: {number: 2};
 
-%p Each of the 3 areas relates to a specific set of skills, activities and behaviours.
+%p=t('assess.step_2.about_1')
 
-%p These are rarely all found in one individual, and instead need to be present within a wider team. The challenge (and opportunity) is to combine them in ways that make the team greater than its individual members.
+%p=t('assess.step_2.about_2')
 
-%p You as an individual might still have a range of these skills (at varying degrees of strength and weakness) across all 3 areas or you may naturally gravitate to only 1 or 2 of them.
+%p=t('assess.step_2.about_3')
 
 .accord_cont
   - @areas.each do |a|

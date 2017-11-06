@@ -1,33 +1,163 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  buttons:
+    start: "Get Started"
+    next: "Next"
+    back: "Back"
+
+  home:
+    title: "Nesta Skills & Innovation Tool"
+    intro_1: "Hello! Welcome to our new skills and innovation tool"
+    intro_2_part_1: "We’ve "
+    intro_2_part_2: "worked with leading innovators"
+    intro_2_part_3: " from around the world to define the key skills and attitudes that help support innovation in the public sector. Focusing in on problem-solving and experimentation, this tool has been designed so that you can..."
+    intro_3_point_1: "Make sense of our findings."
+    intro_3_point_2: "Reflect on & test your own skills and attitudes."
+    intro_3_point_3: "Compare your results with colleagues and build a picture for your team."
+
+  assess:
+    step_1:
+      about: "Our research has shown that successful experimentation and problem solving results in greater, sustainable impact when teams can demonstrate skills and behaviours in the following 3 areas…"
+    step_2:
+      about_1: "Each of the 3 areas relates to a specific set of skills, activities and behaviours."
+      about_2: "These are rarely all found in one individual, and instead need to be present within a wider team. The challenge (and opportunity) is to combine them in ways that make the team greater than its individual members."
+      about_3: "You as an individual might still have a range of these skills (at varying degrees of strength and weakness) across all 3 areas or you may naturally gravitate to only 1 or 2 of them."
+    step_3:
+      about_1: "Let’s try and build up a picture of your skills so we can understand what strengths you bring to a team, and what your areas for development are."
+      about_2: "Look through each of the cards below and <span class='bold'>select the 5</span> which you think your colleagues would use to describe your strongest skills."
+    step_4:
+      about: "Now <span class='bold'>select the 3 cards</span> which you think your colleagues would use to describe your least strong or least well-practiced skills."
+    step_5:
+      about_1: "In addition to skills, our research has also identified 9 attitudes that support successful experimentation and problem solving. These differ from skills in that you will have formed them over a greater period of time and they are more difficult to learn and develop."
+      about_2: "<span class='bold'>Select the 3 attributes</span> that you think your colleagues would most likely use to describe you."
+    step_6:
+      about: "Now <span class='bold'>select the 1 attribute</span> that you think your colleagues would be least likely use to describe you."
+
+  main_areas:
+    titles:
+      behaviours:
+        title_0: "Effective Behaviours"
+        title_1: "Approach"
+        title_2: "Descision basis"
+        title_3: "Interactions"
+    wt:
+      title: "Working Together"
+      about: "Engaging with citizens and stakeholders to create shared ownership of new solutions."
+      skill_1:
+        title: "Brokering"
+        about: "Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests."
+        behaviour_1: "Practical"
+        behaviour_2: "Impartial"
+        behaviour_3: "Genuine"
+      skill_2:
+        title: "Citizen & Stakeholder Engagement"
+        about: "Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation."
+        behaviour_1: "Consider others as the experts"
+        behaviour_2: "Understand and generate"
+        behaviour_3: "Tailored to participants"
+      skill_3:
+        title: "Building Bridges"
+        about: "Orchestrating interaction to develop a common ground across teams or stakeholders, in order to create the shared ownership of and effort towards a goal."
+        behaviour_1: "Open to diversity"
+        behaviour_2: "Inclusive"
+        behaviour_3: "Enables collaborative meaning making"
+      skill_4:
+        title: "Creative Facilitation"
+        about: "Creatively supporting the externalisation and processing of different perspectives and facilitating the deliberation of multiple options and ideas."
+        behaviour_1: "Responsive and adaptable"
+        behaviour_2: "Built on diversity"
+        behaviour_3: "Co-created"
+    lc:
+      title: "Leading Change"
+      about: "Mobilising resources and legitimacy to make change happen."
+      skill_1:
+        title: "Political & Bureaucratic Awareness"
+        about: "Operating political dynamics and bureaucratic procedures to ensure strategic support."
+        behaviour_1: "Utilises leverage for change"
+        behaviour_2: "Pragmatic"
+        behaviour_3: "Opportunistic"
+      skill_2:
+        title: "Demonstrating Value"
+        about: "Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes."
+        behaviour_1: "Through other's eyes"
+        behaviour_2: "Shaped by 'what if?..'"
+        behaviour_3: "Tailored to audience"
+      skill_3:
+        title: "Storytelling & Advocacy"
+        about: "Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with."
+        behaviour_1: "To intrigued and stimulate"
+        behaviour_2: "Through re-framing"
+        behaviour_3: "Compelling"
+      skill_4:
+        title: "Financing Change"
+        about: "Understanding the many ways to liberate and use financial resources as motivation."
+        behaviour_1: "-"
+        behaviour_2: "-"
+        behaviour_3: "-"
+      skill_5:
+        title: "Intrapreneurship"
+        about: "Being insurgent, challenging and questioning the status quo and using business acumen to create space and opportunities for change."
+        behaviour_1: "Risk taker"
+        behaviour_2: "Possibilities"
+        behaviour_3: "Provoking/probing"
+    al:
+      title: "Accelerating Learning"
+      about: "Exploring and iterating new ideas to inform and validate solutions."
+      skill_1:
+        title: "Tech Literacy"
+        about: "Recognizing and understanding the potential of technological developments which can improve your practice."
+        behaviour_1: "Exploring new means"
+        behaviour_2: "Tech as a means to an end"
+        behaviour_3: "Un-obvious, fit for purpose"
+      skill_2:
+        title: "Systems Thinking"
+        about: "Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way."
+        behaviour_1: "Zooming in and out"
+        behaviour_2: "Aggregated"
+        behaviour_3: "Multi-level"
+      skill_3:
+        title: "Future Acumen"
+        about: "Creating and shaping a long-term vision and connecting it with short-term achievable tasks."
+        behaviour_1: "Long term planning with short term goals"
+        behaviour_2: "Multiple futures"
+        behaviour_3: "Embracing risk"
+      skill_4:
+        title: "Data Literacy & Evidence"
+        about: "Discovering, generating and interpreting different kinds of data to accelerate sense-making."
+        behaviour_1: "Broad"
+        behaviour_2: "Data informed frames"
+        behaviour_3: "Novel"
+      skill_5:
+        title: "Prototyping & Iterating"
+        about: "Testing ideas, using lessons of what works (and what doesn’t) to iterate them, in order to systematically improve your idea to create a more informed, robust solution to a problem."
+        behaviour_1: "Many incremental steps"
+        behaviour_2: "Explorative"
+        behaviour_3: "Experimental"
+    attitudes:
+      at_1:
+        title: "Agile"
+        about: "Responding to changing environments with flexibility."
+      at_2:
+        title: "Action-oriented"
+        about: "Biased towards action and learning by doing."
+      at_3:
+        title: "Curious"
+        about: "The desire to explore multiple possibilities."
+      at_4:
+        title: "Reflective"
+        about: "Habit of critically reflecting on process and results."
+      at_5:
+        title: "Courageous"
+        about: "Willingness to take risks."
+      at_6:
+        title: "Outcomes-focused"
+        about: "Strong commitment to real  world effects."
+      at_7:
+        title: "Imaginative"
+        about: "Exploring and envisioning new possible futures."
+      at_8:
+        title: "Resilient"
+        about: "The perseverance to deal with resistance."
+      at_9:
+        title: "Empathetic"
+        about: "Understanding others’ experiences and frames of reference."
+

@@ -1,6 +1,6 @@
 =render partial: "shared/step_counter", locals: {number: 1};
 
-%p Our research has shown that successful experimentation and problem solving results in greater, sustainable impact when teams can demonstrate skills and behaviours in the following 3 areas…
+%p=t('assess.step_1.about')
 
 - @areas.each do |a|
   .card{ class: a.name.parameterize.underscore }

@@ -1,10 +1,7 @@
 =render partial: "shared/step_counter", locals: {number: 4};
 
-%p
-  Now select the
-  = Assessment::WEAK_SKILLS_COUNT
-  cards which you think your colleagues would use to describe your least strong or least well-practiced skills.
-  
+%p=t('assess.step_4.about').html_safe
+
 = form_for @assessment do |f|
   #cards_sort_2.card_sorting
   
