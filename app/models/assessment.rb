@@ -39,10 +39,7 @@ class Assessment < ApplicationRecord
   STRONG_ATTITUDES_COUNT = 3
   WEAK_ATTITUDES_COUNT = 1
   
-  validate :correct_number_of_strong_skills
-  validate :correct_number_of_weak_skills
-  validate :correct_number_of_strong_attitudes
-  validate :correct_number_of_weak_attitudes
+  validate :check_answers, on: :update
   
   # This defines getters and setters for strong and weak skills and attitudes,
   # the setter sets assesssment_answers with the correct skill or attitude
@@ -77,26 +74,38 @@ class Assessment < ApplicationRecord
   
   private
   
+    def check_answers
+      if aasm_state == 'start'
+        correct_number_of_strong_skills
+      elsif aasm_state == 'strong_skills_added'
+        correct_number_of_weak_skills
+      elsif aasm_state == 'weak_skills_added'
+        correct_number_of_strong_attitudes
+      elsif aasm_state == 'strong_attitudes_added'
+        correct_number_of_weak_attitudes
+      end
+    end
+    
     def correct_number_of_strong_skills
-      if strong_skills.count > 0 && strong_skills.count != STRONG_SKILLS_COUNT
+      if strong_skills.count != STRONG_SKILLS_COUNT
         errors.add(:strong_skills, "must be #{STRONG_SKILLS_COUNT}")
       end
     end
     
     def correct_number_of_weak_skills
-      if weak_skills.count > 0 && weak_skills.count != WEAK_SKILLS_COUNT
+      if weak_skills.count != WEAK_SKILLS_COUNT
         errors.add(:weak_skills, "must be #{WEAK_SKILLS_COUNT}")
       end
     end
     
     def correct_number_of_strong_attitudes
-      if strong_attitudes.count > 0 && strong_attitudes.count != STRONG_ATTITUDES_COUNT
+      if strong_attitudes.count != STRONG_ATTITUDES_COUNT
         errors.add(:strong_attitudes, "must be #{STRONG_ATTITUDES_COUNT}")
       end
     end
     
     def correct_number_of_weak_attitudes
-      if weak_attitudes.count > 0 && weak_attitudes.count != WEAK_ATTITUDES_COUNT
+      if weak_attitudes.count != WEAK_ATTITUDES_COUNT
         errors.add(:weak_attitudes, "must be #{WEAK_ATTITUDES_COUNT}")
       end
     end
