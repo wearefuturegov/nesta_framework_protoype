@@ -41,6 +41,9 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'pry'
   gem 'rails-controller-testing'
+  gem 'turnip'
+  gem 'capybara-selenium'
+  gem 'chromedriver-helper'
 end
 
 group :development do
