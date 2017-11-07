@@ -1,6 +1,7 @@
 = render partial: 'shared/step_counter'
 
-=t('assessments.user.about_html')
+=%h3 t('assessments.user.title')
+= t('assessments.user.about_html')
 
 - if @assessment.errors.any?
   %h3

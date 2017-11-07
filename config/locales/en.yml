@@ -60,8 +60,15 @@ en:
         <p>Now <span class='bold'>select the 1 attribute</span> that you think
         your colleagues would be least likely use to describe you.</p>
     user:
+      title: "You're Almost Finished!"
       about_html: |
-        <p>You're almost finished!</p>
+        <p>Before we let you see and compare your results with your team we'd
+        like to find out a little more information about you.</p>
+        <p>Collecting this information helps us to make your results more
+        meaningful, but also furthers our understanding about the current
+        position of skills and attitudes within the sector so we can best
+        support it. Most fields are not mandatory but we'd be grateful
+        for your participation.</p>
         
   activerecord:
     errors:
