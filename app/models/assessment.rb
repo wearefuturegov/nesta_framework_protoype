@@ -3,6 +3,7 @@ class Assessment < ApplicationRecord
   
   before_update :transition_state
   has_many :assessment_answers
+  belongs_to :user, optional: true
   
   STRONG_SKILLS_COUNT = 5
   WEAK_SKILLS_COUNT = 2
