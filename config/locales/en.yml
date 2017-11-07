@@ -44,7 +44,7 @@ en:
         strongest skills.</p>
     weak_skills:
       about_html: |
-        <p>Now <span class='bold'>select the 3 cards</span> which you think your
+        <p>Now <span class='bold'>select the 2 cards</span> which you think your
         colleagues would use to describe your least strong or least
         well-practiced skills.</p>
     strong_attitudes:
