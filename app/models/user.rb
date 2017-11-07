@@ -18,9 +18,6 @@ class User < ApplicationRecord
   
   COUNTRIES = ISO3166::Country.codes
   
-  validates :organisation_type, inclusion: { in: User::ORGANISATION_TYPES }
-  validates :position, inclusion: { in: User::POSTIONS }
-  validates :location, inclusion: { in: User::COUNTRIES }
   validates :email, email: true
   
 end

@@ -87,18 +87,6 @@ RSpec.describe User, type: :model do
       expect(messages[:email]).to eq(['is invalid'])
     end
     
-    it 'has an error for the organisation_type' do
-      expect(messages[:organisation_type]).to eq(['is not included in the list'])
-    end
-    
-    it 'has an error for the position' do
-      expect(messages[:position]).to eq(['is not included in the list'])
-    end
-    
-    it 'has an error for the location' do
-      expect(messages[:location]).to eq(['is not included in the list'])
-    end
-    
   end
   
   

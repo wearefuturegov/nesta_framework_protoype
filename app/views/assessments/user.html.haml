@@ -1,6 +1,6 @@
 = render partial: 'shared/step_counter'
 
-=%h3 t('assessments.user.title')
+%h3= t('assessments.user.title')
 = t('assessments.user.about_html')
 
 - if @assessment.errors.any?
@@ -17,19 +17,19 @@
   = f.fields_for :user do |user_form|
   
     = user_form.label :name
-    = user_form.text_field :name, required: true
+    = user_form.text_field :name
   
     = user_form.label :email
     = user_form.email_field :email, required: true
     
     = user_form.label :organisation_type
-    = user_form.select :organisation_type, User::ORGANISATION_TYPES, { include_blank: 'Please Select' }, required: true
+    = user_form.select :organisation_type, User::ORGANISATION_TYPES, { include_blank: 'Please Select' }
     
     = user_form.label :position
-    = user_form.select :position, User::POSTIONS, { include_blank: 'Please Select' }, required: true
+    = user_form.select :position, User::POSTIONS, { include_blank: 'Please Select' }
   
     = user_form.label :location
-    = user_form.country_select :location, { priority_countries: ['GB', 'FR', 'DE'], include_blank: 'Please Select' }, required: true
+    = user_form.country_select :location, { priority_countries: ['GB', 'FR', 'DE'], include_blank: 'Please Select' }
   
   .actions
     = link_to t('buttons.back'), '', :class => "button full-button"
