@@ -38,4 +38,12 @@ Feature: Assessment
     When I access the edit assessment page
     And I choose 1 attitude
     Then my assessment should have 1 weak attitude
-    And I should be shown my results
+    And I should be shown the "user" form
+    
+  Scenario: Adding User Details
+    Given I have started an assessment
+    And I have added my weak attitudes
+    When I access the edit assessment page
+    And I enter my details
+    Then I should be shown my results
+    And my assessment should have the correct contact details

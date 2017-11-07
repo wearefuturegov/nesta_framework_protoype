@@ -8,6 +8,7 @@ RSpec.describe Assessment, type: :model do
       weak_skills: FactoryBot.create_list(:skill, 2),
       strong_attitudes: FactoryBot.create_list(:attitude, 3),
       weak_attitudes: FactoryBot.create_list(:attitude, 1),
+      user: FactoryBot.create(:user)
     )
   }
   
@@ -25,6 +26,10 @@ RSpec.describe Assessment, type: :model do
   
   it 'creates weak attitudes' do
     expect(assessment.weak_attitudes.count).to eq(1)
+  end
+  
+  it 'has a user' do
+    expect(assessment.user).to be_a(User)
   end
   
   context 'validations' do
@@ -94,8 +99,14 @@ RSpec.describe Assessment, type: :model do
       expect(assessment.aasm_state).to eq('strong_attitudes_added')
     end
     
-    it 'moves from strong_attitudes_added to complete' do
+    it 'moves from strong_attitudes_added to weak_attitudes_added' do
       assessment.aasm_state = 'strong_attitudes_added'
+      assessment.save
+      expect(assessment.aasm_state).to eq('weak_attitudes_added')
+    end
+    
+    it 'moves from weak_attitudes_added to complete' do
+      assessment.aasm_state = 'weak_attitudes_added'
       assessment.save
       expect(assessment.aasm_state).to eq('complete')
     end
