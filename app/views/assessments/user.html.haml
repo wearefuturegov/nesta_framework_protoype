@@ -1,6 +1,6 @@
 =render partial: "shared/step_counter", locals: {number: 7};
 
-%p=t('assess.step_7.about').html_safe
+=t('assessments.user.about_html')
 
 = form_for setup_assessment(@assessment) do |f|
   = f.fields_for :user do |user_form|

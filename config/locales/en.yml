@@ -6,33 +6,62 @@ en:
 
   home:
     title: "Nesta Skills & Innovation Tool"
-    intro_1: "Hello! Welcome to our new skills and innovation tool"
-    intro_2_part_1: "We’ve "
-    intro_2_part_2: "worked with leading innovators"
-    intro_2_part_3: " from around the world to define the key skills and attitudes that help support innovation in the public sector. Focusing in on problem-solving and experimentation, this tool has been designed so that you can..."
-    intro_3_point_1: "Make sense of our findings."
-    intro_3_point_2: "Reflect on & test your own skills and attitudes."
-    intro_3_point_3: "Compare your results with colleagues and build a picture for your team."
-
-  assess:
-    step_1:
-      about: "Our research has shown that successful experimentation and problem solving results in greater, sustainable impact when teams can demonstrate skills and behaviours in the following 3 areas…"
-    step_2:
-      about_1: "Each of the 3 areas relates to a specific set of skills, activities and behaviours."
-      about_2: "These are rarely all found in one individual, and instead need to be present within a wider team. The challenge (and opportunity) is to combine them in ways that make the team greater than its individual members."
-      about_3: "You as an individual might still have a range of these skills (at varying degrees of strength and weakness) across all 3 areas or you may naturally gravitate to only 1 or 2 of them."
-    step_3:
-      about_1: "Let’s try and build up a picture of your skills so we can understand what strengths you bring to a team, and what your areas for development are."
-      about_2: "Look through each of the cards below and <span class='bold'>select the 5</span> which you think your colleagues would use to describe your strongest skills."
-    step_4:
-      about: "Now <span class='bold'>select the 3 cards</span> which you think your colleagues would use to describe your least strong or least well-practiced skills."
-    step_5:
-      about_1: "In addition to skills, our research has also identified 9 attitudes that support successful experimentation and problem solving. These differ from skills in that you will have formed them over a greater period of time and they are more difficult to learn and develop."
-      about_2: "<span class='bold'>Select the 3 attributes</span> that you think your colleagues would most likely use to describe you."
-    step_6:
-      about: "Now <span class='bold'>select the 1 attribute</span> that you think your colleagues would be least likely use to describe you."
-    step_7:
-      about: "You're almost finished!"
+    intro_html: |
+      <p>We’ve <a target="_blank" href="https://www.nesta.org.uk/blog/what-are-skills-and-attitudes-successful-public-problem-solving">worked with leading innovators</a>
+      from around the world to define the key skills and attitudes that help
+      support innovation in the public sector. Focusing in on problem-solving
+      and experimentation, this tool has been designed so that you can...</p>
+      <ul class='default'>
+        <li>Make sense of our findings.</li>
+        <li>Reflect on &amp; test your own skills and attitudes.</li>
+        <li>Compare your results with colleagues and build a picture for your team.</li>
+      </ul>
+    
+  assessments:
+    index:
+      about: |
+        Our research has shown that successful experimentation and problem
+        solving results in greater, sustainable impact when teams can
+        demonstrate skills and behaviours in the following 3 areas...
+    new:
+      about_html: |
+        <p>Each of the 3 areas relates to a specific set of skills,
+        activities and behaviours.</p>
+        <p>These are rarely all found in one individual, and instead need to be
+         present within a wider team. The challenge (and opportunity) is to
+         combine them in ways that make the team greater than its individual
+         members.</p>
+        <p>You as an individual might still have a range of these skills
+        (at varying degrees of strength and weakness) across all 3 areas or you
+        may naturally gravitate to only 1 or 2 of them.<p>
+    strong_skills:
+      about_html: |
+        <p>Let’s try and build up a picture of your skills so we can understand
+        what strengths you bring to a team, and what your areas for development
+        are.</p>
+        <p>Look through each of the cards below and <span class='bold'>select
+        the 5</span> which you think your colleagues would use to describe your
+        strongest skills.</p>
+    weak_skills:
+      about_html: |
+        <p>Now <span class='bold'>select the 3 cards</span> which you think your
+        colleagues would use to describe your least strong or least
+        well-practiced skills.</p>
+    strong_attitudes:
+      about_html: |
+        <p>In addition to skills, our research has also identified 9 attitudes
+        that support successful experimentation and problem solving. These
+        differ from skills in that you will have formed them over a greater
+        period of time and they are more difficult to learn and develop.</p>
+        <p><span class='bold'>Select the 3 attributes</span> that you think
+        your colleagues would most likely use to describe you.</p>
+    weak_attitudes:
+      about_html: |
+        <p>Now <span class='bold'>select the 1 attribute</span> that you think
+        your colleagues would be least likely use to describe you.</p>
+    user:
+      about_html: |
+        <p>You're almost finished!</p>
     
   main_areas:
     titles:
