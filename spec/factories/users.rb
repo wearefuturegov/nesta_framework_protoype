@@ -1,10 +1,9 @@
 FactoryBot.define do
   factory :user do
-    email "MyString"
-    name "MyString"
-    organisation_type "MyString"
-    position "MyString"
-    location "MyString"
-    assessment_id 1
+    email 'me@example.com'
+    name 'Me'
+    organisation_type 'Federal Government'
+    position 'Management'
+    location 'GB'
   end
 end

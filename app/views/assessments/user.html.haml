@@ -1,0 +1,25 @@
+=render partial: "shared/step_counter", locals: {number: 7};
+
+%p=t('assess.step_7.about').html_safe
+
+= form_for setup_assessment(@assessment) do |f|
+  = f.fields_for :user do |user_form|
+  
+    = user_form.label :name
+    = user_form.text_field :name
+  
+    = user_form.label :email
+    = user_form.email_field :email
+    
+    = user_form.label :organisation_type
+    = user_form.select :organisation_type, User::ORGANISATION_TYPES
+    
+    = user_form.label :position
+    = user_form.select :position, User::POSTIONS
+  
+    = user_form.label :location
+    = user_form.country_select :location, priority_countries: ['GB', 'FR', 'DE']
+  
+  .actions
+    = link_to t('buttons.back'), '', :class => "button full-button"
+    = f.submit t('buttons.next'), :class => "button full-button next_button"

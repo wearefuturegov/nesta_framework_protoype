@@ -12,6 +12,8 @@ class Assessment < ApplicationRecord
   
   validate :check_answers, on: :update
   
+  accepts_nested_attributes_for :user
+  
   def strong_skills=(skills)
     set_answers('strong', 'skill', skills)
   end
@@ -41,6 +43,7 @@ class Assessment < ApplicationRecord
     state :strong_skills_added
     state :weak_skills_added
     state :strong_attitudes_added
+    state :weak_attitudes_added
     state :complete
     
     event :add_strong_skills do
@@ -56,7 +59,11 @@ class Assessment < ApplicationRecord
     end
     
     event :add_weak_attitudes do
-      transitions from: :strong_attitudes_added, to: :complete
+      transitions from: :strong_attitudes_added, to: :weak_attitudes_added
+    end
+    
+    event :add_user_details do
+      transitions from: :weak_attitudes_added, to: :complete
     end
   end
   
@@ -93,6 +100,10 @@ class Assessment < ApplicationRecord
   
   def attitude_answers
     assessment_answers.select { |a| !a.attitude.nil? }
+  end
+  
+  def get_user
+    user.nil? ? User.new : user
   end
   
   private

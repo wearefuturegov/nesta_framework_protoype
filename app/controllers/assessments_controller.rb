@@ -52,6 +52,8 @@ class AssessmentsController < ApplicationController
         @template = 'strong_attitudes'
       when 'strong_attitudes_added'
         @template = 'weak_attitudes'
+      when 'weak_attitudes_added'
+        @template = 'user'
       end
     end
     
@@ -60,7 +62,10 @@ class AssessmentsController < ApplicationController
         strong_skills: [],
         weak_skills: [],
         strong_attitudes: [],
-        weak_attitudes: []
+        weak_attitudes: [],
+        user_attributes: [
+          :name, :email, :organisation_type, :position, :location
+        ]
       )
     end
   

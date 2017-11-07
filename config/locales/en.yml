@@ -31,7 +31,9 @@ en:
       about_2: "<span class='bold'>Select the 3 attributes</span> that you think your colleagues would most likely use to describe you."
     step_6:
       about: "Now <span class='bold'>select the 1 attribute</span> that you think your colleagues would be least likely use to describe you."
-
+    step_7:
+      about: "You're almost finished!"
+    
   main_areas:
     titles:
       behaviours:
@@ -160,4 +162,3 @@ en:
       at_9:
         title: "Empathetic"
         about: "Understanding others’ experiences and frames of reference."
-
