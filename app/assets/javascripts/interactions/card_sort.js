@@ -19,10 +19,12 @@ $.fn.cardSort = function(options) {
     if ($parent.hasClass('selected')) {
       $parent.removeClass('selected');
       cardsLeft++;
+      $(this).children('input')[0].checked = false;
     } else {
       if(cardsLeft != 0) {
         cardsLeft--;
         $parent.addClass('selected');
+        $(this).children('input')[0].checked = true;
       }
     }
     $('.card_sort_footer .num_left').html(cardsLeft);
@@ -38,7 +40,7 @@ $.fn.cardSort = function(options) {
       });
       $('.next_button').addClass('disabled');
     }
-    $(this).children('input').attr('checked', true);
+    
     return false;
   });
 

@@ -44,7 +44,7 @@ en:
         strongest skills.</p>
     weak_skills:
       about_html: |
-        <p>Now <span class='bold'>select the 3 cards</span> which you think your
+        <p>Now <span class='bold'>select the 2 cards</span> which you think your
         colleagues would use to describe your least strong or least
         well-practiced skills.</p>
     strong_attitudes:
@@ -62,6 +62,20 @@ en:
     user:
       about_html: |
         <p>You're almost finished!</p>
+        
+  activerecord:
+    errors:
+      models:
+        assessment:
+          attributes:
+            strong_skills:
+              count: You must choose %{count} strong skills
+            weak_skills:
+              count: You must choose %{count} weak skills
+            strong_attitudes:
+              count: You must choose %{count} strong attitudes
+            weak_attitudes:
+              count: You must choose %{count} weak attitudes
     
   main_areas:
     titles:
