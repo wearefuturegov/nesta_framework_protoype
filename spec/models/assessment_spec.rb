@@ -43,7 +43,7 @@ RSpec.describe Assessment, type: :model do
       assessment.strong_skills = FactoryBot.create_list(:skill, 7)
       assessment.save
       assessment.valid?
-      expect(assessment.errors.details[:strong_skills][0][:error]).to eq('must be 5')
+      expect(assessment.errors.details[:strong_skills][0][:error]).to eq('You must choose 5 strong skills')
     end
     
     it 'gives an error for the wrong number of weak skills' do
@@ -51,7 +51,7 @@ RSpec.describe Assessment, type: :model do
       assessment.weak_skills = FactoryBot.create_list(:skill, 1)
       assessment.save
       assessment.valid?
-      expect(assessment.errors.details[:weak_skills][0][:error]).to eq('must be 2')
+      expect(assessment.errors.details[:weak_skills][0][:error]).to eq('You must choose 2 weak skills')
     end
     
     it 'gives an error for the wrong number of strong attitudes' do
@@ -59,7 +59,7 @@ RSpec.describe Assessment, type: :model do
       assessment.strong_attitudes = FactoryBot.create_list(:attitude, 5)
       assessment.save
       assessment.valid?
-      expect(assessment.errors.details[:strong_attitudes][0][:error]).to eq('must be 3')
+      expect(assessment.errors.details[:strong_attitudes][0][:error]).to eq('You must choose 3 strong attitudes')
     end
     
     it 'gives an error for the wrong number of weak attitudes' do
@@ -67,7 +67,7 @@ RSpec.describe Assessment, type: :model do
       assessment.weak_attitudes = FactoryBot.create_list(:attitude, 5)
       assessment.save
       assessment.valid?
-      expect(assessment.errors.details[:weak_attitudes][0][:error]).to eq('must be 1')
+      expect(assessment.errors.details[:weak_attitudes][0][:error]).to eq('You must choose 1 weak attitudes')
     end
     
     it 'cares not a jot for other states' do

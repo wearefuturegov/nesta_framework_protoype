@@ -122,31 +122,39 @@ class Assessment < ApplicationRecord
     
     def correct_number_of_strong_skills
       if strong_skills.count != STRONG_SKILLS_COUNT
-        errors.add(:strong_skills, "must be #{STRONG_SKILLS_COUNT}")
+        add_error :strong_skills, STRONG_SKILLS_COUNT
       end
     end
     
     def correct_number_of_weak_skills
       if weak_skills.count != WEAK_SKILLS_COUNT
-        errors.add(:weak_skills, "must be #{WEAK_SKILLS_COUNT}")
+        add_error :weak_skills, WEAK_SKILLS_COUNT
       end
     end
     
     def correct_number_of_strong_attitudes
       if strong_attitudes.count != STRONG_ATTITUDES_COUNT
-        errors.add(:strong_attitudes, "must be #{STRONG_ATTITUDES_COUNT}")
+        add_error :strong_attitudes, STRONG_ATTITUDES_COUNT
       end
     end
     
     def correct_number_of_weak_attitudes
       if weak_attitudes.count != WEAK_ATTITUDES_COUNT
-        errors.add(:weak_attitudes, "must be #{WEAK_ATTITUDES_COUNT}")
+        add_error :weak_attitudes, WEAK_ATTITUDES_COUNT
       end
     end
     
     def transition_state
       job = self.aasm.events.map(&:name).first
       self.send(job) unless job.nil?
+    end
+    
+    def add_error(attribute, count)
+      errors.add attribute, error_message(attribute, count)
+    end
+    
+    def error_message(attribute, count)
+      I18n.t("activerecord.errors.models.assessment.attributes.#{attribute}.count", count: count)
     end
 
 end
