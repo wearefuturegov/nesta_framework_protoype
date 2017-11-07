@@ -14,7 +14,6 @@ $.fn.cardSort = function(options) {
   $('.card_sort_footer .card_type').html(settings.type_text);
 
   $('.card_sort_single label').click(function() {
-    console.log($('.card_sort_footer').height());
     var $parent = $(this).parent('div');
     if ($parent.hasClass('selected')) {
       $parent.removeClass('selected');
@@ -40,7 +39,7 @@ $.fn.cardSort = function(options) {
       });
       $('.next_button').addClass('disabled');
     }
-    
+
     return false;
   });
 

@@ -16,7 +16,7 @@ en:
         <li>Reflect on &amp; test your own skills and attitudes.</li>
         <li>Compare your results with colleagues and build a picture for your team.</li>
       </ul>
-    
+
   assessments:
     index:
       about: |
@@ -39,9 +39,6 @@ en:
         <p>Let’s try and build up a picture of your skills so we can understand
         what strengths you bring to a team, and what your areas for development
         are.</p>
-        <p>Look through each of the cards below and <span class='bold'>select
-        the 5</span> which you think your colleagues would use to describe your
-        strongest skills.</p>
     weak_skills:
       about_html: |
         <p>Now <span class='bold'>select the 2 cards</span> which you think your
@@ -69,7 +66,7 @@ en:
         position of skills and attitudes within the sector so we can best
         support it. Most fields are not mandatory but we'd be grateful
         for your participation.</p>
-        
+
   activerecord:
     errors:
       models:
@@ -83,7 +80,7 @@ en:
               count: You must choose %{count} strong attitudes
             weak_attitudes:
               count: You must choose %{count} weak attitudes
-    
+
   main_areas:
     titles:
       behaviours:
