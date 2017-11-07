@@ -19,17 +19,10 @@ step 'I choose :num :things' do |i, things|
 end
 
 step 'I should be shown the ":type" form' do |type|
-  text = case type
-  when 'weak skills'
-    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_4.about')
-  when 'strong attitudes'
-    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_5.about_1')
-  when 'weak attitudes'
-    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_6.about')
-  when 'user'
-    ActionView::Base.full_sanitizer.sanitize I18n.t('assess.step_7.about')
-  end
-  expect(page.find('body').text).to match /#{text}/
+  template = type.parameterize(separator: '_')
+  key = "assessments.#{template}.about_html"
+  text = ActionView::Base.full_sanitizer.sanitize I18n.t(key)
+  expect(page.find('body').text).to match /#{text.split.join(' ')}/
 end
 
 step 'I should be shown my results' do

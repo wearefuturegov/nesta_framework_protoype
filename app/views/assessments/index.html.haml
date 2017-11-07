@@ -1,6 +1,6 @@
 =render partial: "shared/step_counter", locals: {number: 1};
 
-%p=t('assess.step_1.about')
+%p=t('assessments.index.about')
 
 - @areas.each do |a|
   .card{ class: a.name.parameterize.underscore }

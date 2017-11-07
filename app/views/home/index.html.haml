@@ -1,16 +1,6 @@
 %h1=t('home.title')
 
-%p=t('home.intro_1')
-
-%p
-  =t('home.intro_2_part_1')
-  =link_to t('home.intro_2_part_2'), 'https://www.nesta.org.uk/blog/what-are-skills-and-attitudes-successful-public-problem-solving', target: '_blank'
-  =t('home.intro_2_part_3')
-
-%ul.default
-  %li=t('home.intro_3_point_1')
-  %li=t('home.intro_3_point_2')
-  %li=t('home.intro_3_point_3')
+=t('home.intro_html')
 
 .center.actions
   = link_to t('buttons.start'), :assessments, :class => "button"
