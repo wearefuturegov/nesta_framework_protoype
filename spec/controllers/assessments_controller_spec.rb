@@ -13,6 +13,11 @@ RSpec.describe AssessmentsController, type: :controller do
       get :index
       expect(assigns(:areas)).to eq(areas)
     end
+    
+    it 'sets the right step' do
+      get :index
+      expect(assigns(:step)).to eq(1)
+    end
   end
   
   describe 'GET new' do
@@ -23,6 +28,11 @@ RSpec.describe AssessmentsController, type: :controller do
     it 'gets areas' do
       get :new
       expect(assigns(:areas)).to eq(areas)
+    end
+    
+    it 'sets the right step' do
+      get :new
+      expect(assigns(:step)).to eq(2)
     end
   end
   
@@ -47,11 +57,27 @@ RSpec.describe AssessmentsController, type: :controller do
     let(:subject) { get :edit, params: { id: assessment } }
     
     {
-      start: :strong_skills,
-      strong_skills_added: :weak_skills,
-      weak_skills_added: :strong_attitudes,
-      strong_attitudes_added: :weak_attitudes
-    }.each do |state, template|
+      start: {
+        template: :strong_skills,
+        count: 3
+      },
+      strong_skills_added: {
+        template: :weak_skills,
+        count: 4
+      },
+      weak_skills_added: {
+        template: :strong_attitudes,
+        count: 5
+      },
+      strong_attitudes_added: {
+        template: :weak_attitudes,
+        count: 6
+      },
+      weak_attitudes_added: {
+        template: :user,
+        count: 7
+      }
+    }.each do |state, attrs|
       
       context "with #{state} state" do
         
@@ -60,7 +86,12 @@ RSpec.describe AssessmentsController, type: :controller do
         end
         
         it 'renders the correct template' do
-          expect(subject).to render_template(template)
+          expect(subject).to render_template(attrs[:template])
+        end
+        
+        it 'sets the right step' do
+          subject
+          expect(assigns(:step)).to eq(attrs[:count])
         end
         
       end

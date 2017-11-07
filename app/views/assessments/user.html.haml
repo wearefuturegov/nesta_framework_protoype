@@ -1,4 +1,4 @@
-= render partial: "shared/step_counter", locals: {number: 7}
+= render partial: 'shared/step_counter'
 
 =t('assessments.user.about_html')
 
@@ -28,7 +28,7 @@
     = user_form.select :position, User::POSTIONS, { include_blank: 'Please Select' }, required: true
   
     = user_form.label :location
-    = user_form.country_select :location, { priority_countries: ['GB', 'FR', 'DE'], include_blank: 'Please Select' }, required: true 
+    = user_form.country_select :location, { priority_countries: ['GB', 'FR', 'DE'], include_blank: 'Please Select' }, required: true
   
   .actions
     = link_to t('buttons.back'), '', :class => "button full-button"

@@ -1,12 +1,14 @@
 class AssessmentsController < ApplicationController
   before_action :get_areas
   prepend_before_action :get_assessment, only: [:edit, :show, :update]
-  before_action :set_template, only: [:edit]
+  before_action :set_template, only: [:edit, :update]
   
   def index
+    @step = 1
   end
   
   def new
+    @step = 2
   end
   
   def create
@@ -16,7 +18,9 @@ class AssessmentsController < ApplicationController
   
   def update
     # Update the assessment
-    @assessment.update_attributes(assessment_params)
+    unless @assessment.update_attributes(assessment_params)
+      flash[:error] = @assessment.errors.full_messages.to_sentence
+    end
     # Redirect to edit or show
     if @assessment.complete?
       redirect_to assessment_url(@assessment)
@@ -45,14 +49,19 @@ class AssessmentsController < ApplicationController
     def set_template
       case @assessment.aasm_state
       when 'start'
+        @step = 3
         @template = 'strong_skills'
       when 'strong_skills_added'
+        @step = 4
         @template = 'weak_skills'
       when 'weak_skills_added'
+        @step = 5
         @template = 'strong_attitudes'
       when 'strong_attitudes_added'
+        @step = 6
         @template = 'weak_attitudes'
       when 'weak_attitudes_added'
+        @step = 7
         @template = 'user'
       end
     end
