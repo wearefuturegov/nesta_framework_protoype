@@ -1,4 +1,15 @@
 class Assessment < ApplicationRecord
+  INITAL_STATE = :start
+  
+  ASSESSMENT_STATES = [
+    :start,
+    :strong_skills_added,
+    :weak_skills_added,
+    :strong_attitudes_added,
+    :weak_attitudes_added,
+    :complete
+  ]
+  
   include AASM
   
   before_update :transition_state
@@ -39,31 +50,12 @@ class Assessment < ApplicationRecord
   end
 
   aasm do
-    state :start, initial: true
-    state :strong_skills_added
-    state :weak_skills_added
-    state :strong_attitudes_added
-    state :weak_attitudes_added
-    state :complete
-    
-    event :add_strong_skills do
-      transitions from: :start, to: :strong_skills_added
-    end
-
-    event :add_weak_skills do
-      transitions from: :strong_skills_added, to: :weak_skills_added
-    end
-    
-    event :add_strong_attitudes do
-      transitions from: :weak_skills_added, to: :strong_attitudes_added
-    end
-    
-    event :add_weak_attitudes do
-      transitions from: :strong_attitudes_added, to: :weak_attitudes_added
-    end
-    
-    event :add_user_details do
-      transitions from: :weak_attitudes_added, to: :complete
+    ASSESSMENT_STATES.each do |s|
+      if s == INITAL_STATE
+        state s, initial: true
+      else
+        state s
+      end
     end
   end
   
@@ -106,6 +98,10 @@ class Assessment < ApplicationRecord
     user.nil? ? User.new : user
   end
   
+  def go_back
+    transition_state(true)
+  end
+  
   private
   
     def check_answers
@@ -144,9 +140,14 @@ class Assessment < ApplicationRecord
       end
     end
     
-    def transition_state
-      job = self.aasm.events.map(&:name).first
-      self.send(job) unless job.nil?
+    def transition_state(back = false)
+      index = ASSESSMENT_STATES.index(self.aasm_state.to_sym)
+      if back
+        aasm_state = ASSESSMENT_STATES[index - 1]
+      else
+        aasm_state = ASSESSMENT_STATES[index + 1]
+      end
+      update_column(:aasm_state, aasm_state) unless aasm_state.nil?
     end
     
     def add_error(attribute, count)

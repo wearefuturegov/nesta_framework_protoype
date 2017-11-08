@@ -17,9 +17,13 @@ class AssessmentsController < ApplicationController
   end
   
   def update
-    # Update the assessment
-    unless @assessment.update_attributes(assessment_params)
-      flash[:error] = @assessment.errors.full_messages.to_sentence
+    if params[:back]
+      @assessment.go_back
+    else
+      # Update the assessment
+      unless @assessment.update_attributes(assessment_params)
+        flash[:error] = @assessment.errors.full_messages.to_sentence
+      end
     end
     # Redirect to edit or show
     if @assessment.complete?

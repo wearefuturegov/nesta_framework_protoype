@@ -1,6 +1,7 @@
 module WebSteps
   step :enter_details, 'I enter my details'
   step :click_next, 'I click next'
+  step :click_back, 'I click the back button'
 
   step 'I access the new assessment page' do
     visit new_assessment_path
@@ -96,6 +97,10 @@ module WebSteps
   
   def click_next
     first(:button, I18n.t('buttons.next')).click
+  end
+  
+  def click_back
+    scroll_to(first :button, I18n.t('buttons.back')).click
   end
   
 end
