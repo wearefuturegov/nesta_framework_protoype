@@ -41,6 +41,9 @@ class AssessmentsController < ApplicationController
   end
   
   def share
+    @team = Team.new(users: [
+      @assessment.user
+    ])
   end
   
   private

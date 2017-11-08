@@ -8,18 +8,18 @@ RSpec.describe TeamsController, type: :controller do
       user = FactoryBot.create(:user)
       post :create, params: {
         team: {
-          users_attributes: [
-            {
+          users_attributes: {
+            '0' => {
               email: 'bob@example.com'
             },
-            {
+            '1' => {
               email: 'alice@example.com'
             },
-            {
+            '2' => {
               email: user.email,
               id: user.id
             }
-          ]
+          }
         }
       }
             

@@ -73,6 +73,20 @@ module WebSteps
     click_back
   end
   
+  step 'I share the assessment with my team members' do
+    @team_members = [
+      'alice@example.com',
+      'bob@example.com'
+    ]
+    visit share_assessment_path(@assessment)
+    click_on I18n.t('assessments.share.add_team_member')
+    @team_members.each do |email|
+      all(:css, '.team_member').last.set(email)
+      click_on I18n.t('assessments.share.add_team_member')
+    end
+    click_on I18n.t('buttons.submit')
+  end
+  
   def select_strong_cards
     select_cards(['Building Bridges', 'Brokering', 'Intrapreneurship', 'Future Acumen', 'Tech Literacy'])
   end

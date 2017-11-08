@@ -14,4 +14,5 @@
 //= require rails-ujs
 //= require highcharts
 //= require chartkick
+//= require cocoon
 //= require_tree .

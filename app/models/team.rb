@@ -4,8 +4,10 @@ class Team < ApplicationRecord
   accepts_nested_attributes_for :users
   
   def users_attributes=(users_attrs)
-    users_attrs.each do |user|
-      self.users << if user[:id]
+    users = users_attrs.values
+    users.delete_if { |attrs| attrs['id'].blank? && attrs['email'].blank? }
+    users.each do |user|
+      self.users << if user[:id].present?
         u = User.find(user[:id])
         u.update_column(:team_id, self.id)
         u

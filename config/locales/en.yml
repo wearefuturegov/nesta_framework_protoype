@@ -3,6 +3,7 @@ en:
     start: "Get Started"
     next: "Next"
     back: "Back"
+    submit: "Submit"
 
   home:
     title: "Nesta Skills & Innovation Tool"
@@ -90,7 +91,8 @@ en:
         attitudes that exist in your team. This will also identify any gaps that
         you may need to address or mitigate.</p>
       subtitle: "Share your results"
-        
+      add_team_member: "Add team member"
+      
   activerecord:
     errors:
       models:

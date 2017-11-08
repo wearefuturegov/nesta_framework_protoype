@@ -17,6 +17,11 @@ step 'I have started an assessment' do
   )
 end
 
+step 'I have a completed assessment' do
+  @user = FactoryBot.create(:user)
+  @assessment = FactoryBot.create(:assessment, user: @user)
+end
+
 step 'my assessment should have :num :type skills' do |num, type|
   @assessment.reload
   skills = type == 'strong' ? @assessment.strong_skills : @assessment.weak_skills
