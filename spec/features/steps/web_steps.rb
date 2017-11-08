@@ -35,6 +35,7 @@ module WebSteps
     @assessment.strong_skills.each do |s|
       card = find('div', text: /\A#{s.name}\Z/).find(:xpath, '../..')
       expect(card[:class]).to include('selected')
+      expect(card.find('input', visible: false)[:checked]).to eq('true')
     end
   end
 

@@ -4,4 +4,4 @@
       = obj.name
     .card_description
       = obj.description
-    = f.check_box type, { multiple: true }, obj.id, nil
+    = f.check_box type, { multiple: true, checked: selected == 'selected' }, obj.id, nil
