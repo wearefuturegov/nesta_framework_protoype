@@ -41,6 +41,13 @@ RSpec.describe Assessment, type: :model do
     expect(assessment.user).to be_a(User)
   end
   
+  it 'starts from scratch' do
+    new_skills = FactoryBot.create_list(:skill, 5)
+    assessment.strong_skills = new_skills
+    expect(assessment.strong_skills.count).to eq(5)
+    expect(assessment.strong_skills).to eq(new_skills)
+  end
+  
   context 'validations' do
     
     it 'is valid initially' do
@@ -48,40 +55,40 @@ RSpec.describe Assessment, type: :model do
     end
     
     it 'gives an error for the wrong number of strong skills' do
-      assessment.aasm_state = 'start'
       assessment.strong_skills = FactoryBot.create_list(:skill, 7)
+      assessment.aasm_state = 'start'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:strong_skills][0][:error]).to eq('You must choose 5 strong skills')
     end
     
     it 'gives an error for the wrong number of weak skills' do
-      assessment.aasm_state = 'strong_skills_added'
       assessment.weak_skills = FactoryBot.create_list(:skill, 1)
+      assessment.aasm_state = 'strong_skills_added'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:weak_skills][0][:error]).to eq('You must choose 2 weak skills')
     end
     
     it 'gives an error for the wrong number of strong attitudes' do
-      assessment.aasm_state = 'weak_skills_added'
       assessment.strong_attitudes = FactoryBot.create_list(:attitude, 5)
+      assessment.aasm_state = 'weak_skills_added'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:strong_attitudes][0][:error]).to eq('You must choose 3 strong attitudes')
     end
     
     it 'gives an error for the wrong number of weak attitudes' do
-      assessment.aasm_state = 'strong_attitudes_added'
       assessment.weak_attitudes = FactoryBot.create_list(:attitude, 5)
+      assessment.aasm_state = 'strong_attitudes_added'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:weak_attitudes][0][:error]).to eq('You must choose 1 weak attitudes')
     end
     
     it 'cares not a jot for other states' do
-      assessment.aasm_state = 'complete'
       assessment.weak_attitudes = FactoryBot.create_list(:attitude, 5)
+      assessment.aasm_state = 'complete'
       assessment.save
       expect(assessment.valid?).to eq(true)
     end

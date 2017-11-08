@@ -11,3 +11,9 @@ Feature: Back Button
     And I click the back button
     And I should be shown the "strong skills" form
     And my skills should be selected
+
+  Scenario: Editing strong skills
+    Given I have started an assessment
+    And I have used the back button to edit my strong skills
+    And I click next
+    Then I should be shown the "weak skills" form

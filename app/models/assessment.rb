@@ -64,18 +64,24 @@ class Assessment < ApplicationRecord
     end
   end
   
-  def set_answers(type, answer_type, answers)
+  def set_answers(answer_type, answer_class, answers)
+    assessment_answers.where(id: get_assessment_answers(answer_type, answer_class.pluralize)).delete_all
+    self.reload if id
     answers.each do |a|
       assessment_answers << AssessmentAnswer.new(
-        "#{answer_type}_id" => (a.try(:id) || a),
-        answer_type: type
+        "#{answer_class}_id" => (a.try(:id) || a),
+        answer_type: answer_type
       )
     end
   end
   
   def get_answers(answer_type, answer_class)
+    get_assessment_answers(answer_type, answer_class).map { |a| a.send(answer_class.singularize) }
+  end
+  
+  def get_assessment_answers(answer_type, answer_class)
     answers = answer_class == 'skills' ? skill_answers : attitude_answers
-    answers.select { |a| a.answer_type == answer_type }.map { |a| a.send(answer_class.singularize) }
+    answers = answers.select { |a| a.answer_type == answer_type }
   end
   
   def skill_answers

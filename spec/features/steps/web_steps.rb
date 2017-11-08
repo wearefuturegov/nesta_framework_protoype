@@ -2,13 +2,10 @@ module WebSteps
   step :enter_details, 'I enter my details'
   step :click_next, 'I click next'
   step :click_back, 'I click the back button'
+  step :access_edit_assessment_page, 'I access the edit assessment page'
 
   step 'I access the new assessment page' do
     visit new_assessment_path
-  end
-
-  step 'I access the edit assessment page' do
-    visit edit_assessment_path(@assessment)
   end
 
   step 'I choose :num :things' do |i, things|
@@ -56,7 +53,7 @@ module WebSteps
   step 'I have filled in my assessment' do
     visit new_assessment_path
     scroll_to(first :button, I18n.t('buttons.next')).click
-    @strong_skills = select_cards(['Building Bridges', 'Brokering', 'Intrapreneurship', 'Future Acumen', 'Tech Literacy'])
+    @strong_skills = select_strong_cards
     @weak_skills = select_cards(['Creative Facilitation', 'Political & Bureaucratic Awareness'])
     @strong_attitudes = select_cards(['Agile', 'Curious', 'Reflective'])
     @weak_attitudes = select_cards(['Empathetic'])
@@ -68,6 +65,20 @@ module WebSteps
     match_results(@weak_skills, '#weak_skills')
     match_results(@strong_attitudes, '#strong_attitudes')
     match_results(@weak_attitudes, '#weak_attitudes')
+  end
+  
+  step 'I have used the back button to edit my strong skills' do
+    access_edit_assessment_page
+    select_strong_cards
+    click_back
+  end
+  
+  def select_strong_cards
+    select_cards(['Building Bridges', 'Brokering', 'Intrapreneurship', 'Future Acumen', 'Tech Literacy'])
+  end
+  
+  def access_edit_assessment_page
+    visit edit_assessment_path(@assessment)
   end
   
   def enter_details
