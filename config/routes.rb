@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       get :share, action: :share
     end
   end
+  
+  resources :teams
 
   root 'home#index'
 end
