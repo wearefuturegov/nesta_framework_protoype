@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   end
   
   resources :teams
+  resources :users do
+    member do
+      get :start_assessment, action: :start_assessment
+    end
+  end
 
   root 'home#index'
 end
