@@ -32,5 +32,5 @@
     = user_form.country_select :location, { priority_countries: ['GB', 'FR', 'DE'], include_blank: 'Please Select' }
 
   .actions
-    = link_to t('buttons.back'), '', :class => "button full-button"
+    = f.submit t('buttons.back'), :name => 'back', :class => "button full-button", formnovalidate: true
     = f.submit t('buttons.next'), :class => "button full-button next_button"
