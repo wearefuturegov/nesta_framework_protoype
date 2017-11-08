@@ -55,15 +55,19 @@ class AssessmentsController < ApplicationController
       when 'start'
         @step = 3
         @template = 'strong_skills'
+        @skills = Skill.all
       when 'strong_skills_added'
         @step = 4
         @template = 'weak_skills'
+        @skills = Skill.where.not(id: @assessment.strong_skills.map { |s| s.skill_id } )
       when 'weak_skills_added'
         @step = 5
         @template = 'strong_attitudes'
+        @attitudes = Attitude.all
       when 'strong_attitudes_added'
         @step = 6
         @template = 'weak_attitudes'
+        @attitudes = Attitude.where.not(id: @assessment.strong_attitudes.map { |s| s.attitude_id } )
       when 'weak_attitudes_added'
         @step = 7
         @template = 'user'

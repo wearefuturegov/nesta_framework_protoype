@@ -113,42 +113,4 @@ RSpec.describe Assessment, type: :model do
     
   end
   
-  context 'available_skills' do
-    
-    let!(:skills) { FactoryBot.create_list(:skill, 5) }
-    let!(:other_skills) { FactoryBot.create_list(:skill, 5) }
-
-    it 'with no selected skills' do
-      assessment = FactoryBot.create(:assessment)
-      expect(assessment.available_skills.count).to eq(10)
-      expect(assessment.available_skills).to eq(skills + other_skills)
-    end
-    
-    it 'with selected skills' do
-      assessment = FactoryBot.create(:assessment, strong_skills: skills)
-      expect(assessment.available_skills.count).to eq(5)
-      expect(assessment.available_skills).to eq(other_skills)
-    end
-    
-  end
-  
-  context 'available_attitudes' do
-    
-    let!(:attitudes) { FactoryBot.create_list(:attitude, 3) }
-    let!(:other_attitudes) { FactoryBot.create_list(:attitude, 3) }
-
-    it 'with no selected attitudes' do
-      assessment = FactoryBot.create(:assessment)
-      expect(assessment.available_attitudes.count).to eq(6)
-      expect(assessment.available_attitudes).to eq(attitudes + other_attitudes)
-    end
-    
-    it 'with selected attitudes' do
-      assessment = FactoryBot.create(:assessment, strong_attitudes: attitudes)
-      expect(assessment.available_attitudes.count).to eq(3)
-      expect(assessment.available_attitudes).to eq(other_attitudes)
-    end
-    
-  end
-  
 end

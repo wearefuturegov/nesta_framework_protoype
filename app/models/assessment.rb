@@ -40,14 +40,6 @@ class Assessment < ApplicationRecord
   def weak_attitudes=(attitudes)
     set_answers('weak', 'attitude', attitudes)
   end
-  
-  def available_skills
-    Skill.where.not(id: skill_answers.map { |s| s.skill_id } )
-  end
-  
-  def available_attitudes
-    Attitude.where.not(id: attitude_answers.map { |s| s.attitude_id } )
-  end
 
   aasm do
     ASSESSMENT_STATES.each do |s|
