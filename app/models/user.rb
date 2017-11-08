@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_one :assessment
+  belongs_to :team, optional: true
   
   ORGANISATION_TYPES = [
     'Multi-national Government',
