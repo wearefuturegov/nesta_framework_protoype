@@ -30,6 +30,13 @@ module WebSteps
     text = ActionView::Base.full_sanitizer.sanitize I18n.t('assessments.user.about_html')
     expect(page.body).to match /text/
   end
+  
+  step 'my skills should be selected' do
+    @assessment.strong_skills.each do |s|
+      card = find('div', text: /\A#{s.name}\Z/).find(:xpath, '../..')
+      expect(card[:class]).to include('selected')
+    end
+  end
 
   step 'I select some skills' do
     @cards = select_cards(['Building Bridges', 'Brokering', 'Intrapreneurship', 'Future Acumen', 'Tech Literacy'])
