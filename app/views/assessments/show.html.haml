@@ -1,1 +1,65 @@
-COMING SOON!
+%h3= t('assessments.show.title')
+
+#strong_skills
+
+  %h4= t('assessments.show.strengths')
+
+  - @assessment.strong_skills.each do |s|
+
+    .card.accordion{ class: s.skill.area.name.parameterize.underscore }
+      .accord_btn.card_title
+        = s.skill.name
+        %span.accord_arrow=fa_icon "chevron-down"
+      .accord_content.card_description
+        = s.skill.description
+
+%hr
+
+#weak_skills
+
+  %h4= t('assessments.show.weaknesses')
+
+  - @assessment.weak_skills.each do |s|
+
+    .card.accordion{ class: s.skill.area.name.parameterize.underscore }
+      .accord_btn.card_title
+        = s.skill.name
+        %span.accord_arrow=fa_icon "chevron-down"
+      .accord_content.card_description
+        = s.skill.description
+
+%hr
+
+#strong_attitudes
+
+  %h4= t('assessments.show.attitudes')
+
+  - @assessment.strong_attitudes.each do |s|
+
+    .card.accordion{ class: s.attitude.name.parameterize.underscore }
+      .accord_btn.card_title
+        = s.attitude.name
+        %span.accord_arrow=fa_icon "chevron-down"
+      .accord_content.card_description
+        = s.attitude.description
+
+%hr
+
+#weak_attitudes
+
+  %h4= t('assessments.show.attitudes_weak')
+
+  - @assessment.weak_attitudes.each do |s|
+
+    .card.accordion{ class: s.attitude.name.parameterize.underscore }
+      .accord_btn.card_title
+        = s.attitude.name
+        %span.accord_arrow=fa_icon "chevron-down"
+      .accord_content.card_description
+        = s.attitude.description
+      
+%hr
+
+%h4= t('assessments.show.graph_title')
+
+= assessment_chart @assessment

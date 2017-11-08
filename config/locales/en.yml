@@ -66,7 +66,21 @@ en:
         position of skills and attitudes within the sector so we can best
         support it. Most fields are not mandatory but we'd be grateful
         for your participation.</p>
-
+    show:
+      title: "Your Results"
+      strengths: "Your Strongest Skills"
+      weaknesses: "Your Weakest Skills"
+      attitudes: "The attitudes that most describe you"
+      attitudes_weak: "The attitude that least describe you"
+      graph_title: "Your skills across the 3 main areas"
+      next_steps:
+        title: "Next Steps"
+        about_html: |
+          <p>Successful innovation requires a team effort, so on the next page
+          we give some guidance on how to share this tool with your colleagues
+          and how you can use our team comparison tool to collate and use
+          your results as a team.</p>
+        
   activerecord:
     errors:
       models:
