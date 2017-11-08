@@ -2,34 +2,50 @@ require 'rails_helper'
 
 RSpec.describe Assessment, type: :model do
   
+  let(:strong_skills) { FactoryBot.create_list(:skill, 5) }
+  let(:weak_skills) { FactoryBot.create_list(:skill, 2) }
+  let(:strong_attitudes) { FactoryBot.create_list(:attitude, 3) }
+  let(:weak_attitudes) { FactoryBot.create_list(:attitude, 1) }
+
   let(:assessment) {
     FactoryBot.create(:assessment,
-      strong_skills: FactoryBot.create_list(:skill, 5),
-      weak_skills: FactoryBot.create_list(:skill, 2),
-      strong_attitudes: FactoryBot.create_list(:attitude, 3),
-      weak_attitudes: FactoryBot.create_list(:attitude, 1),
+      strong_skills: strong_skills,
+      weak_skills: weak_skills,
+      strong_attitudes: strong_attitudes,
+      weak_attitudes: weak_attitudes,
       user: FactoryBot.create(:user)
     )
   }
   
-  it 'creates stong skills' do
+  it 'creates strong skills' do
     expect(assessment.strong_skills.count).to eq(5)
+    expect(assessment.strong_skills).to eq(strong_skills)
   end
   
   it 'creates weak skills' do
     expect(assessment.weak_skills.count).to eq(2)
+    expect(assessment.weak_skills).to eq(weak_skills)
   end
   
   it 'creates stong attitudes' do
     expect(assessment.strong_attitudes.count).to eq(3)
+    expect(assessment.strong_attitudes).to eq(strong_attitudes)
   end
   
   it 'creates weak attitudes' do
     expect(assessment.weak_attitudes.count).to eq(1)
+    expect(assessment.weak_attitudes).to eq(weak_attitudes)
   end
   
   it 'has a user' do
     expect(assessment.user).to be_a(User)
+  end
+  
+  it 'starts from scratch' do
+    new_skills = FactoryBot.create_list(:skill, 5)
+    assessment.strong_skills = new_skills
+    expect(assessment.strong_skills.count).to eq(5)
+    expect(assessment.strong_skills).to eq(new_skills)
   end
   
   context 'validations' do
@@ -39,40 +55,40 @@ RSpec.describe Assessment, type: :model do
     end
     
     it 'gives an error for the wrong number of strong skills' do
-      assessment.aasm_state = 'start'
       assessment.strong_skills = FactoryBot.create_list(:skill, 7)
+      assessment.aasm_state = 'start'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:strong_skills][0][:error]).to eq('You must choose 5 strong skills')
     end
     
     it 'gives an error for the wrong number of weak skills' do
-      assessment.aasm_state = 'strong_skills_added'
       assessment.weak_skills = FactoryBot.create_list(:skill, 1)
+      assessment.aasm_state = 'strong_skills_added'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:weak_skills][0][:error]).to eq('You must choose 2 weak skills')
     end
     
     it 'gives an error for the wrong number of strong attitudes' do
-      assessment.aasm_state = 'weak_skills_added'
       assessment.strong_attitudes = FactoryBot.create_list(:attitude, 5)
+      assessment.aasm_state = 'weak_skills_added'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:strong_attitudes][0][:error]).to eq('You must choose 3 strong attitudes')
     end
     
     it 'gives an error for the wrong number of weak attitudes' do
-      assessment.aasm_state = 'strong_attitudes_added'
       assessment.weak_attitudes = FactoryBot.create_list(:attitude, 5)
+      assessment.aasm_state = 'strong_attitudes_added'
       assessment.save
       assessment.valid?
       expect(assessment.errors.details[:weak_attitudes][0][:error]).to eq('You must choose 1 weak attitudes')
     end
     
     it 'cares not a jot for other states' do
-      assessment.aasm_state = 'complete'
       assessment.weak_attitudes = FactoryBot.create_list(:attitude, 5)
+      assessment.aasm_state = 'complete'
       assessment.save
       expect(assessment.valid?).to eq(true)
     end
@@ -109,44 +125,6 @@ RSpec.describe Assessment, type: :model do
       assessment.aasm_state = 'weak_attitudes_added'
       assessment.save
       expect(assessment.aasm_state).to eq('complete')
-    end
-    
-  end
-  
-  context 'available_skills' do
-    
-    let!(:skills) { FactoryBot.create_list(:skill, 5) }
-    let!(:other_skills) { FactoryBot.create_list(:skill, 5) }
-
-    it 'with no selected skills' do
-      assessment = FactoryBot.create(:assessment)
-      expect(assessment.available_skills.count).to eq(10)
-      expect(assessment.available_skills).to eq(skills + other_skills)
-    end
-    
-    it 'with selected skills' do
-      assessment = FactoryBot.create(:assessment, strong_skills: skills)
-      expect(assessment.available_skills.count).to eq(5)
-      expect(assessment.available_skills).to eq(other_skills)
-    end
-    
-  end
-  
-  context 'available_attitudes' do
-    
-    let!(:attitudes) { FactoryBot.create_list(:attitude, 3) }
-    let!(:other_attitudes) { FactoryBot.create_list(:attitude, 3) }
-
-    it 'with no selected attitudes' do
-      assessment = FactoryBot.create(:assessment)
-      expect(assessment.available_attitudes.count).to eq(6)
-      expect(assessment.available_attitudes).to eq(attitudes + other_attitudes)
-    end
-    
-    it 'with selected attitudes' do
-      assessment = FactoryBot.create(:assessment, strong_attitudes: attitudes)
-      expect(assessment.available_attitudes.count).to eq(3)
-      expect(assessment.available_attitudes).to eq(other_attitudes)
     end
     
   end

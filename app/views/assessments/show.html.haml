@@ -6,12 +6,12 @@
 
   - @assessment.strong_skills.each do |s|
 
-    .card.accordion{ class: s.skill.area.name.parameterize.underscore }
+    .card.accordion{ class: s.area.name.parameterize.underscore }
       .accord_btn.card_title
-        = s.skill.name
+        = s.name
         %span.accord_arrow=fa_icon "chevron-down"
       .accord_content.card_description
-        = s.skill.description
+        = s.description
 
 %hr
 
@@ -21,12 +21,12 @@
 
   - @assessment.weak_skills.each do |s|
 
-    .card.accordion{ class: s.skill.area.name.parameterize.underscore }
+    .card.accordion{ class: s.area.name.parameterize.underscore }
       .accord_btn.card_title
-        = s.skill.name
+        = s.name
         %span.accord_arrow=fa_icon "chevron-down"
       .accord_content.card_description
-        = s.skill.description
+        = s.description
 
 %hr
 
@@ -36,12 +36,12 @@
 
   - @assessment.strong_attitudes.each do |s|
 
-    .card.accordion{ class: s.attitude.name.parameterize.underscore }
+    .card.accordion{ class: s.name.parameterize.underscore }
       .accord_btn.card_title
-        = s.attitude.name
+        = s.name
         %span.accord_arrow=fa_icon "chevron-down"
       .accord_content.card_description
-        = s.attitude.description
+        = s.description
 
 %hr
 
@@ -51,12 +51,12 @@
 
   - @assessment.weak_attitudes.each do |s|
 
-    .card.accordion{ class: s.attitude.name.parameterize.underscore }
+    .card.accordion{ class: s.name.parameterize.underscore }
       .accord_btn.card_title
-        = s.attitude.name
+        = s.name
         %span.accord_arrow=fa_icon "chevron-down"
       .accord_content.card_description
-        = s.attitude.description
+        = s.description
       
 %hr
 

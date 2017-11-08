@@ -17,9 +17,13 @@ class AssessmentsController < ApplicationController
   end
   
   def update
-    # Update the assessment
-    unless @assessment.update_attributes(assessment_params)
-      flash[:error] = @assessment.errors.full_messages.to_sentence
+    if params[:back]
+      @assessment.go_back
+    else
+      # Update the assessment
+      unless @assessment.update_attributes(assessment_params)
+        flash[:error] = @assessment.errors.full_messages.to_sentence
+      end
     end
     # Redirect to edit or show
     if @assessment.complete?
@@ -51,15 +55,19 @@ class AssessmentsController < ApplicationController
       when 'start'
         @step = 3
         @template = 'strong_skills'
+        @skills = Skill.all
       when 'strong_skills_added'
         @step = 4
         @template = 'weak_skills'
+        @skills = Skill.where.not(id: @assessment.strong_skills)
       when 'weak_skills_added'
         @step = 5
         @template = 'strong_attitudes'
+        @attitudes = Attitude.all
       when 'strong_attitudes_added'
         @step = 6
         @template = 'weak_attitudes'
+        @attitudes = Attitude.where.not(id: @assessment.strong_attitudes)
       when 'weak_attitudes_added'
         @step = 7
         @template = 'user'

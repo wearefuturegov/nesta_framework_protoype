@@ -141,6 +141,14 @@ RSpec.describe AssessmentsController, type: :controller do
       expect(assessment.weak_attitudes.count).to eq(1)
     end
     
+    it 'goes back' do
+      assessment.update_column(:aasm_state, 'strong_attitudes_added')
+      params[:back] = 1
+      put :update, params: params
+      assessment.reload
+      expect(assessment.aasm_state).to eq('weak_skills_added')
+    end
+    
   end
   
   

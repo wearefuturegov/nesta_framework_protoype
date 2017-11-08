@@ -7,8 +7,25 @@ $.fn.cardSort = function(options) {
     type: 'cards_sort_1',
     type_text: "skills"
   }, options );
-
-  var cardsLeft = settings.noToChoose;
+  
+  var selectedCards = $('.card_sort_single.selected').length;
+  var cardsLeft = selectedCards == 0 ? settings.noToChoose : (settings.noToChoose - selectedCards);
+  
+  var hideShowFooter = () => {
+    if (cardsLeft == 0) {
+      $('.card_sort_footer .actions').slideDown(300, function() {
+        $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+      });
+      $('.next_button').removeClass('disabled');
+    } else {
+      $('.card_sort_footer .actions').slideUp(300, function() {
+        $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+      });
+      $('.next_button').addClass('disabled');
+    }
+  }
+  
+  hideShowFooter();
 
   $('.card_sort_footer .num_left').html(cardsLeft);
   $('.card_sort_footer .card_type').html(settings.type_text);
@@ -28,18 +45,7 @@ $.fn.cardSort = function(options) {
     }
     $('.card_sort_footer .num_left').html(cardsLeft);
 
-    if (cardsLeft == 0) {
-      $('.card_sort_footer .actions').slideDown(300, function() {
-        $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
-      });
-      $('.next_button').removeClass('disabled');
-    } else {
-      $('.card_sort_footer .actions').slideUp(300, function() {
-        $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
-      });
-      $('.next_button').addClass('disabled');
-    }
-
+    hideShowFooter();
     return false;
   });
 

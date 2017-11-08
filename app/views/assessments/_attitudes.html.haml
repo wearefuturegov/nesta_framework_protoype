@@ -1,2 +1,3 @@
-- @assessment.available_attitudes.each_with_index do |attitude, i|
-  = render partial: 'card', locals: { obj: attitude, i: i, class_name: 'attitude', type: type, f: f }
+- @attitudes.each_with_index do |attitude, i|
+  - selected = @assessment.send(type).include?(attitude) ? 'selected' : ''
+  = render partial: 'card', locals: { obj: attitude, i: i, class_name: 'attitude', type: type, f: f, selected: selected }
