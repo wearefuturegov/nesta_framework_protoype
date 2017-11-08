@@ -75,7 +75,7 @@ class Assessment < ApplicationRecord
   
   def get_answers(answer_type, answer_class)
     answers = answer_class == 'skills' ? skill_answers : attitude_answers
-    answers.select { |a| a.answer_type == answer_type }
+    answers.select { |a| a.answer_type == answer_type }.map { |a| a.send(answer_class.singularize) }
   end
   
   def skill_answers

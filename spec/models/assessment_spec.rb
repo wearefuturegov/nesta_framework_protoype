@@ -2,30 +2,39 @@ require 'rails_helper'
 
 RSpec.describe Assessment, type: :model do
   
+  let(:strong_skills) { FactoryBot.create_list(:skill, 5) }
+  let(:weak_skills) { FactoryBot.create_list(:skill, 2) }
+  let(:strong_attitudes) { FactoryBot.create_list(:attitude, 3) }
+  let(:weak_attitudes) { FactoryBot.create_list(:attitude, 1) }
+
   let(:assessment) {
     FactoryBot.create(:assessment,
-      strong_skills: FactoryBot.create_list(:skill, 5),
-      weak_skills: FactoryBot.create_list(:skill, 2),
-      strong_attitudes: FactoryBot.create_list(:attitude, 3),
-      weak_attitudes: FactoryBot.create_list(:attitude, 1),
+      strong_skills: strong_skills,
+      weak_skills: weak_skills,
+      strong_attitudes: strong_attitudes,
+      weak_attitudes: weak_attitudes,
       user: FactoryBot.create(:user)
     )
   }
   
-  it 'creates stong skills' do
+  it 'creates strong skills' do
     expect(assessment.strong_skills.count).to eq(5)
+    expect(assessment.strong_skills).to eq(strong_skills)
   end
   
   it 'creates weak skills' do
     expect(assessment.weak_skills.count).to eq(2)
+    expect(assessment.weak_skills).to eq(weak_skills)
   end
   
   it 'creates stong attitudes' do
     expect(assessment.strong_attitudes.count).to eq(3)
+    expect(assessment.strong_attitudes).to eq(strong_attitudes)
   end
   
   it 'creates weak attitudes' do
     expect(assessment.weak_attitudes.count).to eq(1)
+    expect(assessment.weak_attitudes).to eq(weak_attitudes)
   end
   
   it 'has a user' do

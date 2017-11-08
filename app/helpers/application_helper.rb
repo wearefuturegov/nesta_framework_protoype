@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   
   def assessment_data(assessment)
-    assessment.strong_skills.inject(Hash.new(0)) { |h, e| h[e.skill.area.name] += 1 ; h }
+    assessment.strong_skills.inject(Hash.new(0)) { |h, e| h[e.area.name] += 1 ; h }
   end
 
 end
