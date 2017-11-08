@@ -80,6 +80,16 @@ en:
           we give some guidance on how to share this tool with your colleagues
           and how you can use our team comparison tool to collate and use
           your results as a team.</p>
+    share:
+      title: "Share your results with your team"
+      about_html: |
+        <p>Our experience has shown there is great value to be had in discussing
+        and mapping everyone's skills and attitudes within teams together. It allows
+        you to check assumptions that you've made in identifying your own strengths
+        and weaknesses and start to build a picture of the overall skills and
+        attitudes that exist in your team. This will also identify any gaps that
+        you may need to address or mitigate.</p>
+      subtitle: "Share your results"
         
   activerecord:
     errors:
