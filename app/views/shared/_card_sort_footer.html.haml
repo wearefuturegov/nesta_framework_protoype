@@ -8,5 +8,8 @@
     = f.submit t('buttons.next'), :class => "button full-button fin_card_sort"
 
 .actions
-  = f.submit t('buttons.back'), :name => 'back', :class => "button full-button"
+  - if @assessment.aasm_state == 'start'
+    = link_to t('buttons.back'), new_assessment_path, :class => "button full-button"
+  - else
+    = f.submit t('buttons.back'), :name => 'back', :class => "button full-button"
   = f.submit t('buttons.next'), :class => "button full-button disabled next_button fin_card_sort"
