@@ -81,6 +81,7 @@ en:
           we give some guidance on how to share this tool with your colleagues
           and how you can use our team comparison tool to collate and use
           your results as a team.</p>
+        share: "Share your results"
     share:
       title: "Share your results with your team"
       about_html: |

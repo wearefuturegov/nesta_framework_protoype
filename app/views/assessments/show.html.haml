@@ -63,3 +63,11 @@
 %h4= t('assessments.show.graph_title')
 
 = assessment_chart @assessment
+
+%hr
+
+%h4= t('assessments.show.next_steps.title')
+
+= t('assessments.show.next_steps.about_html')
+
+%p= link_to t('assessments.show.next_steps.share'), share_assessment_path(@assessment)
