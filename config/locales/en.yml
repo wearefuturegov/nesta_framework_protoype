@@ -107,7 +107,15 @@ en:
               count: You must choose %{count} strong attitudes
             weak_attitudes:
               count: You must choose %{count} weak attitudes
-
+              
+  user_mailer:
+    assessment_invite:
+      subject: "Innovation and Skills Tool - You're invited!"
+      intro_html: |
+        <p>Hi,</p>
+        <p>I'm inviting you to fill out your skills and innovation assessment.</p>
+      link_text: "Check it out here"
+    
   main_areas:
     titles:
       behaviours:
