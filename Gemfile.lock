@@ -78,6 +78,7 @@ GEM
     capybara-selenium (0.0.6)
       capybara
       selenium-webdriver
+    chartkick (2.2.5)
     childprocess (0.8.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.1.0)
@@ -314,6 +315,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   capybara-selenium
+  chartkick
   chromedriver-helper
   country_select
   coveralls
