@@ -3,7 +3,9 @@ module WebSteps
   step :click_next, 'I click next'
   step :click_back, 'I click the back button'
   step :access_edit_assessment_page, 'I access the edit assessment page'
-
+  step :complete_assessment, 'I fill out the assessment'
+  step :create_assessment_from_user_link, 'I create an assessment from the user link'
+  
   step 'I access the new assessment page' do
     visit new_assessment_path
   end
@@ -53,10 +55,7 @@ module WebSteps
   step 'I have filled in my assessment' do
     visit new_assessment_path
     scroll_to(first :button, I18n.t('buttons.next')).click
-    @strong_skills = select_strong_cards
-    @weak_skills = select_cards(['Creative Facilitation', 'Political & Bureaucratic Awareness'])
-    @strong_attitudes = select_cards(['Agile', 'Curious', 'Reflective'])
-    @weak_attitudes = select_cards(['Empathetic'])
+    complete_assessment
     enter_details
   end
   
@@ -86,6 +85,27 @@ module WebSteps
     end
     click_on I18n.t('buttons.submit')
   end
+    
+  step 'I should see my email address on the user form' do
+    expect(find('#assessment_user_attributes_email')[:value]).to eq(@user.email)
+  end
+  
+  step 'I have filled out an assessment from the user link' do
+    create_assessment_from_user_link
+    complete_assessment
+  end
+  
+  def create_assessment_from_user_link
+    @user = FactoryBot.create(:user, :without_details)
+    visit start_assessment_user_path(@user)
+  end
+  
+  def complete_assessment
+    @strong_skills = select_strong_cards
+    @weak_skills = select_cards(['Creative Facilitation', 'Political & Bureaucratic Awareness'])
+    @strong_attitudes = select_cards(['Agile', 'Curious', 'Reflective'])
+    @weak_attitudes = select_cards(['Empathetic'])
+  end
   
   def select_strong_cards
     select_cards(['Building Bridges', 'Brokering', 'Intrapreneurship', 'Future Acumen', 'Tech Literacy'])
@@ -97,11 +117,11 @@ module WebSteps
   
   def enter_details
     @name = 'Me'
-    @email = 'me@example.com'
+    @email = @user.try(:email) || 'me@example.com'
     @organisation_type ='Federal Government'
     @position = 'Management'
     @location = 'GB'
-      
+          
     fill_in 'assessment_user_attributes_name', with: @name
     fill_in 'assessment_user_attributes_email', with: @email
       
