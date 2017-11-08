@@ -1,6 +1,6 @@
 class AssessmentsController < ApplicationController
   before_action :get_areas
-  prepend_before_action :get_assessment, only: [:edit, :show, :update]
+  prepend_before_action :get_assessment, only: [:edit, :show, :update, :share]
   before_action :set_template, only: [:edit, :update]
   
   def index
@@ -38,6 +38,9 @@ class AssessmentsController < ApplicationController
   end
   
   def show
+  end
+  
+  def share
   end
   
   private

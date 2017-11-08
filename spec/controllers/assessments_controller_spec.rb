@@ -151,5 +151,21 @@ RSpec.describe AssessmentsController, type: :controller do
     
   end
   
+  describe 'GET share' do
+    
+    let(:assessment) { FactoryBot.create(:assessment) }
+    let(:subject) { get :share, params: { id: assessment } }
+    
+    it 'renders the index template' do
+      expect(subject).to render_template(:share)
+    end
+    
+    it 'gets the assessment' do
+      subject
+      expect(assigns(:assessment)).to eq(assessment)
+    end
+    
+  end
+  
   
 end
