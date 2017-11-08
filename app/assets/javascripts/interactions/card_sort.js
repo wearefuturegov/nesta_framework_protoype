@@ -11,7 +11,7 @@ $.fn.cardSort = function(options) {
   var selectedCards = $('.card_sort_single.selected').length;
   var cardsLeft = selectedCards == 0 ? settings.noToChoose : (settings.noToChoose - selectedCards);
   
-  var hideShowFooter = () => {
+  var hideShowFooter = function() {
     if (cardsLeft == 0) {
       $('.card_sort_footer .actions').slideDown(300, function() {
         $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
