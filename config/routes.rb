@@ -18,7 +18,10 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :teams
+  resources :teams do
+    resources :assessments, only: :index
+  end
+  
   resources :users do
     member do
       get :start_assessment, action: :start_assessment

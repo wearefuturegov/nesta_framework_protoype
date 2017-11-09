@@ -18,6 +18,38 @@ RSpec.describe AssessmentsController, type: :controller do
       get :index
       expect(assigns(:step)).to eq(1)
     end
+    
+    context 'with a team id' do
+      let(:users) {
+        [
+          FactoryBot.create(:user),
+          FactoryBot.create(:user),
+          FactoryBot.create(:user),
+          FactoryBot.create(:user, :with_assessment),
+          FactoryBot.create(:user, :with_assessment)
+        ]
+      }
+      let(:team) {
+          FactoryBot.create(:team, users: users)
+      }
+      
+      let(:subject) { get :index, params: { team_id: team.id } }
+      
+      it 'gets the team' do
+        subject
+        expect(assigns(:team)).to eq(team)
+      end
+      
+      it 'gets the assessments' do
+        subject
+        expect(assigns(:assessments).count).to eq(2)
+      end
+      
+      it 'renders the correct template' do
+        expect(subject).to render_template('team/assessments')
+      end
+      
+    end
   end
   
   describe 'GET new' do

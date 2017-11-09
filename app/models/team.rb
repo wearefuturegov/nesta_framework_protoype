@@ -1,5 +1,6 @@
 class Team < ApplicationRecord
   has_many :users
+  has_many :assessments, through: :users
   
   accepts_nested_attributes_for :users
   after_create :email_users

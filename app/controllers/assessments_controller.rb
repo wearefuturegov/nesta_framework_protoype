@@ -4,7 +4,13 @@ class AssessmentsController < ApplicationController
   before_action :set_template, only: [:edit, :update]
   
   def index
-    @step = 1
+    if params[:team_id]
+      @team = Team.find(params[:team_id])
+      @assessments = @team.assessments
+      render 'team/assessments'
+    else
+      @step = 1
+    end
   end
   
   def new
