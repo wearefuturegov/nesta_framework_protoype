@@ -5,6 +5,7 @@ module WebSteps
   step :access_edit_assessment_page, 'I access the edit assessment page'
   step :complete_assessment, 'I fill out the assessment'
   step :create_assessment_from_user_link, 'I create an assessment from the user link'
+  step :should_see_my_results, 'I should see my results'
   
   step 'I access the new assessment page' do
     visit new_assessment_path
@@ -59,13 +60,6 @@ module WebSteps
     enter_details
   end
   
-  step 'I should see my results' do
-    match_results(@strong_skills, '#strong_skills')
-    match_results(@weak_skills, '#weak_skills')
-    match_results(@strong_attitudes, '#strong_attitudes')
-    match_results(@weak_attitudes, '#weak_attitudes')
-  end
-  
   step 'I have used the back button to edit my strong skills' do
     access_edit_assessment_page
     select_strong_cards
@@ -93,6 +87,30 @@ module WebSteps
   step 'I have filled out an assessment from the user link' do
     create_assessment_from_user_link
     complete_assessment
+  end
+  
+  step 'I access the team summary page' do
+    visit team_assessments_path(@team)
+  end
+  
+  step 'I should see all my team\'s assessment results' do
+    @team.users.each_with_index do |user, i|
+      div = all('.assessment')[i]
+      @strong_skills = user.assessment.strong_skills.map { |s| s.name }
+      @weak_skills = user.assessment.weak_skills.map { |s| s.name }
+      @strong_attitudes = user.assessment.strong_attitudes.map { |a| a.name }
+      @weak_attitudes = user.assessment.weak_attitudes.map { |a| a.name }
+      should_see_my_results(div)
+      expect(div.text).to match /#{user.name}/
+    end
+  end
+  
+  def should_see_my_results(container = nil)
+    container ||= page
+    match_results(@strong_skills, container, '#strong_skills')
+    match_results(@weak_skills, container, '#weak_skills')
+    match_results(@strong_attitudes, container, '#strong_attitudes')
+    match_results(@weak_attitudes, container, '#weak_attitudes')
   end
   
   def create_assessment_from_user_link
@@ -133,9 +151,9 @@ module WebSteps
     click_next
   end
   
-  def match_results(skills_or_attitudes, selector)
+  def match_results(skills_or_attitudes, container, selector)
     skills_or_attitudes.each do |s|
-      expect(page.find(selector).text).to match /#{s}/
+      expect(container.find(selector).text).to match /#{s}/
     end
   end
 

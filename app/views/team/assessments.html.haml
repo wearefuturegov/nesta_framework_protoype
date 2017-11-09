@@ -1,0 +1,9 @@
+%h3= t('assessments.index.team_results.title')
+
+- @assessments.each do |assessment|
+  
+  .assessment
+  
+    %h4= assessment.user.name || assessment.user.email
+    
+    = render partial: 'results', locals: { assessment: assessment }

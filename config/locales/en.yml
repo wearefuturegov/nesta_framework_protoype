@@ -24,6 +24,8 @@ en:
         Our research has shown that successful experimentation and problem
         solving results in greater, sustainable impact when teams can
         demonstrate skills and behaviours in the following 3 areas...
+      team_results:
+        title: Team summary
     new:
       about_html: |
         <p>Each of the 3 areas relates to a specific set of skills,
