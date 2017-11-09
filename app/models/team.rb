@@ -2,6 +2,7 @@ class Team < ApplicationRecord
   has_many :users
   
   accepts_nested_attributes_for :users
+  after_create :email_users
   
   def users_attributes=(users_attrs)
     users = users_attrs.values
@@ -16,4 +17,13 @@ class Team < ApplicationRecord
       end
     end
   end
+  
+  private
+  
+    def email_users
+      users.where(assessment_id: nil).each do |user|
+        SendEmail.enqueue('UserMailer', :assessment_invite, user.id)
+      end
+    end
+    
 end

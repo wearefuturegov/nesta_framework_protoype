@@ -12,5 +12,9 @@ FactoryBot.define do
       position nil
       location nil
     end
+    
+    trait :with_assessment do
+      assessment FactoryBot.create(:assessment)
+    end
   end
 end
