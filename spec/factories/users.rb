@@ -14,7 +14,7 @@ FactoryBot.define do
     end
     
     trait :with_assessment do
-      assessment FactoryBot.create(:assessment)
+      assessment { FactoryBot.create(:assessment) }
     end
   end
 end
