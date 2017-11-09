@@ -1,62 +1,6 @@
 %h3= t('assessments.show.title')
 
-#strong_skills
-
-  %h4= t('assessments.show.strengths')
-
-  - @assessment.strong_skills.each do |s|
-
-    .card.accordion{ class: s.area.name.parameterize.underscore }
-      .accord_btn.card_title
-        = s.name
-        %span.accord_arrow=fa_icon "chevron-down"
-      .accord_content.card_description
-        = s.description
-
-%hr
-
-#weak_skills
-
-  %h4= t('assessments.show.weaknesses')
-
-  - @assessment.weak_skills.each do |s|
-
-    .card.accordion{ class: s.area.name.parameterize.underscore }
-      .accord_btn.card_title
-        = s.name
-        %span.accord_arrow=fa_icon "chevron-down"
-      .accord_content.card_description
-        = s.description
-
-%hr
-
-#strong_attitudes
-
-  %h4= t('assessments.show.attitudes')
-
-  - @assessment.strong_attitudes.each do |s|
-
-    .card.accordion{ class: s.name.parameterize.underscore }
-      .accord_btn.card_title
-        = s.name
-        %span.accord_arrow=fa_icon "chevron-down"
-      .accord_content.card_description
-        = s.description
-
-%hr
-
-#weak_attitudes
-
-  %h4= t('assessments.show.attitudes_weak')
-
-  - @assessment.weak_attitudes.each do |s|
-
-    .card.accordion{ class: s.name.parameterize.underscore }
-      .accord_btn.card_title
-        = s.name
-        %span.accord_arrow=fa_icon "chevron-down"
-      .accord_content.card_description
-        = s.description
+= render partial: 'results', locals: { assessment: @assessment }
       
 %hr
 

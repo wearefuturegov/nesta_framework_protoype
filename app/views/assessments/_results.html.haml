@@ -1,0 +1,29 @@
+#strong_skills
+
+  %h4= t('assessments.show.strengths')
+  
+  = render partial: 'skills/skills', locals: { skills: assessment.strong_skills }
+
+%hr
+
+#weak_skills
+
+  %h4= t('assessments.show.weaknesses')
+
+  = render partial: 'skills/skills', locals: { skills: assessment.weak_skills }
+
+%hr
+
+#strong_attitudes
+
+  %h4= t('assessments.show.attitudes')
+
+  = render partial: 'attitudes/attitudes', locals: { attitudes: assessment.strong_attitudes }
+
+%hr
+
+#weak_attitudes
+
+  %h4= t('assessments.show.attitudes_weak')
+
+  = render partial: 'attitudes/attitudes', locals: { attitudes: assessment.weak_attitudes }
