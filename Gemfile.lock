@@ -102,6 +102,7 @@ GEM
       term-ansicolor
       thor
     crass (1.0.2)
+    database_cleaner (1.6.1)
     diff-lcs (1.3)
     docile (1.1.5)
     domain_name (0.5.20170404)
@@ -322,6 +323,7 @@ DEPENDENCIES
   cocoon
   country_select
   coveralls
+  database_cleaner
   email_validator
   factory_bot_rails
   geff!

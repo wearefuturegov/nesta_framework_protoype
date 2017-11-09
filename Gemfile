@@ -50,6 +50,7 @@ group :development, :test do
   gem 'turnip'
   gem 'capybara-selenium'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
 end
 
 group :development do
