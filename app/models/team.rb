@@ -1,6 +1,5 @@
 class Team < ApplicationRecord
   has_many :users
-  has_many :assessments, through: :users
   
   accepts_nested_attributes_for :users
   after_create :email_users
@@ -19,10 +18,22 @@ class Team < ApplicationRecord
     end
   end
   
+  def assessments
+    users_and_assessments.map { |u| u.assessment }.compact
+  end
+  
+  def users_without_assessments
+    users_and_assessments.where(assessments: { id: nil }).uniq
+  end
+  
+  def users_and_assessments
+    users.left_outer_joins(:assessment)
+  end
+  
   private
   
     def email_users
-      users.where(assessment_id: nil).each do |user|
+      users_without_assessments.each do |user|
         SendEmail.enqueue('UserMailer', :assessment_invite, user.id)
       end
     end
