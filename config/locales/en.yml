@@ -3,6 +3,7 @@ en:
     start: "Get Started"
     next: "Next"
     back: "Back"
+    submit: "Submit"
 
   home:
     title: "Nesta Skills & Innovation Tool"
@@ -23,6 +24,8 @@ en:
         Our research has shown that successful experimentation and problem
         solving results in greater, sustainable impact when teams can
         demonstrate skills and behaviours in the following 3 areas...
+      team_results:
+        title: Team summary
     new:
       about_html: |
         <p>Each of the 3 areas relates to a specific set of skills,
@@ -80,7 +83,24 @@ en:
           we give some guidance on how to share this tool with your colleagues
           and how you can use our team comparison tool to collate and use
           your results as a team.</p>
-        
+        share: "Share your results"
+      show_team:
+        title: "See how you compare with your team"
+        about_html: |
+          <p>Next, why not see how you compare with the rest of your team?</p>
+        link: "See my team's results"
+    share:
+      title: "Share your results with your team"
+      about_html: |
+        <p>Our experience has shown there is great value to be had in discussing
+        and mapping everyone's skills and attitudes within teams together. It allows
+        you to check assumptions that you've made in identifying your own strengths
+        and weaknesses and start to build a picture of the overall skills and
+        attitudes that exist in your team. This will also identify any gaps that
+        you may need to address or mitigate.</p>
+      subtitle: "Share your results"
+      add_team_member: "Add team member"
+      
   activerecord:
     errors:
       models:
@@ -94,7 +114,15 @@ en:
               count: You must choose %{count} strong attitudes
             weak_attitudes:
               count: You must choose %{count} weak attitudes
-
+              
+  user_mailer:
+    assessment_invite:
+      subject: "Innovation and Skills Tool - You're invited!"
+      intro_html: |
+        <p>Hi,</p>
+        <p>I'm inviting you to fill out your skills and innovation assessment.</p>
+      link_text: "Check it out here"
+    
   main_areas:
     titles:
       behaviours:

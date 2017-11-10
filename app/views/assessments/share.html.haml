@@ -1,0 +1,16 @@
+%h3= t('assessments.share.title')
+
+= t('assessments.share.about_html')
+
+%h4= t('assessments.share.subtitle')
+
+
+= form_for(@team) do |f|
+  
+  = f.fields_for :users do |user_fields|
+    .hidden
+      = render 'user_fields', f: user_fields
+  .links
+    = link_to_add_association t('assessments.share.add_team_member'), f, :users
+  
+  = f.submit t('buttons.submit')

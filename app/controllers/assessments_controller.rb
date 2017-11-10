@@ -1,10 +1,16 @@
 class AssessmentsController < ApplicationController
   before_action :get_areas
-  prepend_before_action :get_assessment, only: [:edit, :show, :update]
+  prepend_before_action :get_assessment, only: [:edit, :show, :update, :share]
   before_action :set_template, only: [:edit, :update]
   
   def index
-    @step = 1
+    if params[:team_id]
+      @team = Team.find(params[:team_id])
+      @assessments = @team.assessments
+      render 'team/assessments'
+    else
+      @step = 1
+    end
   end
   
   def new
@@ -38,6 +44,12 @@ class AssessmentsController < ApplicationController
   end
   
   def show
+  end
+  
+  def share
+    @team = Team.new(users: [
+      @assessment.user
+    ])
   end
   
   private
@@ -81,7 +93,7 @@ class AssessmentsController < ApplicationController
         strong_attitudes: [],
         weak_attitudes: [],
         user_attributes: [
-          :name, :email, :organisation_type, :position, :location
+          :id, :name, :email, :organisation_type, :position, :location
         ]
       )
     end

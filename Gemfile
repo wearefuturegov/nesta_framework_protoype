@@ -33,6 +33,8 @@ gem 'aasm'
 gem 'country_select'
 gem 'email_validator'
 gem 'chartkick'
+gem 'cocoon'
+gem 'que'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -48,6 +50,7 @@ group :development, :test do
   gem 'turnip'
   gem 'capybara-selenium'
   gem 'chromedriver-helper'
+  gem 'database_cleaner'
 end
 
 group :development do
