@@ -25,8 +25,8 @@ RSpec.describe TeamsController, type: :controller do
   
   describe 'POST create' do
     
-    it 'creates a team with users' do
-      user = FactoryBot.create(:user)
+    let(:user) { FactoryBot.create(:user) }
+    let(:subject) {
       post :create, params: {
         team: {
           users_attributes: {
@@ -43,7 +43,10 @@ RSpec.describe TeamsController, type: :controller do
           }
         }
       }
-            
+    }
+    
+    it 'creates a team with users' do
+      subject
       expect(Team.count).to eq(1)
       team = Team.last
       expect(team.users.count).to eq(3)
@@ -52,6 +55,11 @@ RSpec.describe TeamsController, type: :controller do
       expect(team.users[2].email).to eq(user.email)
       
       expect(User.count).to eq(3)
+    end
+    
+    it 'redirects to the team page' do
+      expect(subject).to redirect_to(team_assessments_url(Team.last))
+      expect(flash[:notice]).to eq(I18n.t('teams.create.notice'))
     end
     
   end

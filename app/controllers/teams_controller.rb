@@ -8,7 +8,8 @@ class TeamsController < ApplicationController
   end
   
   def create
-    Team.create(team_params)
+    team = Team.create(team_params)
+    redirect_to team_assessments_url(team), flash: { notice: I18n.t('teams.create.notice') }
   end
   
   private

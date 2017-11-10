@@ -102,6 +102,10 @@ en:
         you may need to address or mitigate.</p>
       subtitle: "Share your results"
       add_team_member: "Add team member"
+    create:
+      notice: |
+        Your team members have been emailed with the link to start their assessments.
+        Once they've all filled them out, their results will appear on this page.
       
   activerecord:
     errors:
