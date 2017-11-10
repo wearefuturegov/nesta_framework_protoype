@@ -7,3 +7,7 @@
     %h4= assessment.user.name || assessment.user.email
     
     = render partial: 'results', locals: { assessment: assessment }
+
+%h4= t('assessments.index.team_results.skills_by_area')
+
+= pie_chart @team.skills_by_area, library: { chart: { backgroundColor: "#F4F3F4" } }
