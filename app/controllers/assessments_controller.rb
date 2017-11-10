@@ -93,7 +93,7 @@ class AssessmentsController < ApplicationController
         strong_attitudes: [],
         weak_attitudes: [],
         user_attributes: [
-          :name, :email, :organisation_type, :position, :location
+          :id, :name, :email, :organisation_type, :position, :location
         ]
       )
     end
