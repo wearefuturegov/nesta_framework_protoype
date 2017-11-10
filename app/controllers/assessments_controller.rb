@@ -7,7 +7,7 @@ class AssessmentsController < ApplicationController
     if params[:team_id]
       @team = Team.find(params[:team_id])
       @assessments = @team.assessments
-      render 'team/assessments'
+      render 'teams/assessments'
     else
       @step = 1
     end
@@ -44,12 +44,6 @@ class AssessmentsController < ApplicationController
   end
   
   def show
-  end
-  
-  def share
-    @team = Team.new(users: [
-      @assessment.user
-    ])
   end
   
   private

@@ -89,7 +89,9 @@ en:
         about_html: |
           <p>Next, why not see how you compare with the rest of your team?</p>
         link: "See my team's results"
-    share:
+        
+  teams:
+    new:
       title: "Share your results with your team"
       about_html: |
         <p>Our experience has shown there is great value to be had in discussing

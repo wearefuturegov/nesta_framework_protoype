@@ -2,6 +2,27 @@ require 'rails_helper'
 
 RSpec.describe TeamsController, type: :controller do
   
+  describe 'GET new' do
+    
+    let(:assessment) { FactoryBot.create(:assessment, user: FactoryBot.create(:user)) }
+    let(:subject) { get :new, params: { assessment_id: assessment } }
+    
+    it 'renders the new template' do
+      expect(subject).to render_template(:new)
+    end
+    
+    it 'gets the assessment' do
+      subject
+      expect(assigns(:assessment)).to eq(assessment)
+    end
+    
+    it 'initializes a team' do
+      subject
+      expect(assigns(:team)).to be_a(Team)
+    end
+    
+  end
+  
   describe 'POST create' do
     
     it 'creates a team with users' do
