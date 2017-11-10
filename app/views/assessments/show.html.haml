@@ -6,7 +6,7 @@
 
 %h4= t('assessments.show.graph_title')
 
-= assessment_chart @assessment
+= pie_chart @assessment.skills_by_area, library: { chart: { backgroundColor: "#F4F3F4" } }
 
 %hr
 
