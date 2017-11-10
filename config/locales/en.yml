@@ -84,6 +84,11 @@ en:
           and how you can use our team comparison tool to collate and use
           your results as a team.</p>
         share: "Share your results"
+      show_team:
+        title: "See how you compare with your team"
+        about_html: |
+          <p>Next, why not see how you compare with the rest of your team?</p>
+        link: "See my team's results"
     share:
       title: "Share your results with your team"
       about_html: |

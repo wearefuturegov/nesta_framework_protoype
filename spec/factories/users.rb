@@ -16,5 +16,9 @@ FactoryBot.define do
     trait :with_assessment do
       assessment { FactoryBot.create(:assessment, :valid) }
     end
+    
+    trait :with_team do
+      team { FactoryBot.create(:team) }
+    end
   end
 end

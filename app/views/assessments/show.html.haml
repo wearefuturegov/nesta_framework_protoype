@@ -10,8 +10,18 @@
 
 %hr
 
-%h4= t('assessments.show.next_steps.title')
+- if @assessment.user.team.present?
+  
+  %h4= t('assessments.show.show_team.title')
 
-= t('assessments.show.next_steps.about_html')
+  = t('assessments.show.show_team.about_html')
 
-%p= link_to t('assessments.show.next_steps.share'), share_assessment_path(@assessment)
+  %p= link_to t('assessments.show.show_team.link'), team_assessments_path(@assessment.user.team)
+
+- else
+
+  %h4= t('assessments.show.next_steps.title')
+
+  = t('assessments.show.next_steps.about_html')
+
+  %p= link_to t('assessments.show.next_steps.share'), share_assessment_path(@assessment)

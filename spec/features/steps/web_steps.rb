@@ -105,6 +105,11 @@ module WebSteps
     end
   end
   
+  step 'I should see a link to my team\'s comparison page' do
+    expect(page.body).to match(/#{I18n.t('assessments.show.show_team.link')}/)
+    expect(page.body).to match(/#{team_assessments_path(@user.team)}/)
+  end
+  
   def should_see_my_results(container = nil)
     container ||= page
     match_results(@strong_skills, container, '#strong_skills')
@@ -114,7 +119,7 @@ module WebSteps
   end
   
   def create_assessment_from_user_link
-    @user = FactoryBot.create(:user, :without_details)
+    @user = FactoryBot.create(:user, :without_details, :with_team)
     visit start_assessment_user_path(@user)
   end
   
