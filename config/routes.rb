@@ -13,9 +13,7 @@ Rails.application.routes.draw do
     collection do
       get :areas, action: :areas
     end
-    member do
-      get :share, action: :share
-    end
+    resources :teams, only: [:new, :create]
   end
   
   resources :teams do

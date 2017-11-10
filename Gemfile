@@ -51,6 +51,8 @@ group :development, :test do
   gem 'capybara-selenium'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
+  gem 'action_mailer_cache_delivery'
+  gem 'email_spec'
 end
 
 group :development do

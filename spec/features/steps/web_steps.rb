@@ -71,11 +71,11 @@ module WebSteps
       'alice@example.com',
       'bob@example.com'
     ]
-    visit share_assessment_path(@assessment)
-    click_on I18n.t('assessments.share.add_team_member')
+    visit new_assessment_team_path(@assessment)
+    click_on I18n.t('teams.new.add_team_member')
     @team_members.each do |email|
       all(:css, '.team_member').last.set(email)
-      click_on I18n.t('assessments.share.add_team_member')
+      click_on I18n.t('teams.new.add_team_member')
     end
     click_on I18n.t('buttons.submit')
   end

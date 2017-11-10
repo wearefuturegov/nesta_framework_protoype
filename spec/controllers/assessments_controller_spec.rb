@@ -46,7 +46,7 @@ RSpec.describe AssessmentsController, type: :controller do
       end
       
       it 'renders the correct template' do
-        expect(subject).to render_template('team/assessments')
+        expect(subject).to render_template('teams/assessments')
       end
       
     end
@@ -182,27 +182,5 @@ RSpec.describe AssessmentsController, type: :controller do
     end
     
   end
-  
-  describe 'GET share' do
-    
-    let(:assessment) { FactoryBot.create(:assessment, user: FactoryBot.create(:user)) }
-    let(:subject) { get :share, params: { id: assessment } }
-    
-    it 'renders the index template' do
-      expect(subject).to render_template(:share)
-    end
-    
-    it 'gets the assessment' do
-      subject
-      expect(assigns(:assessment)).to eq(assessment)
-    end
-    
-    it 'initializes a team' do
-      subject
-      expect(assigns(:team)).to be_a(Team)
-    end
-    
-  end
-  
   
 end
