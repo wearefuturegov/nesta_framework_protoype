@@ -8,8 +8,7 @@ class TeamsController < ApplicationController
   end
   
   def create
-    team = Team.create
-    team.update_attributes(team_params)
+    Team.create(team_params)
   end
   
   private

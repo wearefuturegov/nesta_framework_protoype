@@ -5,4 +5,4 @@ Feature: Sharing Assessments
     Given I have a completed assessment
     When I share the assessment with my team members
     Then a team should be created with those team members
-    
+    And each team member should get an email

@@ -12,7 +12,7 @@ RSpec.describe Team, type: :model do
   end
   
   it 'sends an email to users' do
-    expect { team }.to change { ActionMailer::Base.deliveries.count }.by(5)
+    expect { team }.to change { ActionMailer::Base.cached_deliveries.count }.by(5)
   end
   
   context 'grouping areas' do

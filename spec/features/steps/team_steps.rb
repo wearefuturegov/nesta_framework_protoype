@@ -42,3 +42,10 @@ step 'my team have completed all their assessments' do
   )
   @team = FactoryBot.create(:team, users: @users)
 end
+
+step 'each team member should get an email' do
+  @team_members.each_with_index do |email, i|
+    expect(unread_emails_for(email).size).to eq(1)
+    expect(unread_emails_for(email)[0]).to have_subject(I18n.t('user_mailer.assessment_invite.subject'))
+  end
+end
