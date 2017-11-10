@@ -129,4 +129,40 @@ RSpec.describe Assessment, type: :model do
     
   end
   
+  context 'grouping by area' do
+    
+    let(:area1) { FactoryBot.create(:area, name: 'area1') }
+    let(:area2) { FactoryBot.create(:area, name: 'area2') }
+    let(:area3) { FactoryBot.create(:area, name: 'area3') }
+    let(:assessment) {
+      FactoryBot.create(:assessment,
+        strong_skills: [
+          FactoryBot.create_list(:skill, 2, area: area1),
+          FactoryBot.create_list(:skill, 1, area: area2),
+          FactoryBot.create_list(:skill, 2, area: area3)
+        ].flatten,
+        weak_skills: [
+          FactoryBot.create_list(:skill, 1, area: area1),
+          FactoryBot.create_list(:skill, 1, area: area3)
+        ].flatten
+      )
+    }
+    
+    it 'groups the strong areas' do
+      expect(assessment.skills_by_area).to eq({
+        'area1' => 2,
+        'area2' => 1,
+        'area3' => 2
+      })
+    end
+    
+    it 'groups the weak areas' do
+      expect(assessment.skills_by_area(:weak_skills)).to eq({
+        'area1' => 1,
+        'area3' => 1
+      })
+    end
+    
+  end
+  
 end

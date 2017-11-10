@@ -100,6 +100,11 @@ class Assessment < ApplicationRecord
     transition_state(true)
   end
   
+  def skills_by_area(type = :strong_skills)
+    skills = send(type)
+    skills.inject(Hash.new(0)) { |h, e| h[e.area.name] += 1 ; h }
+  end
+  
   private
   
     def check_answers

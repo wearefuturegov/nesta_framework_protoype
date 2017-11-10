@@ -26,8 +26,24 @@ class Team < ApplicationRecord
     users_and_assessments.where(assessments: { id: nil }).uniq
   end
   
+  def users_with_assessments
+    users_and_assessments.where.not(assessments: { id: nil }).uniq
+  end
+  
   def users_and_assessments
     users.left_outer_joins(:assessment)
+  end
+  
+  def skills_by_area(type = :strong_skills)
+    results = users_with_assessments.map { |u|
+      u.assessment.skills_by_area(type)
+    }
+    results.inject(Hash.new(0)) do |h, r|
+      r.each do |k,v|
+        h[k] += v
+      end
+      h
+    end
   end
   
   private
