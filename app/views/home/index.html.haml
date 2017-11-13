@@ -1,6 +1,29 @@
-%h1=t('home.title')
+#home{"data-0" => "background:hsl(64, 87%, 0%);", "data-end" => "background:hsl(194, 18%, 18%);"}
+  %h1=t('home.title')
 
-=t('home.intro_html')
+  %section#soc
+    .breakout
+      =image_tag("states_of_change_logo_desktop_large.svg")
+    %h3=t('home.soc_strapline')
+    %p=t('home.soc_about')
 
-.center.actions
-  = link_to t('buttons.start'), :assessments, :class => "button"
+  =t('home.intro_html')
+  =t('home.intro_html')
+  =t('home.intro_html')
+  =t('home.intro_html')
+  =t('home.intro_html')
+
+  .center.actions
+    = link_to t('buttons.start'), :assessments, :class => "button"
+
+
+:javascript
+  var s = skrollr.init({
+    edgeStrategy: 'set',
+    easing: {
+      WTF: Math.random,
+      inverted: function(p) {
+        return 1-p;
+      }
+    }
+  });

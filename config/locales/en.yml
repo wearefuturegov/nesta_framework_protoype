@@ -7,6 +7,8 @@ en:
 
   home:
     title: "Nesta Skills & Innovation Tool"
+    soc_strapline: "Building the next generation of public innovation"
+    soc_about: "Across the globe, government teams are pioneering new ways of working. States of Change is a collective that exists to support this growing global movement."
     intro_html: |
       <p>We’ve <a target="_blank" href="https://www.nesta.org.uk/blog/what-are-skills-and-attitudes-successful-public-problem-solving">worked with leading innovators</a>
       from around the world to define the key skills and attitudes that help
@@ -89,7 +91,7 @@ en:
         about_html: |
           <p>Next, why not see how you compare with the rest of your team?</p>
         link: "See my team's results"
-        
+
   teams:
     new:
       title: "Share your results with your team"
@@ -106,7 +108,7 @@ en:
       notice: |
         Your team members have been emailed with the link to start their assessments.
         Once they've all filled them out, their results will appear on this page.
-      
+
   activerecord:
     errors:
       models:
@@ -120,7 +122,7 @@ en:
               count: You must choose %{count} strong attitudes
             weak_attitudes:
               count: You must choose %{count} weak attitudes
-              
+
   user_mailer:
     assessment_invite:
       subject: "Innovation and Skills Tool - You're invited!"
@@ -128,7 +130,7 @@ en:
         <p>Hi,</p>
         <p>I'm inviting you to fill out your skills and innovation assessment.</p>
       link_text: "Check it out here"
-    
+
   main_areas:
     titles:
       behaviours:
