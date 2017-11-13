@@ -1,11 +1,43 @@
 .home.index {
+  header {
+    display: none;
+  }
+  header.home_header {
+    display: block;
+    background-color: rgba($white, 0.9);
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
+  #skrollr-body {
+
+  }
   .container {
     padding: 0;
   }
 }
+.home_container {
+  padding: 20px;
+}
 
-#home {
-
+#soc_about {
+  background-image: url(bg_hero.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: $white;
+  text-align: center;
+  padding: 15px 0;
+  h3 {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    margin-bottom: 25px;
+  }
 }
 
 .breakout {

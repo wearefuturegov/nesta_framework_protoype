@@ -1,12 +1,6 @@
 body {
   font-family: $font-stack;
   background-color: rgb(245,245,245);
-  &.home {
-    header, footer {
-      background: transparent;
-      color: $black;
-    }
-  }
 }
 
 p {

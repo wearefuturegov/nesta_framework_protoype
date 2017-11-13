@@ -1,29 +1,24 @@
-#home{"data-0" => "background:hsl(64, 87%, 0%);", "data-end" => "background:hsl(194, 18%, 18%);"}
-  %h1=t('home.title')
-
-  %section#soc
+%header.home_header{"data-200" => "opacity:0;", "data-275" => "opacity:1;"}
+  .container
+    .site-header_logo
+      =image_tag("logo.svg")
+#skrollr-body
+  %section#soc_about{"data-top" => "background-position-y: 0px;", "data-top-bottom" => "background-position-y: -120px;"}
     .breakout
       =image_tag("states_of_change_logo_desktop_large.svg")
-    %h3=t('home.soc_strapline')
-    %p=t('home.soc_about')
+    .home_container
+      %h3=t('home.soc_strapline')
+      %h3=t('home.soc_about')
 
-  =t('home.intro_html')
-  =t('home.intro_html')
-  =t('home.intro_html')
-  =t('home.intro_html')
-  =t('home.intro_html')
 
-  .center.actions
-    = link_to t('buttons.start'), :assessments, :class => "button"
+  %section#tool
+    %h1=t('home.title')
+    =t('home.intro_html')
+    .center.actions
+      = link_to t('buttons.start'), :assessments, :class => "button"
 
 
 :javascript
-  var s = skrollr.init({
-    edgeStrategy: 'set',
-    easing: {
-      WTF: Math.random,
-      inverted: function(p) {
-        return 1-p;
-      }
-    }
-  });
+  window.onload = function() {
+    var s = skrollr.init();
+  };
