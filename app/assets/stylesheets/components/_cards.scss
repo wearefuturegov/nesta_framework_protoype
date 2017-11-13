@@ -121,9 +121,11 @@
   text-align: center;
   padding: 20px;
   background-color: $white;
-  box-shadow: 0 0 10px 0 rgba(47, 47, 47, 0.1);
+  // color: $white;
+  box-shadow: 0 -1px 10px 0 rgba($black, 0.2);
   z-index: 999;
   // @include transition(height, 0.4s);
+  border-top: 1px solid rgba($black, 0.1);
 
   .actions {
     margin-top: 10px;
@@ -131,6 +133,20 @@
 
     .full-button {
       width: 100%;
+    }
+  }
+  #status_indicator {
+    text-align: center;
+    .indicator {
+      width: 8px;
+      height: 8px;
+      background-color: rgba($black, 0.2);
+      border-radius: 100%;
+      display: inline-block;
+      margin: 0 5px;
+      &.attitude {
+        background-color: rgba($black, 1);
+      }
     }
   }
 }
