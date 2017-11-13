@@ -12,12 +12,23 @@
 
 
   %section#tool
-    %h1=t('home.title')
-    =t('home.intro_html')
-    .center.actions
-      = link_to t('buttons.start'), :assessments, :class => "button"
+    .home_container
+      %h1=t('home.title')
+      =t('home.intro_html')
+      %ul.default
+        %li{"data-bottom-top" => "transform: translateX(-120%)", "data-100-bottom-top" => "transform: translateX(0%)"}
+          Make sense of our findings
+        %li
+          Reflect on &amp; test your own skills and attitudes.
+        %li
+          Compare your results with colleagues and build a picture for your team.
 
+      .center.actions
+        = link_to t('buttons.start'), :assessments, :class => "button"
 
+  %footer
+    .home_container
+      = render 'layouts/site_footer'
 :javascript
   window.onload = function() {
     var s = skrollr.init();

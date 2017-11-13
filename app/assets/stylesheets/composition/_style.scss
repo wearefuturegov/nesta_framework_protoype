@@ -3,6 +3,12 @@ body {
   background-color: rgb(245,245,245);
 }
 
+.site-header_logo {
+  img {
+    vertical-align: middle;
+  }
+}
+
 p {
   max-width: 925px;
 }
@@ -28,6 +34,14 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
 
   &:hover, &:active {
     background-color: rgba($primary-color, 1);
+  }
+}
+
+.white_btn {
+  background-color: rgba($white, 0.9);
+  color: $black;
+  &:focus, &:active {
+    background-color: rgba($white, 1);
   }
 }
 
