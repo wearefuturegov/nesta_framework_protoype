@@ -29,23 +29,26 @@ $.fn.cardSort = function(options) {
 
   $('.card_sort_footer .num_left').html(cardsLeft);
   $('.card_sort_footer .card_type').html(settings.type_text);
-  for (var i = 1; i < (cardsLeft+1); i++) {
+  for (var i = 1; i < (settings.noToChoose+1); i++) {
     $('.card_sort_footer #status_indicator').prepend('<div id="indicator_'+ i +'" class="indicator"></div>');
   }
+  $('.selected').each(function(index) {
+    $('#indicator_'+(index+1)).addClass($(this).data('type'));
+  });
 
   $('.card_sort_single label').click(function() {
     var $parent = $(this).parent('div');
     if ($parent.hasClass('selected')) {
       cardsLeft++;
-      $('#indicator_'+cardsLeft).removeClass('working_together');
-      $('#indicator_'+cardsLeft).removeClass('leading_change');
-      $('#indicator_'+cardsLeft).removeClass('accelerating_learning');
-      $('#indicator_'+cardsLeft).removeClass('attitude');
+      $('.indicator.'+$parent.data('type')).last().removeClass($parent.data('type'));
+      // $('#indicator_'+cardsLeft).removeClass('leading_change');
+      // $('#indicator_'+cardsLeft).removeClass('accelerating_learning');
+      // $('#indicator_'+cardsLeft).removeClass('attitude');
       $parent.removeClass('selected');
       $(this).children('input')[0].checked = false;
     } else {
       if(cardsLeft != 0) {
-        $('#indicator_'+cardsLeft).addClass($parent.data('type'));
+        $('.indicator').not('.working_together').not('.leading_change').not('.accelerating_learning').not('.attitude').first().addClass($parent.data('type'));
         cardsLeft--;
         $parent.addClass('selected');
         $(this).children('input')[0].checked = true;
