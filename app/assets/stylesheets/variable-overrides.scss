@@ -5,55 +5,26 @@
 $heading-font-family: 'Roboto Slab', serif;
 $font-stack: "Lucida Sans Unicode", "Lucida Grande", "Helvetica Neue", "Helvetica", "Roboto", "Noto", "Droid Sans", "Cantarell", "Oxygen", "Ubuntu", "Franklin Gothic Medium", "Century Gothic", "Liberation Sans", sans-serif;
 
-// ORIGINAL COLOURS
-$old-green: #8DD0C6;
-$old-yellow: #F6DA9A;
-$old-pink: #F7A0B2;
-$old-purple: #C29FDA;
+$blue: #A79be7;
+$yellow: #FF9A3F;
+$pink: #e83b5c;
 
-//NEW COLOURS
-// $green: #FDC66E;
-// $yellow: #FDC66E;
-// $pink: #68A2F7;
-// $purple: #C58BE2;
-
-$green: #009688;
-$yellow: #FFC107;
-$pink: #E91E63;
-$purple: #9C27B0;
-
-$blue: #2F1E52;
-
-$green-gradient: linear-gradient(-94deg, lighten($green, 3%) 3%, $green 100%);
+$blue-gradient: linear-gradient(-94deg, lighten($blue, 3%) 3%, $blue 100%);
 $yell-gradient: linear-gradient(-94deg, lighten($yellow, 3%) 3%, $yellow 100%);
-$purp-gradient: linear-gradient(-94deg, lighten($purple, 3%) 3%, $purple 100%);
-
-$primary-color-gradient: linear-gradient(-94deg, lighten($primary-color, 3%) 3%, $primary-color 100%);
-
-$pink-purple-gradient: linear-gradient(98deg, $old-pink 0%, $old-purple 140%);
-$green-yellow-gradient: linear-gradient(98deg, $old-green -10%, $old-yellow 120%);
-
-$pink-gradient-subtle: linear-gradient(98deg, $old-pink -30%, $old-purple 170%);
-$green-gradient-subtle: linear-gradient(98deg, $old-green -50%, $old-yellow 150%);
-
-
-$pink-gradient-original: linear-gradient(98deg, $old-pink 0%, $old-purple 100%);
-$green-gradient-original: linear-gradient(98deg, $old-green 0%, $old-yellow 105%);
+$pink-gradient: linear-gradient(-94deg, lighten($pink, 3%) 3%, $pink 100%);
 
 $black: #434048;
-$black-original: #434149;
-
 
 $primary-color: $black;
 
 $base-border-radius: 3px;
 
 
-$leading_change: $green;
-$leading_change-gradient: $green-gradient;
+$leading_change: $pink;
+$leading_change-gradient: $pink-gradient;
 
-$accelerating_learning: $purple;
-$accelerating_learning-gradient: $purp-gradient;
+$accelerating_learning: $blue;
+$accelerating_learning-gradient: $blue-gradient;
 
 $working_together: $yellow;
 $working_together-gradient: $yell-gradient;
