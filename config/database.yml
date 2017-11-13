@@ -3,11 +3,11 @@ defaults: &defaults
 
 development:
   <<: *defaults
-  database: app_development
+  database: nesta_development
 
 test: &TEST
   <<: *defaults
-  database: app_test
+  database: nesta_test
 
 cucumber:
   <<: *TEST
