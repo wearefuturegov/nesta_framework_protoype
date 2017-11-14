@@ -1,4 +1,4 @@
-.card_sort_single{ id: "card_#{i + 1}", class: "#{class_name} #{selected}" }
+.card_sort_single{ id: "card_#{i + 1}", class: "#{class_name} #{selected}", "data-type" => class_name }
   %label
     .card_title{ class: class_name }
       = obj.name

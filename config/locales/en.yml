@@ -7,16 +7,13 @@ en:
 
   home:
     title: "Nesta Skills & Innovation Tool"
+    soc_strapline: "Building the next generation of public innovation"
+    soc_about: "Across the globe, government teams are pioneering new ways of working. States of Change is a collective that exists to support this growing global movement."
     intro_html: |
       <p>We’ve <a target="_blank" href="https://www.nesta.org.uk/blog/what-are-skills-and-attitudes-successful-public-problem-solving">worked with leading innovators</a>
       from around the world to define the key skills and attitudes that help
       support innovation in the public sector. Focusing in on problem-solving
       and experimentation, this tool has been designed so that you can...</p>
-      <ul class='default'>
-        <li>Make sense of our findings.</li>
-        <li>Reflect on &amp; test your own skills and attitudes.</li>
-        <li>Compare your results with colleagues and build a picture for your team.</li>
-      </ul>
 
   assessments:
     index:
@@ -69,27 +66,34 @@ en:
         position of skills and attitudes within the sector so we can best
         support it. Most fields are not mandatory but we'd be grateful
         for your participation.</p>
+
     show:
       title: "Your Results"
+      results_html: |
+        <p>Below we’ve summarised your individual results and provided a
+        downloadable guide which gives some guidance on how you might use
+        this information to practice and develop your skills.</p>
+        <p>Download practice guide</p>
+      next_steps:
+        title: "Next Steps"
+        about_html: |
+          <p>Now you’ve completed an individual reflection assessment we
+          suggest inviting team members and getting an idea of how skills
+          and attitudes exist in your team. The team results are accompanied
+          by a guide on how to structure a team workshop to get the most our
+          of your results. </p>
+        invite: "Invite team members"
+      show_team:
+        title: "See how you compare with your team"
+        about_html: |
+          <p>Next, why not see how you compare with the rest of your team?</p>
+        link: "View my team's results"
       strengths: "Your Strongest Skills"
       weaknesses: "Your Weakest Skills"
       attitudes: "The attitudes that most describe you"
       attitudes_weak: "The attitude that least describe you"
       graph_title: "Your skills across the 3 main areas"
-      next_steps:
-        title: "Next Steps"
-        about_html: |
-          <p>Successful innovation requires a team effort, so on the next page
-          we give some guidance on how to share this tool with your colleagues
-          and how you can use our team comparison tool to collate and use
-          your results as a team.</p>
-        share: "Share your results"
-      show_team:
-        title: "See how you compare with your team"
-        about_html: |
-          <p>Next, why not see how you compare with the rest of your team?</p>
-        link: "See my team's results"
-        
+
   teams:
     new:
       title: "Share your results with your team"
@@ -106,7 +110,7 @@ en:
       notice: |
         Your team members have been emailed with the link to start their assessments.
         Once they've all filled them out, their results will appear on this page.
-      
+
   activerecord:
     errors:
       models:
@@ -120,7 +124,7 @@ en:
               count: You must choose %{count} strong attitudes
             weak_attitudes:
               count: You must choose %{count} weak attitudes
-              
+
   user_mailer:
     assessment_invite:
       subject: "Innovation and Skills Tool - You're invited!"
@@ -128,7 +132,7 @@ en:
         <p>Hi,</p>
         <p>I'm inviting you to fill out your skills and innovation assessment.</p>
       link_text: "Check it out here"
-    
+
   main_areas:
     titles:
       behaviours:

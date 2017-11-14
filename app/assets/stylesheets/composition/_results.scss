@@ -1,0 +1,32 @@
+.assessments.show {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+#results_page {
+  padding-top: 25px;
+
+  hr {
+    margin: 50px 0;
+    border-bottom: 1px solid rgba($black, 0.3);
+  }
+  h1, h4 {
+    text-align: center;
+  }
+  .inner_container {
+    @include mob_tab {
+      margin-left: 0;
+      margin-right: 0;
+      width: 100%;
+      .half {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+.text_block {
+  max-width: 90%;
+  margin: 0 auto;
+}

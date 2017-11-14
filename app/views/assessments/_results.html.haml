@@ -1,29 +1,28 @@
-#strong_skills
-
-  %h4= t('assessments.show.strengths')
-  
-  = render partial: 'skills/skills', locals: { skills: assessment.strong_skills }
+#strong_skills.inner_container
+  .half
+    %h4= t('assessments.show.strengths')
+    = render partial: 'skills/skills', locals: { skills: assessment.strong_skills }
+  .half
+    %h4= t('assessments.show.graph_title')
+    = pie_chart @assessment.skills_by_area, library: { chart: { backgroundColor: "transparent" } }
 
 %hr
 
-#weak_skills
+#weak_skills.inner_container
 
   %h4= t('assessments.show.weaknesses')
-
   = render partial: 'skills/skills', locals: { skills: assessment.weak_skills }
 
 %hr
 
-#strong_attitudes
+#strong_attitudes.inner_container
 
   %h4= t('assessments.show.attitudes')
-
   = render partial: 'attitudes/attitudes', locals: { attitudes: assessment.strong_attitudes }
 
 %hr
 
-#weak_attitudes
+#weak_attitudes.inner_container
 
   %h4= t('assessments.show.attitudes_weak')
-
   = render partial: 'attitudes/attitudes', locals: { attitudes: assessment.weak_attitudes }

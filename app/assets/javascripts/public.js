@@ -19,7 +19,7 @@ $(document).ready(function() {
     noOfCards: 9,
     noToChoose: 3,
     type: 'cards_sort_3',
-    type_text: "strongest attitudes"});
+    type_text: "best attitudes"});
 
   $('#cards_sort_4').cardSort({
     noOfCards: 6,

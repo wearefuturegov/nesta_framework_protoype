@@ -15,4 +15,5 @@
 //= require highcharts
 //= require chartkick
 //= require cocoon
+//= require skrollr
 //= require_tree .

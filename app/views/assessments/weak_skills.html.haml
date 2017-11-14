@@ -4,7 +4,7 @@
 
 = form_for @assessment do |f|
   #cards_sort_2.card_sorting
-  
+
     = render partial: 'skills', locals: { areas: @areas, f: f, type: :weak_skills }
-    
+
   =render partial: 'shared/card_sort_footer', locals: {next_link: :assess_step5, back_link: :assess_step3, f: f};
