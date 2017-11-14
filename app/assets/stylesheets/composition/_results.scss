@@ -15,7 +15,7 @@
     text-align: center;
   }
   .inner_container {
-    @include mobile {
+    @include mob_tab {
       margin-left: 0;
       margin-right: 0;
       width: 100%;
