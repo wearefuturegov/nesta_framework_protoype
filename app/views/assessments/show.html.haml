@@ -1,27 +1,19 @@
-%h3= t('assessments.show.title')
+#results_page
+  .text_block
+    %h1= t('assessments.show.title')
+    = t('assessments.show.results_html')
 
-= render partial: 'results', locals: { assessment: @assessment }
-      
-%hr
+  %hr
+  .text_block
+    - if @assessment.user.team.present?
+      %h4= t('assessments.show.show_team.title')
+      = t('assessments.show.show_team.about_html')
+      %p= link_to t('assessments.show.show_team.link'), team_assessments_path(@assessment.user.team)
+    - else
+      %h4= t('assessments.show.next_steps.title')
+      = t('assessments.show.next_steps.about_html')
+      %p= link_to t('assessments.show.next_steps.invite'), new_assessment_team_path(@assessment)
 
-%h4= t('assessments.show.graph_title')
+  %hr
 
-= pie_chart @assessment.skills_by_area, library: { chart: { backgroundColor: "#F4F3F4" } }
-
-%hr
-
-- if @assessment.user.team.present?
-  
-  %h4= t('assessments.show.show_team.title')
-
-  = t('assessments.show.show_team.about_html')
-
-  %p= link_to t('assessments.show.show_team.link'), team_assessments_path(@assessment.user.team)
-
-- else
-
-  %h4= t('assessments.show.next_steps.title')
-
-  = t('assessments.show.next_steps.about_html')
-
-  %p= link_to t('assessments.show.next_steps.share'), new_assessment_team_path(@assessment)
+  = render partial: 'results', locals: { assessment: @assessment }

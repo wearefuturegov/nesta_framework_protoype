@@ -66,26 +66,33 @@ en:
         position of skills and attitudes within the sector so we can best
         support it. Most fields are not mandatory but we'd be grateful
         for your participation.</p>
+
     show:
       title: "Your Results"
+      results_html: |
+        <p>Below we’ve summarised your individual results and provided a
+        downloadable guide which gives some guidance on how you might use
+        this information to practice and develop your skills.</p>
+        <p>Download practice guide</p>
+      next_steps:
+        title: "Next Steps"
+        about_html: |
+          <p>Now you’ve completed an individual reflection assessment we
+          suggest inviting team members and getting an idea of how skills
+          and attitudes exist in your team. The team results are accompanied
+          by a guide on how to structure a team workshop to get the most our
+          of your results. </p>
+        invite: "Invite team members"
+      show_team:
+        title: "See how you compare with your team"
+        about_html: |
+          <p>Next, why not see how you compare with the rest of your team?</p>
+        link: "View my team's results"
       strengths: "Your Strongest Skills"
       weaknesses: "Your Weakest Skills"
       attitudes: "The attitudes that most describe you"
       attitudes_weak: "The attitude that least describe you"
       graph_title: "Your skills across the 3 main areas"
-      next_steps:
-        title: "Next Steps"
-        about_html: |
-          <p>Successful innovation requires a team effort, so on the next page
-          we give some guidance on how to share this tool with your colleagues
-          and how you can use our team comparison tool to collate and use
-          your results as a team.</p>
-        share: "Share your results"
-      show_team:
-        title: "See how you compare with your team"
-        about_html: |
-          <p>Next, why not see how you compare with the rest of your team?</p>
-        link: "See my team's results"
 
   teams:
     new:
