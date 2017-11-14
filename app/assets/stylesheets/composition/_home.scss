@@ -1,11 +1,11 @@
 .home.index {
   background-color: $black;
+  max-height: 100%;
   header, .site-footer {
     display: none;
   }
   footer {
     margin-top: 0;
-    padding-bottom: 0;
   }
   header.home_header {
     display: block;

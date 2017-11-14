@@ -20,13 +20,17 @@
 .card_sorting {
   @include grid-container;
 
-  @include tablet {
-    @include grid-collapse;
-  }
   @include desktop {
-    @include grid-column(6);
-    @include grid-collapse;
+    width: 60%;
+    float: left;
   }
+  // @include tablet {
+  //   @include grid-collapse;
+  // }
+  // @include desktop {
+  //   @include grid-column(6);
+  //   @include grid-collapse;
+  // }
 }
 
 .card_sort_single {
@@ -96,20 +100,20 @@
     box-shadow: 0 0px 0px 0 rgba(67, 65, 73, 0.14), 0 0px 0px -2px rgba(67, 65, 73, 0.2), 0 1px 5px 0 rgba(67, 65, 73, 0.12)
   }
 
-  @include tablet {
-    @include grid-column(6);
+  // @include tablet {
+  //   @include grid-column(6);
 
-    &:nth-child(2n+1) {
-      clear: left;
-    }
-  }
-  @include desktop {
-    @include grid-column(6);
+  //   &:nth-child(2n+1) {
+  //     clear: left;
+  //   }
+  // }
+  // @include desktop {
+  //   @include grid-column(6);
 
-    &:nth-child(2n+1) {
-      clear: left;
-    }
-  }
+  //   &:nth-child(2n+1) {
+  //     clear: left;
+  //   }
+  // }
 }
 
 
@@ -148,6 +152,17 @@
         background-color: rgba($black, 1);
       }
     }
+  }
+  @include desktop {
+    position: relative;
+    float: right;
+    width: 35%;
+    margin-top: 30px;
+    border-radius: $base-border-radius;
+    box-shadow: none;
+  }
+  @include mobile {
+    transform: translate(0px, 0px) !important;
   }
 }
 

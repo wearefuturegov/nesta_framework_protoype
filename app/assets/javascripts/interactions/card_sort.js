@@ -14,12 +14,16 @@ $.fn.cardSort = function(options) {
   var hideShowFooter = function() {
     if (cardsLeft == 0) {
       $('.card_sort_footer .actions').slideDown(300, function() {
-        $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+        }
       });
       $('.next_button').removeClass('disabled');
     } else {
       $('.card_sort_footer .actions').slideUp(300, function() {
-        $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+        }
       });
       $('.next_button').addClass('disabled');
     }
@@ -60,6 +64,7 @@ $.fn.cardSort = function(options) {
     return false;
   });
 
-
-  $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $('footer').css('margin-bottom', $('.card_sort_footer').height()+40);
+  }
 };
