@@ -76,8 +76,31 @@ button, input[type="button"], input[type="reset"], input[type="submit"], .button
   display: inline;
 }
 
-select {
-  background-color: $white;
+#{$all-text-inputs} {
   border: 1px solid $black;
-  padding: 5px 4px 4px;
+}
+
+select {
+  // background-color: $white;
+  // border: 1px solid $black;
+  // padding: 5px 4px 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid $black;
+  border-radius: $base-border-radius;
+  background-color: #fff;
+  line-height: 1.5em;
+  padding: 8px 52px 8px 13px;
+  color: #333333;
+  cursor: pointer;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #333 50%),linear-gradient(135deg, #333 50%, transparent 50%),linear-gradient(to right, #333, #333);
+  background-position: calc(100% - 24px) calc(13px + 6px),calc(100% - 19px) calc(13px + 6px),calc(100% - 48px) 0px;
+  background-size: 5px 5px, 5px 5px, 1px 65px;
+  background-repeat: no-repeat;
+  margin-bottom: 13px;
+  width: 100%;
 }
