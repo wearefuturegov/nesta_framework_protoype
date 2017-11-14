@@ -3,6 +3,12 @@ body {
   background-color: rgb(245,245,245);
 }
 
+.container {
+  @include desktop {
+    max-width: 960px;
+  }
+}
+
 .site-header_logo {
   img {
     vertical-align: middle;
