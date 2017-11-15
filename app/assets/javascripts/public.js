@@ -2,6 +2,7 @@ $(document).ready(function() {
 
   $('.disabled').click(function(e){ if($(this).hasClass('disabled')){ e.preventDefault(); }});
   $('.accordion').accordion();
+  $('#alerts').alerts();
 
   $('#cards_sort_1').cardSort({
     noOfCards: 14,
