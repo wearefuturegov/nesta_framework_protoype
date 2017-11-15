@@ -1,13 +1,14 @@
-.card_sort_footer{"data-start" => "transform: translate(0px, 0px)"}
-  .status
-    Choose
-    %span.num_left.bold 0
-    more
-    %span.card_type
-  #status_indicator
+.card_sort_footer
+  .inner
+    .status
+      Choose
+      %span.num_left.bold 0
+      more
+      %span.card_type
+    #status_indicator
 
-  .actions
-    = f.submit t('buttons.next'), :class => "button full-button fin_card_sort"
+    .actions
+      = f.submit t('buttons.next'), :class => "button full-button fin_card_sort"
 
 .actions
   - if @assessment.aasm_state == 'start'
@@ -17,8 +18,17 @@
   = f.submit t('buttons.next'), :class => "button full-button disabled next_button fin_card_sort"
 
 :javascript
-  window.onload = function() {
-    $('.card_sort_footer').attr("data-end", "transform: translate(0px, "+ ($('.card_sorting').height()-210) +"px)");
-    var s = skrollr.init();
-    console.log($(document).height() - $('footer').height() + $('.card_sort_footer').data("start"));
+   window.onload = function() {
+    if($(window).width() > 960)  {
+      var topPoint = $('.card_sorting').position().top + 30;
+
+      $('.card_sort_footer .inner').css('top', topPoint).css('width', $('.card_sort_footer').width()).followTo(($('.card_sorting').height()-210), topPoint);
+    }
+    $( window ).resize(function() {
+      if($(window).width() > 960)  {
+        var topPoint = $('.card_sorting').position().top + 30;
+
+        $('.card_sort_footer .inner').css('top', topPoint).css('width', $('.card_sort_footer').width()).followTo(($('.card_sorting').height()-210), topPoint);
+      }
+    });
   };
