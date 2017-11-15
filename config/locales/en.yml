@@ -4,6 +4,7 @@ en:
     next: "Next"
     back: "Back"
     submit: "Submit"
+    submit_team: "Send invites to team"
 
   home:
     title: "Nesta Skills & Innovation Tool"
@@ -96,16 +97,17 @@ en:
 
   teams:
     new:
-      title: "Share your results with your team"
+      title: "Invite team members"
       about_html: |
         <p>Our experience has shown there is great value to be had in discussing
-        and mapping everyone's skills and attitudes within teams together. It allows
-        you to check assumptions that you've made in identifying your own strengths
-        and weaknesses and start to build a picture of the overall skills and
-        attitudes that exist in your team. This will also identify any gaps that
-        you may need to address or mitigate.</p>
-      subtitle: "Share your results"
-      add_team_member: "Add team member"
+        and mapping everyone's skills and attitudes within teams together. It
+        allows you build a picture of the overall skills and attitudes that exist
+        in your team, helping identify any gaps that you may need to address or mitigate.</p>
+        <p>Once you’ve invited team members and they’ve completed an assessment you’ll
+        be emailed a link to access the team results page.</p>
+        <p>Add as many email addresses as you would like below and they will be emailed a link
+        to complete their own assesment.</p>
+      add_team_member: "Add new team member"
     create:
       notice: |
         Your team members have been emailed with the link to start their assessments.

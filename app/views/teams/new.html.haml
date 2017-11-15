@@ -2,15 +2,14 @@
 
 = t('teams.new.about_html')
 
-%h4= t('teams.new.subtitle')
-
-
 = form_for(@team) do |f|
-  
+
   = f.fields_for :users do |user_fields|
     .hidden
       = render 'user_fields', f: user_fields
   .links
-    = link_to_add_association t('teams.new.add_team_member'), f, :users
-  
-  = f.submit t('buttons.submit')
+    = link_to_add_association f, :users do
+      =fa_icon 'plus'
+      =t('teams.new.add_team_member')
+
+  = f.submit t('buttons.submit_team'), class: 'right_float'
