@@ -26,6 +26,17 @@
   }
 }
 
+.inner_container {
+  .half {
+    margin-left: 0;
+    @include desktop {
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
 .text_block {
   max-width: 90%;
   margin: 0 auto;
@@ -48,9 +59,10 @@
     font-weight: bold;
   }
   .inner_container {
-    padding-top: 25px;
+    padding: 15px;
   }
   h4 {
     font-weight: 400;
+    text-align: center;
   }
 }
