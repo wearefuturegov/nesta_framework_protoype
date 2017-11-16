@@ -13,7 +13,6 @@ class Assessment < ApplicationRecord
   include AASM
   
   before_update :transition_state
-  after_update :send_email, if: Proc.new { |a| a.complete? }
   has_many :assessment_answers
   belongs_to :user, optional: true
   
@@ -160,10 +159,6 @@ class Assessment < ApplicationRecord
     
     def error_message(attribute, count)
       I18n.t("activerecord.errors.models.assessment.attributes.#{attribute}.count", count: count)
-    end
-    
-    def send_email
-      SendEmail.enqueue('UserMailer', :send_results, user.id)
     end
 
 end
