@@ -3,4 +3,11 @@
     = skill.name
     %span.accord_arrow=fa_icon "chevron-down"
   .accord_content.card_description
-    = skill.description
+    %p
+      = skill.description
+    - if skill.behaviours
+      %h4 Key behaviours
+      %ul
+      - skill.behaviours.each do |b|
+        %li
+          = b.description
