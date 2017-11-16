@@ -100,6 +100,7 @@ module WebSteps
       @weak_skills = user.assessment.weak_skills.map { |s| s.name }
       @strong_attitudes = user.assessment.strong_attitudes.map { |a| a.name }
       @weak_attitudes = user.assessment.weak_attitudes.map { |a| a.name }
+      div.click
       should_see_my_results(div)
       expect(div.text).to match /#{user.name}/
     end
