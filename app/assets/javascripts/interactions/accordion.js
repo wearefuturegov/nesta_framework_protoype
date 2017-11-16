@@ -11,7 +11,6 @@ $.fn.accordion = function() {
       $this.parent().parent().find('.accord_content').removeClass('open');
       $this.parent().parent().find('.accord_content').slideUp(500);
       $this.parent().toggleClass('open');
-      console.log($this.find('.accord_arrow'));
       $this.find('.accord_arrow').addClass('rotate');
       $this.next().slideToggle(500);
     }
