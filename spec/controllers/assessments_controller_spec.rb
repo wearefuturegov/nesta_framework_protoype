@@ -178,6 +178,24 @@ RSpec.describe AssessmentsController, type: :controller do
       expect(assessment.weak_attitudes.count).to eq(1)
     end
     
+    it 'creates a user' do
+      assessment.update_column(:aasm_state, 'weak_attitudes_added')
+      params[:assessment][:user_attributes] = {
+        email: 'me@example.com'
+      }
+      put :update, params: params
+      assessment.reload
+      expect(assessment.user).to_not be_nil
+    end
+    
+    it 'triggers an email' do
+      assessment.update_column(:aasm_state, 'weak_attitudes_added')
+      params[:assessment][:user_attributes] = {
+        email: 'me@example.com'
+      }
+      expect { put :update, params: params }.to change { ActionMailer::Base.cached_deliveries.count }.by(1)
+    end
+    
     it 'goes back' do
       assessment.update_column(:aasm_state, 'strong_attitudes_added')
       params[:back] = 1
