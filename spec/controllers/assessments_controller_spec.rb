@@ -45,6 +45,11 @@ RSpec.describe AssessmentsController, type: :controller do
         expect(assigns(:assessments).count).to eq(2)
       end
       
+      it 'gets users without an assessment' do
+        subject
+        expect(assigns(:users_without_assessments).count).to eq(3)
+      end
+      
       it 'renders the correct template' do
         expect(subject).to render_template('teams/assessments')
       end

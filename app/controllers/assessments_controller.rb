@@ -7,6 +7,7 @@ class AssessmentsController < ApplicationController
     if params[:team_id]
       @team = Team.find(params[:team_id])
       @assessments = @team.assessments
+      @users_without_assessments = @team.users_without_assessments
       render 'teams/assessments'
     else
       @step = 1
