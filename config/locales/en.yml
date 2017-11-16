@@ -24,6 +24,10 @@ en:
         demonstrate skills and behaviours in the following 3 areas...
       team_results:
         title: Team summary
+        about_html: |
+          <p>Below we’ve summarised all the results collected from your team.
+          The guide below gives you an idea on how you might interpret and use these results as a team.</p>
+          <p><a href="#">Team Development Guide</a></p>
     new:
       about_html: |
         <p>Each of the 3 areas relates to a specific set of skills,
@@ -74,7 +78,7 @@ en:
         <p>Below we’ve summarised your individual results and provided a
         downloadable guide which gives some guidance on how you might use
         this information to practice and develop your skills.</p>
-        <p>Download practice guide</p>
+        <p><a href="#">Download practice guide</a></p>
       next_steps:
         title: "Next Steps"
         about_html: |
@@ -94,7 +98,15 @@ en:
       attitudes: "The attitudes that most describes you"
       attitudes_weak: "The attitude that least describes you"
       graph_title: "Your skills across the 3 main areas"
-
+  finish:
+    title:
+    about_html: |
+      <p>Thanks for taking the time to use our tool. We have been sent you an email
+      that will allow you to return to your results or team summary at any time.</p>
+      <p>We hope you’ve found it both informative and useful. This tool is still in
+      beta and we’d love to get some feedback on how you have found the experience -
+      so if you have 2 minutes please consider <a href="#">giving us some feedback</a>.</p>
+      <p>You can find out more about the work being undertaken by the <a href="#">states of change collective here</a>.</p>
   teams:
     new:
       title: "Invite team members"
@@ -111,7 +123,8 @@ en:
     create:
       notice: |
         Your team members have been emailed with the link to start their assessments.
-        Once they've all filled them out, their results will appear on this page.
+        Once completed, their results will appear on this page.
+        You can return to this page in future from your results summary.
 
   activerecord:
     errors:
