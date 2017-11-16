@@ -165,4 +165,21 @@ RSpec.describe Assessment, type: :model do
     
   end
   
+  it 'sends an email when the assessment is complete' do
+    assessment.aasm_state = 'weak_attitudes_added'
+    expect { assessment.save }.to change { ActionMailer::Base.cached_deliveries.count }.by(1)
+  end
+  
+  it 'does not send an email for any other state' do
+    [
+      'start',
+      'strong_skills_added',
+      'weak_skills_added',
+      'strong_attitudes_added'
+    ].each do |state|
+      assessment.aasm_state = state
+      expect { assessment.save }.to change { ActionMailer::Base.cached_deliveries.count }.by(0)
+    end
+  end
+  
 end

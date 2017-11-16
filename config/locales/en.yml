@@ -134,6 +134,13 @@ en:
         <p>Hi,</p>
         <p>I'm inviting you to fill out your skills and innovation assessment.</p>
       link_text: "Check it out here"
+    send_results:
+      subject: "Innovation and Skills Tool - Your results"
+      intro_html: |
+        <p>Hi,</p>
+        <p>Thank you for completing you Skills and Innovation assessment.</p>
+        <p>For reference, you can find your assessment results at this link %{assessment_url}.</p>
+        <p>Thanks<br />The Skills and Innovation Team</p>
 
   main_areas:
     titles:
