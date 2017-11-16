@@ -2,29 +2,20 @@ $.fn.accordion = function() {
   if (this.length === 0) { return false; }
 
   $(this).click(function() {
-    if($(this).hasClass('open')) {
-      closeAccord($(this));
+    var $this = $(this);
+    if ($this.parent().hasClass('open')) {
+      $this.parent().removeClass('open');
+      $this.find('.accord_arrow').removeClass('rotate');
+      $this.next().slideUp(500);
     } else {
-      checkOtherAccords($(this));
-      openAccord($(this));
+      $this.parent().parent().find('.accord_content').removeClass('open');
+      $this.parent().parent().find('.accord_content').slideUp(500);
+      $this.parent().toggleClass('open');
+      console.log($this.find('.accord_arrow'));
+      $this.find('.accord_arrow').addClass('rotate');
+      $this.next().slideToggle(500);
     }
   });
-
-  function openAccord(currentClick) {
-    currentClick.addClass('open');
-    currentClick.find('.accord_content').slideDown(500);
-  }
-
-  function closeAccord(currentClick) {
-    currentClick.removeClass('open');
-    currentClick.find('.accord_content').slideUp(500);
-  }
-
-  function checkOtherAccords(currentClick) {
-    var otherOpen = currentClick.closest('.accord_cont').find('.open');
-    if (otherOpen.length ===0) { return false; }
-
-    closeAccord(otherOpen);
-  }
-
 };
+
+

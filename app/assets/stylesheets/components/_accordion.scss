@@ -4,23 +4,18 @@
       cursor: pointer;
     }
   }
-  .accord_arrow {
+  .accord_arrow:first-of-type {
     float: right;
     @include transition(all 0.5s);
   }
   .accord_content {
     display: none;
+    padding-top: 15px;
   }
-}
 
-.accordion.open {
-  .accord_btn {
-
-  }
-  .accord_arrow {
-    @include transform(rotate(180deg));
-  }
-  .accord_content {
-
+  &.open {
+    .accord_arrow.rotate {
+      @include transform(rotate(180deg));
+    }
   }
 }

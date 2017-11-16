@@ -1,15 +1,17 @@
-%h3= t('assessments.index.team_results.title')
-=t('assessments.index.team_results.about_html')
-.button=t('assessments.index.team_results.team_guide')
-
-%h4= t('assessments.index.team_results.skills_by_area')
-= pie_chart @team.skills_by_area, library: { chart: { backgroundColor: "transparent" } }
+.text_block
+  %h3= t('assessments.index.team_results.title')
+  =t('assessments.index.team_results.about_html')
+  .button=t('assessments.index.team_results.team_guide')
+.text_block
+  %h4= t('assessments.index.team_results.skills_by_area')
+  = pie_chart @team.skills_by_area, library: { chart: { backgroundColor: "transparent" } }
 
 
 - @assessments.each do |assessment|
   .assessment.single_team_user.card.accordion
-    .accord_btn
-      %h4= assessment.user.name || assessment.user.email
+    .accord_btn.title
+      = assessment.user.name || assessment.user.email
+      %span.accord_arrow=fa_icon "chevron-down"
     .accord_content
       = render partial: 'results', locals: { assessment: assessment }
 
