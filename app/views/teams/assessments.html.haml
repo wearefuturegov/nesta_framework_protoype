@@ -8,7 +8,7 @@
 
 
 - @assessments.each do |assessment|
-  .assessment.single_team_user.card.accordion
+  .assessment.single_team_user.card.accordion.parent_accord
     .accord_btn.title
       = assessment.user.name || assessment.user.email
       %span.accord_arrow=fa_icon "chevron-down"
