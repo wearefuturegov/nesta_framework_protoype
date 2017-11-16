@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
   get 'home/privacy'
-
-  get 'assess/step1'
-  get 'assess/step2'
-  get 'assess/step3'
-  get 'assess/step4'
-  get 'assess/step5'
-  get 'assess/step6'
+  get 'home/finish'
 
   resources :assessments do
     collection do

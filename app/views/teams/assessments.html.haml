@@ -2,6 +2,7 @@
   %h3= t('assessments.index.team_results.title')
   =t('assessments.index.team_results.about_html')
   .button=t('assessments.index.team_results.team_guide')
+
 .text_block
   %h4= t('assessments.index.team_results.skills_by_area')
   = pie_chart @team.skills_by_area, library: { chart: { backgroundColor: "transparent" } }
@@ -22,3 +23,6 @@
         %span.accord_arrow=fa_icon "chevron-down"
       .accord_content
         %p Has not completed their assesment yet.
+
+.finish
+  =link_to 'Finish', home_finish_path, class: 'button'

@@ -1,11 +1,14 @@
 .container
   %h3 Keep Connected
   %hr
-  .half
+  .half.soc_logo
     %p=image_tag("logo_footer.svg")
   .half
     %p We’ll be developing our global faculty, R&D programme and learning programmes in different parts of the world over the coming months.
-  .full_width
-    %p To keep up to date with what we’re doing, sign up to receive our updates or send us an email.
-    .actions
-      =link_to "Sign up Here", "https://www.nesta.org.uk/sign-our-weekly-newsletter", target: '_blank', class: 'button white_btn'
+  .full_width.fg_logo
+    Created in collaboration with
+    =link_to 'https://www.wearefuturegov.com/', target: '_blank' do
+      =image_tag("fg_logo.png")
+
+  .full_width.privacy
+    =link_to 'Privacy policy', home_privacy_path

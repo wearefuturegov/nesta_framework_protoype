@@ -95,9 +95,9 @@ en:
       attitudes_weak: "The attitude that least describes you"
       graph_title: "Your skills across the 3 main areas"
   finish:
-    title:
+    title: Thank you for being a part of our new tool
     about_html: |
-      <p>Thanks for taking the time to use our tool. We have been sent you an email
+      <p>Thanks for taking the time to use our tool. We have sent you an email
       that will allow you to return to your results or team summary at any time.</p>
       <p>We hope you’ve found it both informative and useful. This tool is still in
       beta and we’d love to get some feedback on how you have found the experience -
