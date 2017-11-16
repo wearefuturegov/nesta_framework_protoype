@@ -27,7 +27,8 @@ en:
         about_html: |
           <p>Below we’ve summarised all the results collected from your team.
           The guide below gives you an idea on how you might interpret and use these results as a team.</p>
-          <p><a href="#">Team Development Guide</a></p>
+        team_guide: Team Development Guide
+        skills_by_area: Your teams skills by area
     new:
       about_html: |
         <p>Each of the 3 areas relates to a specific set of skills,
@@ -73,20 +74,15 @@ en:
         for your participation.</p>
 
     show:
-      title: "Your Results"
-      results_html: |
-        <p>Below we’ve summarised your individual results and provided a
-        downloadable guide which gives some guidance on how you might use
-        this information to practice and develop your skills.</p>
-        <p><a href="#">Download practice guide</a></p>
       next_steps:
-        title: "Next Steps"
+        title: "Your results summary"
         about_html: |
-          <p>Now you’ve completed an individual reflection assessment we
-          suggest inviting team members and getting an idea of how skills
-          and attitudes exist in your team. The team results are accompanied
-          by a guide on how to structure a team workshop to get the most our
-          of your results. </p>
+          <p>Now you’ve completed an individual reflection assessment why not
+          invite colleagues and complete the picture for your team? or download
+          our guide which offers advice on how you might use your individual
+          results for personal development</p>
+          <p><a href="#" class="button">Download practice guide</a></p>
+
         invite: "Invite team members"
       show_team:
         title: "See how you compare with your team"

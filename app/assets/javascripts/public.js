@@ -26,6 +26,6 @@ $(document).ready(function() {
     noOfCards: 6,
     noToChoose: 1,
     type: 'cards_sort_4',
-    type_text: "weakest attitudes"});
+    type_text: "weak attitudes"});
 
 });
