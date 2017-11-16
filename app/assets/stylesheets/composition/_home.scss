@@ -34,7 +34,7 @@
 }
 
 #soc_about, #who_we_are {
-  background-image: url(bg_hero.jpg);
+  background-image: asset-url('bg_hero.jpg');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -50,7 +50,7 @@
   }
 }
 #who_we_are {
-  background-image: url(bg_who_we_are.jpg);
+  background-image: asset-url('bg_who_we_are.jpg');
   position: relative;
   .imgBG {
     position: absolute;
