@@ -23,7 +23,7 @@ class User < ApplicationRecord
   validates :email, email: true
   
   def can_send_email?
-    !assessment.nil? && assessment.complete?
+    !assessment.nil? && assessment.complete? && !email_sent?
   end
   
   private
@@ -34,6 +34,7 @@ class User < ApplicationRecord
   
     def send_email
       SendEmail.enqueue('UserMailer', :send_results, id)
+      update_column :email_sent, true
     end
   
 end
