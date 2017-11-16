@@ -3,14 +3,24 @@ class BuildAssessment
   def self.perform
     yaml = YAML.load File.read(File.join Rails.root, 'config', 'assessment.yml')
     yaml['areas'].each do |a|
-      area = Area.create(name: a['name'], description: a['description'])
+      area = Area.find_or_create_by(name: a['name'])
+      area.description = a['description']
+      area.save
       a['skills'].each do |s|
-        Skill.create(name: s['name'], description: s['description'], area: area)
+        skill = Skill.find_or_create_by(name: s['name'], area: area)
+        skill.description = s['description']
+        skill.behaviours = []
+        (s['behaviours'] || []).each do |b|
+          skill.behaviours << Behaviour.find_or_create_by(description: b)
+        end
+        skill.save
       end
     end
     
     yaml['attitudes'].each do |a|
-      Attitude.create(name: a['name'], description: a['description'])
+      attitude = Attitude.find_or_create_by(name: a['name'])
+      attitude.description = a['description']
+      attitude.save
     end
   end
   

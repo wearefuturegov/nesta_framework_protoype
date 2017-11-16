@@ -23,4 +23,11 @@ RSpec.describe Skill, type: :model do
     expect(skill.area).to eq(area)
   end
   
+  it 'allows behaviours to be specified' do
+    skill.behaviours << FactoryBot.create_list(:behaviour, 3)
+    skill.save
+    skill.reload
+    expect(skill.behaviours.count).to eq(3)
+  end
+  
 end

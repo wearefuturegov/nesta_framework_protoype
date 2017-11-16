@@ -26,8 +26,43 @@
   }
 }
 
+.inner_container {
+  .half {
+    margin-left: 0;
+    @include desktop {
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
 .text_block {
   max-width: 90%;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
+.behaviour {
+  .bold {
+    display: inline;
+  }
+}
+
+.single_team_user {
+  background-color: $white;
+  color: $black;
+
+  .title {
+    font-family: $heading-font-family;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .inner_container {
+    padding: 15px;
+  }
+  h4 {
+    font-weight: 400;
+    text-align: center;
+  }
+}

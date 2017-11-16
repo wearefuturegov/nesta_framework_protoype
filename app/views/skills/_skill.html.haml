@@ -3,4 +3,11 @@
     = skill.name
     %span.accord_arrow=fa_icon "chevron-down"
   .accord_content.card_description
-    = skill.description
+    %p
+      = skill.description
+    - if skill.behaviours
+      %h4=t('main_areas.titles.behaviours.title_0')
+      - skill.behaviours.each_with_index do |b, index|
+        .behaviour
+          .bold="#{t("main_areas.titles.behaviours.title_#{index}")}:"
+          = b.description
