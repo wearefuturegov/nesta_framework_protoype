@@ -77,7 +77,7 @@ module WebSteps
       all(:css, '.team_member').last.set(email)
       click_on I18n.t('teams.new.add_team_member')
     end
-    click_on I18n.t('buttons.submit')
+    click_on I18n.t('buttons.submit_team')
   end
     
   step 'I should see my email address on the user form' do
@@ -128,6 +128,7 @@ module WebSteps
     @weak_skills = select_cards(['Creative Facilitation', 'Political & Bureaucratic Awareness'])
     @strong_attitudes = select_cards(['Agile', 'Curious', 'Reflective'])
     @weak_attitudes = select_cards(['Empathetic'])
+    sleep 1
   end
   
   def select_strong_cards
