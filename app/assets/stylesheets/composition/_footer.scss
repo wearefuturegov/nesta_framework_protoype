@@ -31,4 +31,18 @@ footer {
       color: rgba($white, 0.9);
     }
   }
+  .soc_logo img {
+    max-height: 115px;
+  }
+  .fg_logo {
+    margin-top: 15px;
+    img {
+      height: 15px;
+    }
+  }
+  .privacy {
+    margin-top: 15px;
+    font-size: 14px;
+    text-decoration: underline;
+  }
 }

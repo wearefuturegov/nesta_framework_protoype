@@ -1,13 +1,10 @@
 #results_page
   .text_block
+    %h1= t('assessments.show.show_team.title')
+    = t('assessments.show.show_team.about_html')
+    = link_to t('assessments.show.next_steps.invite'), new_assessment_team_path(@assessment), class: 'button blue'
     - if @assessment.user.team.present?
-      %h1= t('assessments.show.show_team.title')
-      = t('assessments.show.show_team.about_html')
       = link_to t('assessments.show.show_team.link'), team_assessments_path(@assessment.user.team), class: 'button blue'
-    - else
-      %h1= t('assessments.show.next_steps.title')
-      = t('assessments.show.next_steps.about_html')
-      = link_to t('assessments.show.next_steps.invite'), new_assessment_team_path(@assessment), class: 'button blue'
 
   %hr
 
