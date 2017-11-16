@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require rails-ujs
-//= require highcharts
-//= require chartkick
+//= require plotly
 //= require cocoon
 //= require skrollr
 //= require_tree .
