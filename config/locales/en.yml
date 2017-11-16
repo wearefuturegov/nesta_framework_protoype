@@ -91,8 +91,8 @@ en:
         link: "View my team's results"
       strengths: "Your Strongest Skills"
       weaknesses: "Your Weakest Skills"
-      attitudes: "The attitudes that most describe you"
-      attitudes_weak: "The attitude that least describe you"
+      attitudes: "The attitudes that most describes you"
+      attitudes_weak: "The attitude that least describes you"
       graph_title: "Your skills across the 3 main areas"
 
   teams:
