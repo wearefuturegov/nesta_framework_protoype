@@ -5,7 +5,11 @@ class BuildAssessment
     yaml['areas'].each do |a|
       area = Area.create(name: a['name'], description: a['description'])
       a['skills'].each do |s|
-        Skill.create(name: s['name'], description: s['description'], area: area)
+        skill = Skill.create(name: s['name'], description: s['description'], area: area)
+        (s['behaviours'] || []).each do |b|
+          skill.behaviours << Behaviour.create(description: b)
+        end
+        skill.save
       end
     end
     

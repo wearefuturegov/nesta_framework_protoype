@@ -4,38 +4,90 @@ areas:
     skills:
       - name: Citizen & Stakeholder Engagement
         description: Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation.
+        behaviours:
+          - Consider others as the experts
+          - Understand and generate
+          - Tailored to participants
       - name: Creative Facilitation
         description: Creatively supporting the externalisation and processing of different perspectives and facilitating the deliberation of multiple options and ideas.
+        behaviours:
+          - Responsive and adaptable
+          - Built on diversity
+          - Co-created
       - name: Building Bridges
         description: Orchestrating interaction to develop a common ground across teams or stakeholders, in order to create the shared ownership of and effort towards a goal.
+        behaviours:
+          - Open to diversity
+          - Inclusive
+          - Enables collaborative meaning making
       - name: Brokering
         description: Mediating contrasting interests and acting as a negotiator between stakeholders and partners, to reduce friction and manage diverse interests.
+        behaviours:
+          - Practical
+          - Impartial
+          - Genuine
   - name: Leading Change
     description: Mobilising resources and legitimacy to make change happen.
     skills:
       - name: Political & Bureaucratic Awareness
         description: Operating political dynamics and bureaucratic procedures to ensure strategic support.
+        behaviours:
+          - Utilises leverage for change
+          - Pragmatic
+          - Opportunistic
       - name: Financing Change
         description: Understanding the many ways to liberate and use financial resources as motivation.
       - name: Intrapreneurship
         description: Being insurgent, challenging and questioning the status quo and using business acumen to create space and opportunities for change.
+        behaviours:
+          - Risk taker
+          - Possibilities
+          - Provoking/probing
       - name: Demonstrating Value
         description: Creating a justification for change by articulating the value of new approaches and solutions, for decision making purposes.
+        behaviours:
+          - Through other's eyes
+          - Shaped by 'what if?..'
+          - Tailored to audience
       - name: Storytelling & Advocacy
         description: Using narratives and media to articulate vision and information in compelling, engaging, humanised ways that people can connect with.
+        behaviours:
+          - To intrigued and stimulate
+          - Through re-framing
+          - Compelling
   - name: Accelerating Learning
     description: Exploring and iterating new ideas to inform and validate solutions.
     skills:
       - name: Future Acumen
         description: Creating and shaping a long-term vision and connecting it with short-term achievable tasks.
+        behaviours:
+          - Long term planning with short term goals
+          - Multiple futures
+          - Embracing risk
       - name: Prototyping & Iterating
         description: Testing ideas, using lessons of what works (and what doesn’t) to iterate them, in order to systematically improve your idea to create a more informed, robust solution to a problem.
+        behaviours:
+          - Many incremental steps
+          - Explorative
+          - Experimental
       - name: Data Literacy & Evidence
         description: Discovering, generating and interpreting different kinds of data to accelerate sense-making.
+        behaviours:
+          - Broad
+          - Data informed frames
+          - Novel
       - name: Systems Thinking
         description: Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way.
+        behaviours:
+          - Zooming in and out
+          - Aggregated
+          - Multi-level
       - name: Tech Literacy
         description: Recognizing and understanding the potential of technological developments which can improve your practice.
+        behaviours:
+          - Exploring new means
+          - Tech as a means to an end
+          - Un-obvious, fit for purpose
 
 attitudes:
   - name: Agile
