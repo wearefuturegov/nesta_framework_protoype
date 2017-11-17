@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require plotly
+//= require pie_chart
 //= require cocoon
 //= require skrollr
 //= require_tree .
