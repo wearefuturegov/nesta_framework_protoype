@@ -3,22 +3,41 @@ require 'rails_helper'
 RSpec.describe AssessmentsController, type: :controller do
   
   let(:areas) { FactoryBot.create_list(:area, 3) }
+  let(:assessment) { FactoryBot.create(:assessment) }
   
-  describe 'GET index' do
-    it 'renders the index template' do
-      expect(get :index).to render_template(:index)
-    end
+  describe 'GET step_1' do
+    let(:subject) {
+      get :step_1, params: { id: assessment }
+    }
     
-    it 'gets areas' do
-      get :index
-      expect(assigns(:areas)).to eq(areas)
+    it 'renders the index template' do
+      expect(subject).to render_template(:step_1)
     end
     
     it 'sets the right step' do
-      get :index
+      subject
       expect(assigns(:step)).to eq(1)
     end
+  end
+  
+  describe 'GET step_2' do
+    let(:subject) {
+      get :step_2, params: { id: assessment }
+    }
     
+    it 'renders the index template' do
+      expect(subject).to render_template(:step_2)
+    end
+    
+    it 'sets the right step' do
+      subject
+      expect(assigns(:step)).to eq(2)
+    end
+  end
+  
+  
+  describe 'GET index' do
+
     context 'with a team id' do
       let(:users) {
         [
@@ -57,29 +76,13 @@ RSpec.describe AssessmentsController, type: :controller do
     end
   end
   
-  describe 'GET new' do
-    it 'renders the new template' do
-      expect(get :new).to render_template(:new)
-    end
-    
-    it 'gets areas' do
-      get :new
-      expect(assigns(:areas)).to eq(areas)
-    end
-    
-    it 'sets the right step' do
-      get :new
-      expect(assigns(:step)).to eq(2)
-    end
-  end
-  
   describe 'PUT create' do
     it 'creates an assessment' do
       expect { put :create }.to change { Assessment.count }.by(1)
     end
     
     it 'redirects to edit' do
-      expect(put :create).to redirect_to(edit_assessment_url(Assessment.last))
+      expect(put :create).to redirect_to(step_1_assessment_url(Assessment.last))
     end
     
     it 'sets the right state' do
@@ -90,7 +93,6 @@ RSpec.describe AssessmentsController, type: :controller do
   
   describe 'GET edit' do
     
-    let(:assessment) { FactoryBot.create(:assessment) }
     let(:subject) { get :edit, params: { id: assessment } }
     
     {

@@ -5,8 +5,8 @@ Feature: Assessment
     Given the assessment data has been populated
 
   Scenario: Starting a survey
-    When I access the new assessment page
-    And I click next
+    When I access the homepage
+    And I click Get Started
     Then an assessment should exist
 
   Scenario: Adding Strong Skills

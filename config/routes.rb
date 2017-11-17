@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     collection do
       get :areas, action: :areas
     end
+    member do
+      get :step_1
+      get :step_2
+    end
     resources :teams, only: [:new, :create]
   end
 

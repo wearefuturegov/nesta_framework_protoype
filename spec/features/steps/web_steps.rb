@@ -7,8 +7,12 @@ module WebSteps
   step :create_assessment_from_user_link, 'I create an assessment from the user link'
   step :should_see_my_results, 'I should see my results'
   
-  step 'I access the new assessment page' do
-    visit new_assessment_path
+  step 'I access the homepage' do
+    visit '/'
+  end
+  
+  step 'I click Get Started' do
+    click_on I18n.t('buttons.start')
   end
 
   step 'I choose :num :things' do |i, things|

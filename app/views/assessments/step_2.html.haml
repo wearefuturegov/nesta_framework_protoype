@@ -15,5 +15,5 @@
             = s.name
 
 .actions
-  = link_to "back", :assessments, :class => "button full-button"
-  = button_to t('buttons.next'), assessments_path, method: :post, class: "button full-button right_float"
+  = link_to "back", step_1_assessment_path(@assessment), :class => "button full-button"
+  = link_to t('buttons.next'), edit_assessment_path(@assessment), class: "button full-button right_float"

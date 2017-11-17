@@ -1,6 +1,6 @@
 class AssessmentsController < ApplicationController
   before_action :get_areas
-  prepend_before_action :get_assessment, only: [:edit, :show, :update, :share]
+  prepend_before_action :get_assessment, except: [:index, :create]
   before_action :set_template, only: [:edit, :update]
   
   def index
@@ -9,18 +9,20 @@ class AssessmentsController < ApplicationController
       @assessments = @team.assessments
       @users_without_assessments = @team.users_without_assessments
       render 'teams/assessments'
-    else
-      @step = 1
     end
   end
   
-  def new
+  def step_1
+    @step = 1
+  end
+  
+  def step_2
     @step = 2
   end
   
   def create
     @assessment = Assessment.create
-    redirect_to edit_assessment_url(@assessment)
+    redirect_to step_1_assessment_url(@assessment)
   end
   
   def update

@@ -11,4 +11,4 @@
 
 .actions
   = link_to "back", :home_index, :class => "button full-button"
-  = link_to "next", :new_assessment, :class => "button full-button"
+  = link_to t('buttons.next'), step_2_assessment_path(@assessment), :class => "button full-button"

@@ -26,7 +26,7 @@
           Compare your results with colleagues and build a picture for your team. | lorem ipsum doler set decorum ist
 
       .center.actions
-        = link_to t('buttons.start'), :assessments, :class => "button"
+        = button_to t('buttons.start'), :assessments, method: :post, class: "button"
   %section#who_we_are{"data-bottom-top" => "background-position-y: 0px;", "data-top-bottom" => "background-position-y: -95px;"}
     =image_tag("bg_who_we_are.jpg", class: 'imgBG', "data-bottom-top" => "top: -200px;", "data-top-bottom" => "top: 0px;")
     .home_container
