@@ -89,5 +89,36 @@ RSpec.describe User, type: :model do
     
   end
   
+  describe '#send_email' do
+    
+    it 'sends an email when the user has a complete assessment applied' do
+      user = FactoryBot.create(:user)
+      user.assessment = FactoryBot.create(:assessment, aasm_state: 'complete')
+      expect { user.save }.to change { ActionMailer::Base.cached_deliveries.count }.by(1)
+    end
+    
+    it 'does not send an email if the user does not have an assessment' do
+      expect { FactoryBot.create(:user) }.to change { ActionMailer::Base.cached_deliveries.count }.by(0)
+    end
+    
+    it 'does not send an email when the user has an incomplete assessment applied' do
+      user = FactoryBot.create(:user)
+      expect { FactoryBot.create(:assessment, user: user) }.to change { ActionMailer::Base.cached_deliveries.count }.by(0)
+    end
+    
+    it 'does not send an email if the email sent boolean is true' do
+      user = FactoryBot.create(:user, email_sent: true)
+      user.assessment = FactoryBot.create(:assessment, aasm_state: 'complete')
+      expect { user.save }.to change { ActionMailer::Base.cached_deliveries.count }.by(0)
+    end
+    
+    it 'updates the email_sent column' do
+      user = FactoryBot.create(:user)
+      user.assessment = FactoryBot.create(:assessment, aasm_state: 'complete')
+      user.save
+      expect(user.email_sent).to eq(true)
+    end
+    
+  end
   
 end
