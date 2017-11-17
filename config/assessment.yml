@@ -1,6 +1,7 @@
 areas:
   - name: Working Together
     description: Engaging with citizens and stakeholders to create shared ownership of new solutions.
+    colour: '#FF9A3F'
     skills:
       - name: Citizen & Stakeholder Engagement
         description: Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation.
@@ -28,6 +29,7 @@ areas:
           - Genuine
   - name: Leading Change
     description: Mobilising resources and legitimacy to make change happen.
+    colour: '#e83b5c'
     skills:
       - name: Political & Bureaucratic Awareness
         description: Operating political dynamics and bureaucratic procedures to ensure strategic support.
@@ -57,6 +59,7 @@ areas:
           - Compelling
   - name: Accelerating Learning
     description: Exploring and iterating new ideas to inform and validate solutions.
+    colour: '#A79be7'
     skills:
       - name: Future Acumen
         description: Creating and shaping a long-term vision and connecting it with short-term achievable tasks.

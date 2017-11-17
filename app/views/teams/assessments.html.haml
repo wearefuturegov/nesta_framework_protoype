@@ -1,11 +1,11 @@
 .text_block
-  %h3= t('assessments.index.team_results.title')
+  %h1= t('assessments.index.team_results.title')
   =t('assessments.index.team_results.about_html')
   .button=t('assessments.index.team_results.team_guide')
 
 .text_block
-  %h4= t('assessments.index.team_results.skills_by_area')
-  = pie_chart @team.skills_by_area, library: { chart: { backgroundColor: "transparent" } }
+  %h2= t('assessments.index.team_results.skills_by_area')
+  = pie_chart @team.skills_by_area
 
 - @assessments.each do |assessment|
   .assessment.single_team_user.card.accordion.parent_accord

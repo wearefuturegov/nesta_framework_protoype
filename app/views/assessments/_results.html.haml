@@ -4,7 +4,7 @@
     = render partial: 'skills/skills', locals: { skills: assessment.strong_skills }
   .half
     %h4= t('assessments.show.graph_title')
-    = pie_chart assessment.skills_by_area, library: { chart: { backgroundColor: "transparent" } }
+    = pie_chart assessment.skills_by_area
 
 %hr
 
