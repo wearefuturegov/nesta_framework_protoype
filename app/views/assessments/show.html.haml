@@ -3,10 +3,10 @@
     %h1= t('assessments.show.next_steps.title')
 
     - if @assessment.user.team.present?
-      =t('assessments.show.next_steps.about_html')
+      =t('assessments.show.show_team.about_html')
       = link_to t('assessments.show.show_team.link'), team_assessments_path(@assessment.user.team), class: 'button blue'
     - else
-      =t('assessments.show.show_team.about_html')
+      =t('assessments.show.next_steps.about_html')
       = link_to t('assessments.show.next_steps.invite'), new_assessment_team_path(@assessment), class: 'button blue'
 
   %hr
