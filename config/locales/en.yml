@@ -85,9 +85,11 @@ en:
 
         invite: "Invite team members"
       show_team:
-        title: "See how you compare with your team"
         about_html: |
-          <p>Next, why not see how you compare with the rest of your team?</p>
+          <p>Now you’ve completed an individual reflection assessment why check
+          out your colleagues results? or download our guide which offers advice
+          on how you might use your individual results for personal development</p>
+          <p><a href="#" class="button">Download practice guide</a></p>
         link: "View my team's results"
       strengths: "Your Strongest Skills"
       weaknesses: "Your Weakest Skills"
