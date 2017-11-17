@@ -24,7 +24,7 @@
       }
     }
   }
-  
+
   #pie {
     width: 300px;
     margin: 0 auto;
@@ -46,12 +46,20 @@
   max-width: 90%;
   margin: 0 auto;
   margin-bottom: 30px;
+
+  h1, h2, h3, h4 {
+    text-align: center;
+  }
 }
 
 .behaviour {
   .bold {
     display: inline;
   }
+}
+
+.svg-container {
+  margin: 0 auto !important;
 }
 
 .single_team_user {
