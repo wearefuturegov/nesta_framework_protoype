@@ -16,7 +16,7 @@ RSpec.describe UsersController, type: :controller do
     end
     
     it 'redirects to the assessment' do
-      expect(subject).to redirect_to(edit_assessment_url(Assessment.last))
+      expect(subject).to redirect_to(step_1_assessment_url(Assessment.last))
     end
     
   end

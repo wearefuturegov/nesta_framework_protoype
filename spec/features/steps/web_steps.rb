@@ -58,8 +58,8 @@ module WebSteps
   end
 
   step 'I have filled in my assessment' do
-    visit new_assessment_path
-    scroll_to(first :button, I18n.t('buttons.next')).click
+    visit '/'
+    click_on I18n.t('buttons.start')
     complete_assessment
     enter_details
   end
@@ -129,6 +129,8 @@ module WebSteps
   end
   
   def complete_assessment
+    click_on I18n.t('buttons.next')
+    click_on I18n.t('buttons.next')
     @strong_skills = select_strong_cards
     @weak_skills = select_cards(['Creative Facilitation', 'Political & Bureaucratic Awareness'])
     @strong_attitudes = select_cards(['Agile', 'Curious', 'Reflective'])
