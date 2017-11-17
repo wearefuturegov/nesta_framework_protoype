@@ -1,8 +1,7 @@
 #results_page
   .text_block
-    %h1= t('assessments.index.team_results.title')
-    =t('assessments.index.team_results.about_html')
-    .button=t('assessments.index.team_results.team_guide')
+    %h1= t('assessments.show.next_steps.title')
+    =t('assessments.show.next_steps.about_html')
 
     - if @assessment.user.team.present?
       = link_to t('assessments.show.show_team.link'), team_assessments_path(@assessment.user.team), class: 'button blue'
