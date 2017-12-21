@@ -81,15 +81,14 @@ en:
           invite colleagues and complete the picture for your team? Or download
           our guide which offers advice on how you might use your individual
           results for personal development.</p>
-          <p><a href="#" class="button">Download practice guide</a></p>
-
+        individual_guide: "Download practice guide"
         invite: "Invite team members"
       show_team:
         about_html: |
           <p>Now you’ve completed an individual reflection assessment why not check
           out your colleagues results? or download our guide which offers advice
           on how you might use your individual results for personal development</p>
-          <p><a href="#" class="button">Download practice guide</a></p>
+        individual_guide: "Download practice guide"
         link: "View my team's results"
       strengths: "Your Strongest Skills"
       weaknesses: "Your Weakest Skills"

@@ -1,7 +1,16 @@
 .text_block
   %h1= t('assessments.index.team_results.title')
   =t('assessments.index.team_results.about_html')
-  .button=t('assessments.index.team_results.team_guide')
+  = link_to t('assessments.index.team_results.team_guide'), "/downloads/team_follow_up.pdf", class: 'button', target: '_blank'
+  %br
+  %br
+  %p
+    With this quide you may also need these resources:
+    %br
+    = link_to "Project Journey Map", "/downloads/project_journey_map.pdf", target: '_blank'
+    &
+    = link_to "Competency Framework", "/downloads/competency_framework.pdf", target: '_blank'
+
 
 .text_block
   %h2= t('assessments.index.team_results.skills_by_area')
