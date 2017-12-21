@@ -61,11 +61,11 @@ en:
     weak_attitudes:
       about_html: |
         <p>Now <span class='bold'>select the 1 attribute</span> that you think
-        your colleagues would be least likely use to describe you.</p>
+        your colleagues would be least likely to use to describe you.</p>
     user:
-      title: "You're Almost Finished!"
+      title: "You're almost finished!"
       about_html: |
-        <p>Before we let you see and compare your results with your team we'd
+        <p>Before you see and compare your results with your team we'd
         like to find out a little more information about you.</p>
         <p>Collecting this information helps us to make your results more
         meaningful, but also furthers our understanding about the current
@@ -78,15 +78,15 @@ en:
         title: "Your results summary"
         about_html: |
           <p>Now you’ve completed an individual reflection assessment why not
-          invite colleagues and complete the picture for your team? or download
+          invite colleagues and complete the picture for your team? Or download
           our guide which offers advice on how you might use your individual
-          results for personal development</p>
+          results for personal development.</p>
           <p><a href="#" class="button">Download practice guide</a></p>
 
         invite: "Invite team members"
       show_team:
         about_html: |
-          <p>Now you’ve completed an individual reflection assessment why check
+          <p>Now you’ve completed an individual reflection assessment why not check
           out your colleagues results? or download our guide which offers advice
           on how you might use your individual results for personal development</p>
           <p><a href="#" class="button">Download practice guide</a></p>
@@ -97,14 +97,14 @@ en:
       attitudes_weak: "The attitude that least describes you"
       graph_title: "Your skills across the 3 main areas"
   finish:
-    title: Thank you for being a part of our new tool
+    title: Thank you, you're finished!
     about_html: |
-      <p>Thanks for taking the time to use our tool. We have sent you an email
+      <p>We've sent you an email
       that will allow you to return to your results or team summary at any time.</p>
-      <p>We hope you’ve found it both informative and useful. This tool is still in
+      <p>We hope you’ve found this tool both informative and useful. This tool is still in
       beta and we’d love to get some feedback on how you have found the experience -
-      so if you have 2 minutes please consider <a href="https://kellyduggan.typeform.com/to/vqlTIs" target="_blank">giving us some feedback</a>.</p>
-      <p>You can find out more about the work being undertaken by the <a href="http://www.states-of-change.org/" target="_blank">states of change collective here</a>.</p>
+      so if you have 2 minutes please consider <a href="#">giving us some feedback</a>.</p>
+      <p>You can find out more about the work being undertaken by the <a href="#">states of change collective here</a>.</p>
   teams:
     new:
       title: "Invite team members"
@@ -143,15 +143,15 @@ en:
       subject: "Innovation and Skills Tool - You're invited!"
       intro_html: |
         <p>Hi,</p>
-        <p>I'm inviting you to fill out your skills and innovation assessment.</p>
+        <p>You've been invited by one of your colleagues to complete a skills and innovation assessment.</p>
       link_text: "Check it out here"
     send_results:
       subject: "Innovation and Skills Tool - Your results"
       intro_html: |
         <p>Hi,</p>
         <p>Thank you for completing you Skills and Innovation assessment.</p>
-        <p>For reference, you can find your assessment results at this link %{assessment_url}.</p>
-        <p>Thanks<br />The Skills and Innovation Team</p>
+        <p>For reference, you can return to your results here... %{assessment_url}.</p>
+        <p>Thanks<br />States of Change</p>
 
   main_areas:
     titles:
@@ -171,7 +171,7 @@ en:
         behaviour_3: "Genuine"
       skill_2:
         title: "Citizen & Stakeholder Engagement"
-        about: "Actively involve citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation."
+        about: "Actively involving citizens, stakeholders and unusual suspects to bring the diverse voices of those directly, and indirectly, affected by an intervention into the conversation."
         behaviour_1: "Consider others as the experts"
         behaviour_2: "Understand and generate"
         behaviour_3: "Tailored to participants"
@@ -225,13 +225,13 @@ en:
       about: "Exploring and iterating new ideas to inform and validate solutions."
       skill_1:
         title: "Tech Literacy"
-        about: "Recognizing and understanding the potential of technological developments which can improve your practice."
+        about: "Recognising and understanding the potential of technological developments which can improve your practice."
         behaviour_1: "Exploring new means"
         behaviour_2: "Tech as a means to an end"
         behaviour_3: "Un-obvious, fit for purpose"
       skill_2:
         title: "Systems Thinking"
-        about: "Combining micro and macro perspectives to group complexity, understanding the system in a complete holistic way."
+        about: "Combining micro and macro perspectives to grasp complexity, understanding the system in a complete holistic way."
         behaviour_1: "Zooming in and out"
         behaviour_2: "Aggregated"
         behaviour_3: "Multi-level"
@@ -265,7 +265,7 @@ en:
         about: "The desire to explore multiple possibilities."
       at_4:
         title: "Reflective"
-        about: "Habit of critically reflecting on process and results."
+        about: "Habit of critically reflecting on processes and results."
       at_5:
         title: "Courageous"
         about: "Willingness to take risks."

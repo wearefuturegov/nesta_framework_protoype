@@ -1,10 +1,14 @@
 .container
-  %h3 Keep Connected
+  %h3 Keep connected
   %hr
   .half.soc_logo
-    %p=image_tag("logo_footer.svg")
+    =link_to 'http://www.states-of-change.org/', target: '_blank' do
+      =image_tag("logo_footer.svg")
   .half
     %p We’ll be developing our global faculty, R&D programme and learning programmes in different parts of the world over the coming months.
+    %p.normal_link
+      Email us at:
+      =mail_to "hello@states-of-change.org"
   .full_width.fg_logo
     Created in collaboration with
     =link_to 'https://www.wearefuturegov.com/', target: '_blank' do
