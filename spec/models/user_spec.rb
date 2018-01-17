@@ -16,10 +16,10 @@ RSpec.describe User, type: :model do
     
     it 'has a list of organisation types' do
       expect(User::ORGANISATION_TYPES).to eq([
-        'Multi-national Government',
-        'Federal Government',
-        'Regional Government',
-        'Local Government',
+        'Multi-national government',
+        'Federal government',
+        'Regional government',
+        'Local government',
         'Other'
       ])
     end
