@@ -149,7 +149,7 @@ module WebSteps
   def enter_details
     @name = 'Me'
     @email = @user.try(:email) || 'me@example.com'
-    @organisation_type ='Federal Government'
+    @organisation_type ='Federal government'
     @position = 'Management'
     @location = 'GB'
           
