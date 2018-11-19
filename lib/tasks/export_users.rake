@@ -8,10 +8,10 @@ namespace :users do
     bucket = s3.bucket('skills-and-innovation')
     
     file = CSV.generate do |csv|
-      csv << ['Email', 'Assessment Link']
+      csv << ['Date Created', 'Email', 'Assessment Link']
       User.all.each do |u|
         next if u.assessment.nil?
-        csv << [u.email, assessment_url(u.assessment, host: 'skills-and-innovation.herokuapp.com')]
+        csv << [u.assessment.created_at.to_s(:short), u.email, assessment_url(u.assessment, host: 'skills-and-innovation.herokuapp.com')]
       end
     end
     
