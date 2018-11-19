@@ -11,7 +11,7 @@ namespace :users do
       csv << ['Email', 'Assessment Link']
       User.all.each do |u|
         next if u.assessment.nil?
-        csv << [u.email, assessment_url(u.assessment)]
+        csv << [u.email, assessment_url(u.assessment, host: 'skills-and-innovation.herokuapp.com')]
       end
     end
     
